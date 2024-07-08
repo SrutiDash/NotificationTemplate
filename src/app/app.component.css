@@ -1,4 +1,4 @@
-/* .navbar {
+   /* .navbar {
     display: flex;
     align-items: center;
     background-color: white;
@@ -17,7 +17,7 @@
   
   .notification img {
     height: 20px;
-    margin-right: 20px;
+    margin-right: 800px;
   }
   
   .user-info {
@@ -144,7 +144,7 @@
   
   .notification img {
     height: 20px;
-    margin-right: 800px;
+    margin-right: 20px;
   }
   
   .user-info {
@@ -249,5 +249,53 @@
   .main-content {
     flex-grow: 1;
     padding: 20px;
+  }
+  
+  .notification-management .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .notification-management .create-new {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .notification-management .filter {
+    margin-bottom: 20px;
+  }
+  
+  .notification-management .filter button {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .notification-management table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .notification-management table th,
+  .notification-management table td {
+    padding: 10px;
+    border: 1px solid #e7e7e7;
+    text-align: left;
+  }
+  
+  .notification-management table th {
+    background-color: #f8f9fa;
+  }
+  
+  .notification-management table th span {
+    cursor: pointer;
   }
   

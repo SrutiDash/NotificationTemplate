@@ -40,14 +40,15 @@
           <li [class.active]="activeSubMenu === 'bulk-notifications'" (click)="navigateTo('bulk-notifications')">Bulk Notifications</li>
         </div>
       </div>
+    </ul>
+  </div>
 
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>
-</div>
- -->
+</div> -->
 
- <div class="navbar">
+<div class="navbar">
   <img src="https://i.ibb.co/F7qnqsm/comviva-logo-1.png" alt="comviva-logo-1" class="logo">
   <span class="last-login">Last login :</span>
   <span class="date">12 DEC 2020 5:00pm</span>
@@ -93,6 +94,30 @@
   </div>
 
   <div class="main-content">
+    <div class="notification-management" *ngIf="activeMenu === 'notification-management'">
+      <div class="header">
+        <h1>Notification Management</h1>
+        <button class="create-new">Create New</button>
+      </div>
+      <div class="filter">
+        <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter">
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>SERVICE TYPE</th>
+            <th>EVENT TRIGGER</th>
+            <th>PARTY</th>
+            <th>CREATED ON <span>&uarr;&darr;</span></th>
+            <th>CREATED BY <span>&uarr;&darr;</span></th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table rows should be dynamically generated here -->
+        </tbody>
+      </table>
+    </div>
     <router-outlet></router-outlet>
   </div>
 </div>
