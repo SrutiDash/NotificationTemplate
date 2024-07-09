@@ -1,0 +1,31 @@
+.notification-management .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .notification-management .filter {
+    margin-top: 20px;
+  }
+  
+  .notification-management .filter .filter-icon {
+    cursor: pointer;
+  }
+  
+  .notification-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .notification-management th,
+  .notification-management td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .notification-management th span {
+    cursor: pointer;
+  }
+  

@@ -1,3 +1,81 @@
+<!-- 
+<div class="navbar">
+  <img src="https://i.ibb.co/F7qnqsm/comviva-logo-1.png" alt="comviva-logo-1" class="logo">
+  <span class="last-login">Last login :</span>
+  <span class="date">12 DEC 2020 5:00pm</span>
+  <div class="notification">
+    <img src="https://i.ibb.co/sbmqFXw/Group-2979.png" alt="notification">
+  </div>
+  <div class="user-info" (click)="toggleDropdown()">
+    <img src="https://i.ibb.co/1G23cfN/Mask-group.png" alt="pfp" class="profile-pic">
+    <div class="user-details">
+      <span>James Smith</span>
+      <span class="role">Admin</span>
+    </div>
+  </div>
+  <div class="dropdown-menu" *ngIf="dropdownOpen">
+    <ul>
+      <li (click)="navigateTo('profile-details')">
+        <img src="https://i.ibb.co/5j29hfd/Screenshot-2024-07-05-121149.png" alt="Profile Icon">Profile details
+      </li>
+      <li (click)="navigateTo('settings')">
+        <img src="https://i.ibb.co/b6v6PPB/Screenshot-2024-07-05-121159.png" alt="Settings Icon">Settings
+      </li>
+      <li (click)="logout()">
+        <img src="https://i.ibb.co/r6bKtCL/Screenshot-2024-07-05-121850.png" alt="Logout Icon">Logout
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <ul>
+      <div class="icons" (click)="toggleSubMenu('notification-management')">
+        <img src="https://i.ibb.co/72jNv77/Group-9605.png" alt="Group-9605">
+        <li [class.active]="activeMenu === 'notification-management'">Notification Management</li>
+      </div>
+      <div *ngIf="activeMenu === 'notification-management'">
+        <div class="sub-menu">
+          <li [class.active]="activeSubMenu === 'notifications'" (click)="setActiveSubMenu('notifications')">Notifications</li>
+          <li [class.active]="activeSubMenu === 'bulk-notifications'" (click)="setActiveSubMenu('bulk-notifications')">Bulk Notifications</li>
+        </div>
+      </div>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="notification-management" *ngIf="activeMenu === 'notification-management'">
+      <div class="header">
+        <h1>Notification Management</h1>
+        <button class="create-new">Create New</button>
+      </div>
+      <div class="filter">
+        <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter" (click)="toggleFilterPrompt()" class="filter-icon">
+        <div class="filter-dropdown" *ngIf="isFilterPromptVisible">
+          <app-filter-prompt (close)="toggleFilterPrompt()"></app-filter-prompt>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>SERVICE TYPE</th>
+            <th>EVENT TRIGGER</th>
+            <th>PARTY</th>
+            <th>CREATED ON <span>&uarr;&darr;</span></th>
+            <th>CREATED BY <span>&uarr;&darr;</span></th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+
 <!-- <div class="navbar">
   <img src="https://i.ibb.co/F7qnqsm/comviva-logo-1.png" alt="comviva-logo-1" class="logo">
   <span class="last-login">Last login :</span>
@@ -36,14 +114,118 @@
       </div>
       <div *ngIf="activeMenu === 'notification-management'">
         <div class="sub-menu">
-          <li [class.active]="activeSubMenu === 'notifications'" (click)="navigateTo('notifications')">Notifications</li>
-          <li [class.active]="activeSubMenu === 'bulk-notifications'" (click)="navigateTo('bulk-notifications')">Bulk Notifications</li>
+          <li [class.active]="activeSubMenu === 'notifications'" (click)="setActiveSubMenu('notifications')">Notifications</li>
+          <li [class.active]="activeSubMenu === 'bulk-notifications'" (click)="setActiveSubMenu('bulk-notifications')">Bulk Notifications</li>
         </div>
       </div>
     </ul>
   </div>
 
   <div class="main-content">
+    <div class="notification-management" *ngIf="activeMenu === 'notification-management'">
+      <div class="header">
+        <h1>Notification Management</h1>
+        <button class="create-new">Create New</button>
+      </div>
+      <div class="filter">
+        <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter" (click)="toggleFilterPrompt()" class="filter-icon">
+        <div class="filter-dropdown" *ngIf="isFilterPromptVisible">
+          <app-filter-prompt (close)="toggleFilterPrompt()"></app-filter-prompt>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>SERVICE TYPE</th>
+            <th>EVENT TRIGGER</th>
+            <th>PARTY</th>
+            <th>CREATED ON <span>&uarr;&darr;</span></th>
+            <th>CREATED BY <span>&uarr;&darr;</span></th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+
+<!-- <div class="navbar">
+  <img src="https://i.ibb.co/F7qnqsm/comviva-logo-1.png" alt="comviva-logo-1" class="logo">
+  <span class="last-login">Last login :</span>
+  <span class="date">12 DEC 2020 5:00pm</span>
+  <div class="notification">
+    <img src="https://i.ibb.co/sbmqFXw/Group-2979.png" alt="notification">
+  </div>
+  <div class="user-info" (click)="toggleDropdown()">
+    <img src="https://i.ibb.co/1G23cfN/Mask-group.png" alt="pfp" class="profile-pic">
+    <div class="user-details">
+      <span>James Smith</span>
+      <span class="role">Admin</span>
+    </div>
+  </div>
+  <div class="dropdown-menu" *ngIf="dropdownOpen">
+    <ul>
+      <li (click)="navigateTo('profile-details')">
+        <img src="https://i.ibb.co/5j29hfd/Screenshot-2024-07-05-121149.png" alt="Profile Icon">Profile details
+      </li>
+      <li (click)="navigateTo('settings')">
+        <img src="https://i.ibb.co/b6v6PPB/Screenshot-2024-07-05-121159.png" alt="Settings Icon">Settings
+      </li>
+      <li (click)="logout()">
+        <img src="https://i.ibb.co/r6bKtCL/Screenshot-2024-07-05-121850.png" alt="Logout Icon">Logout
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+    <ul>
+      <div class="icons" (click)="toggleSubMenu('notification-management')">
+        <img src="https://i.ibb.co/72jNv77/Group-9605.png" alt="Group-9605">
+        <li [class.active]="activeMenu === 'notification-management'">Notification Management</li>
+      </div>
+      <div *ngIf="activeMenu === 'notification-management'">
+        <div class="sub-menu">
+          <li [class.active]="activeSubMenu === 'notifications'" (click)="setActiveSubMenu('notifications')">Notifications</li>
+          <li [class.active]="activeSubMenu === 'bulk-notifications'" (click)="setActiveSubMenu('bulk-notifications')">Bulk Notifications</li>
+        </div>
+      </div>
+    </ul>
+  </div>
+
+  <div class="main-content">
+    <div class="notification-management" *ngIf="activeMenu === 'notification-management'">
+      <div class="header">
+        <h1>Notification Management</h1>
+        <button class="create-new" (click)="navigateToCreate()">Create New</button>
+      </div>
+      <div class="filter">
+        <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter" (click)="toggleFilterPrompt()" class="filter-icon">
+        <div class="filter-dropdown" *ngIf="isFilterPromptVisible">
+          <app-filter-prompt (close)="toggleFilterPrompt()"></app-filter-prompt>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>SERVICE TYPE</th>
+            <th>EVENT TRIGGER</th>
+            <th>PARTY</th>
+            <th>CREATED ON <span>&uarr;&darr;</span></th>
+            <th>CREATED BY <span>&uarr;&darr;</span></th>
+            <th>ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+    </div>
     <router-outlet></router-outlet>
   </div>
 </div> -->
@@ -86,38 +268,14 @@
       </div>
       <div *ngIf="activeMenu === 'notification-management'">
         <div class="sub-menu">
-          <li [class.active]="activeSubMenu === 'notifications'" (click)="navigateTo('notifications')">Notifications</li>
-          <li [class.active]="activeSubMenu === 'bulk-notifications'" (click)="navigateTo('bulk-notifications')">Bulk Notifications</li>
+          <li [class.active]="activeSubMenu === 'notifications'" (click)="setActiveSubMenu('notifications')">Notifications</li>
+          <li [class.active]="activeSubMenu === 'bulk-notifications'" (click)="setActiveSubMenu('bulk-notifications')">Bulk Notifications</li>
         </div>
       </div>
     </ul>
   </div>
 
   <div class="main-content">
-    <div class="notification-management" *ngIf="activeMenu === 'notification-management'">
-      <div class="header">
-        <h1>Notification Management</h1>
-        <button class="create-new">Create New</button>
-      </div>
-      <div class="filter">
-        <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter">
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>SERVICE TYPE</th>
-            <th>EVENT TRIGGER</th>
-            <th>PARTY</th>
-            <th>CREATED ON <span>&uarr;&darr;</span></th>
-            <th>CREATED BY <span>&uarr;&darr;</span></th>
-            <th>ACTION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Table rows should be dynamically generated here -->
-        </tbody>
-      </table>
-    </div>
     <router-outlet></router-outlet>
   </div>
 </div>
