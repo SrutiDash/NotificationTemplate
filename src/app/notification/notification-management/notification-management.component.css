@@ -1,4 +1,4 @@
-.notification-management .header {
+/* .notification-management .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,5 +27,66 @@
   
   .notification-management th span {
     cursor: pointer;
+  } */
+
+  .notification-management {
+    padding: 20px;
   }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .filter-icon {
+    cursor: pointer;
+  }
+  
+  .filter-dropdown {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+  }
+  
+  .create-new {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .create-new:hover {
+    background-color: #e73370;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
   

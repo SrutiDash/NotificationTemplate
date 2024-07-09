@@ -163,6 +163,6 @@ export class AppComponent {
   }
 
   logout() {
-    // Logic to handle logout
+    
   }
 }
