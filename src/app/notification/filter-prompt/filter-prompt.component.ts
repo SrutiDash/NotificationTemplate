@@ -1,14 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-filter-prompt',
-//   templateUrl: './filter-prompt.component.html',
-//   styleUrl: './filter-prompt.component.css'
-// })
-// export class FilterPromptComponent {
-
-// }
-
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
