@@ -16,7 +16,7 @@
     margin-bottom: 10px;
   }
   
-  .form-group {
+  /* .form-group {
     margin-bottom: 20px;
   }
   
@@ -44,5 +44,38 @@
   
   .form-group button:hover {
     background-color: #e53935;
+  }
+   */
+
+   .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+  }
+  
+  .form-group select:focus {
+    outline: none;
+    border-color: #aaa;
+  }
+  
+  .form-group option {
+    padding: 10px;
   }
   

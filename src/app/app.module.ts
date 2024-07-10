@@ -6,6 +6,7 @@ import { FilterPromptComponent } from './notification/filter-prompt/filter-promp
 import { CreateNotificationComponent } from './notification/create-notification/create-notification.component';
 import { NotificationManagementComponent } from './notification/notification-management/notification-management.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
