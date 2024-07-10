@@ -1,8 +1,23 @@
-import { Component } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-@Component({
-  selector: 'app-create-notification',
-  templateUrl: './create-notification.component.html',
-  styleUrls: ['./create-notification.component.css']
-})
-export class CreateNotificationComponent {}
+import { CreateNotificationComponent } from './create-notification.component';
+
+describe('CreateNotificationComponent', () => {
+  let component: CreateNotificationComponent;
+  let fixture: ComponentFixture<CreateNotificationComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [CreateNotificationComponent]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(CreateNotificationComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
