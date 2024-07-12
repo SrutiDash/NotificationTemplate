@@ -5,31 +5,66 @@
         <form>
             <div class="form-group">
                 <label for="serviceTypeSearch">Service Type</label>
-                <input type="text" id="serviceTypeSearch" (focus)="showOptions('serviceType')" (keyup)="filterOptions('serviceType', $event)" placeholder="Search service type...">
+                <input type="text" id="serviceTypeSearch" (focus)="showOptions('serviceType')" (keyup)="filterOptions('serviceType', $event)" placeholder="Search service type">
                 <ul id="serviceTypeOptions" *ngIf="filteredServiceTypes.length > 0">
                     <li *ngFor="let option of filteredServiceTypes" (click)="selectOption('serviceType', option)">{{ option }}</li>
                 </ul>
             </div>
             <div class="form-group">
                 <label for="eventTriggerSearch">Event Trigger</label>
-                <input type="text" id="eventTriggerSearch" (focus)="showOptions('eventTrigger')" (keyup)="filterOptions('eventTrigger', $event)" placeholder="Search event trigger...">
+                <input type="text" id="eventTriggerSearch" (focus)="showOptions('eventTrigger')" (keyup)="filterOptions('eventTrigger', $event)" placeholder="Search event trigger">
                 <ul id="eventTriggerOptions" *ngIf="filteredEventTriggers.length > 0">
                     <li *ngFor="let option of filteredEventTriggers" (click)="selectOption('eventTrigger', option)">{{ option }}</li>
                 </ul>
             </div>
             <div class="form-group">
                 <label for="partySearch">Party</label>
-                <input type="text" id="partySearch" (focus)="showOptions('party')" (keyup)="filterOptions('party', $event)" placeholder="Search party...">
+                <input type="text" id="partySearch" (focus)="showOptions('party')" (keyup)="filterOptions('party', $event)" placeholder="Search party">
                 <ul id="partyOptions" *ngIf="filteredParties.length > 0">
                     <li *ngFor="let option of filteredParties" (click)="selectOption('party', option)">{{ option }}</li>
                 </ul>
             </div>
             <div class="form-group">
-                <label for="condition">Condition</label>
-                <button type="button" id="condition">Add New Condition</button>
+                <label for="conditionSearch">Condition</label>
+                <input type="text" id="conditionSearch" (focus)="showOptions('condition')" (keyup)="filterOptions('condition', $event)" placeholder="Add New Condition...">
+                <ul id="conditionOptions" *ngIf="filteredConditions.length > 0">
+                    <li *ngFor="let option of filteredConditions" (click)="selectOption('condition', option)">{{ option }}</li>
+                </ul>
             </div>
         </form>
-
+        <div *ngFor="let condition of addedConditions; let i = index" class="condition-group">
+            <div class="form-group">
+                <label for="conditionField1_{{i}}">Condition Field 1</label>
+                <input type="text" id="conditionField1_{{i}}" (focus)="showOptions('conditionField1', i)" (keyup)="filterOptions('conditionField1', $event, i)" placeholder="Search...">
+                <ul id="conditionField1Options_{{i}}" *ngIf="filteredConditionFields1[i].length > 0">
+                    <li *ngFor="let option of filteredConditionFields1[i]" (click)="selectOption('conditionField1', option, i)">{{ option }}</li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label for="conditionField2_{{i}}">Condition Field 2</label>
+                <input type="text" id="conditionField2_{{i}}" (focus)="showOptions('conditionField2', i)" (keyup)="filterOptions('conditionField2', $event, i)" placeholder="Search...">
+                <ul id="conditionField2Options_{{i}}" *ngIf="filteredConditionFields2[i].length > 0">
+                    <li *ngFor="let option of filteredConditionFields2[i]" (click)="selectOption('conditionField2', option, i)">{{ option }}</li>
+                </ul>
+            </div>
+            <div class="form-group">
+                <label for="conditionField3_{{i}}">Condition Field 3</label>
+                <input type="text" id="conditionField3_{{i}}" (focus)="showOptions('conditionField3', i)" (keyup)="filterOptions('conditionField3', $event, i)" placeholder="Search...">
+                <ul id="conditionField3Options_{{i}}" *ngIf="filteredConditionFields3[i].length > 0">
+                    <li *ngFor="let option of filteredConditionFields3[i]" (click)="selectOption('conditionField3', option, i)">{{ option }}</li>
+                </ul>
+                <button class="delete-condition" (click)="removeCondition(i)">Delete</button>
+            </div>
+            <div class="form-group">
+                <label for="conditionField4_{{i}}">Condition Field 4</label>
+                <input type="text" id="conditionField4_{{i}}" (focus)="showOptions('conditionField4', i)" (keyup)="filterOptions('conditionField4', $event, i)" placeholder="Search...">
+                <ul id="conditionField4Options_{{i}}" *ngIf="filteredConditionFields4[i].length > 0">
+                    <li *ngFor="let option of filteredConditionFields4[i]" (click)="selectOption('conditionField4', option, i)">{{ option }}</li>
+                </ul>
+                <button class="add-condition" (click)="addCondition(i)">Add</button>
+                <button class="or-condition" (mouseenter)="showOr(i)" (mouseleave)="hideOr(i)">OR</button>
+            </div>
+        </div>
         <div *ngIf="!isServiceTypeSelected">
             <h3>Notification Details</h3>
             <div class="notification-details-img">

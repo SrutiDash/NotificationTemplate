@@ -108,4 +108,36 @@ ul li:hover {
   font-size: 15px;
   font-weight: 700;
   line-height: 20.46px;
-} 
+}
+
+.condition-group {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.condition-group .form-group {
+  flex: 1;
+}
+
+.condition-group .delete-condition,
+.condition-group .add-condition {
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.condition-group .or-condition {
+  display: none;
+  margin-left: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+.condition-group .or-condition.visible {
+  display: inline-block;
+}
