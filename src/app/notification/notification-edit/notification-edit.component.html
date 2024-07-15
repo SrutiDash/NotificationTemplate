@@ -1,4 +1,140 @@
-<div class="notification-edit">
+   <!-- <div class="notification-edit">
+    <h1>Enter Notification Details</h1>
+  
+    <div class="notification-details">
+      <h2>Notification Details</h2>
+      <form>
+        <div class="form-group">
+          <label for="serviceType">Service Type</label>
+          <input type="text" id="serviceType" [(ngModel)]="notification.serviceType" name="serviceType">
+        </div>
+        <div class="form-group">
+          <label for="eventTrigger">Event Trigger</label>
+          <input type="text" id="eventTrigger" [(ngModel)]="notification.eventTrigger" name="eventTrigger">
+        </div>
+        <div class="form-group">
+          <label for="party">Party</label>
+          <input type="text" id="party" [(ngModel)]="notification.party" name="party">
+        </div>
+        <div class="form-group">
+          <label for="senderParent">Sender Parent</label>
+          <input type="text" id="senderParent" [(ngModel)]="notification.senderParent" name="senderParent">
+        </div>
+        <div class="form-group">
+          <label for="grade">Grade</label>
+          <input type="text" id="grade" [(ngModel)]="notification.grade" name="grade">
+        </div>
+        <div class="form-group">
+          <label for="createdBy">Created By</label>
+          <input type="text" id="createdBy" [(ngModel)]="notification.createdBy" name="createdBy">
+        </div>
+        <div class="form-group">
+          <label for="createdOn">Created On</label>
+          <input type="text" id="createdOn" [(ngModel)]="notification.createdOn" name="createdOn">
+        </div>
+        <div class="form-group">
+          <label for="status">Status</label>
+          <input type="text" id="status" [(ngModel)]="notification.status" name="status">
+        </div>
+      </form>
+    </div>
+    
+    <div class="search-parameters">
+      <h2>Search Parameter</h2>
+      <input type="text" id="search" [(ngModel)]="search" name="search" placeholder="Search...">
+    </div>
+    
+    <div class="channels">
+      <h2>Channels</h2>
+      <div class="channel">
+        <div class="channel-header">In-App Notification</div>
+        <div class="form-group">
+          <label for="inAppLanguage">Language</label>
+          <input type="text" id="inAppLanguage" [(ngModel)]="notification.inAppNotification.language" name="inAppLanguage">
+        </div>
+        <div class="form-group">
+          <label for="inAppHeader">Header</label>
+          <input type="text" id="inAppHeader" [(ngModel)]="notification.inAppNotification.header" name="inAppHeader">
+        </div>
+        <div class="form-group">
+          <label for="inAppBody">Message Body</label>
+          <textarea id="inAppBody" [(ngModel)]="notification.inAppNotification.messageBody" name="inAppBody"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="inAppDocs">Attachable Documents</label>
+          <input type="text" id="inAppDocs" [(ngModel)]="notification.inAppNotification.attachableDocuments" name="inAppDocs">
+        </div>
+      </div>
+      
+      <div class="channel">
+        <div class="channel-header">SMS</div>
+        <div class="form-group">
+          <label for="smsLanguage">Language</label>
+          <input type="text" id="smsLanguage" [(ngModel)]="notification.sms.language" name="smsLanguage">
+        </div>
+        <div class="form-group">
+          <label for="smsHeader">Header</label>
+          <input type="text" id="smsHeader" [(ngModel)]="notification.sms.header" name="smsHeader">
+        </div>
+        <div class="form-group">
+          <label for="smsBody">Body</label>
+          <textarea id="smsBody" [(ngModel)]="notification.sms.body" name="smsBody"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="smsDocs">Attachable Documents</label>
+          <input type="text" id="smsDocs" [(ngModel)]="notification.sms.attachableDocuments" name="smsDocs">
+        </div>
+      </div>
+      
+      <div class="channel">
+        <div class="channel-header">Email</div>
+        <div class="form-group">
+          <label for="emailLanguage">Language</label>
+          <input type="text" id="emailLanguage" [(ngModel)]="notification.email.language" name="emailLanguage">
+        </div>
+        <div class="form-group">
+          <label for="emailHeader">Header</label>
+          <input type="text" id="emailHeader" [(ngModel)]="notification.email.header" name="emailHeader">
+        </div>
+        <div class="form-group">
+          <label for="emailBody">Body</label>
+          <textarea id="emailBody" [(ngModel)]="notification.email.body" name="emailBody"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="emailDocs">Attachable Documents</label>
+          <input type="text" id="emailDocs" [(ngModel)]="notification.email.attachableDocuments" name="emailDocs">
+        </div>
+      </div>
+      
+      <div class="channel">
+        <div class="channel-header">URL</div>
+        <div class="form-group">
+          <label for="urlLanguage">Language</label>
+          <input type="text" id="urlLanguage" [(ngModel)]="notification.url.language" name="urlLanguage">
+        </div>
+        <div class="form-group">
+          <label for="urlHeader">Header</label>
+          <input type="text" id="urlHeader" [(ngModel)]="notification.url.header" name="urlHeader">
+        </div>
+        <div class="form-group">
+          <label for="urlBody">Body</label>
+          <textarea id="urlBody" [(ngModel)]="notification.url.body" name="urlBody"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="urlDocs">Attachable Documents</label>
+          <input type="text" id="urlDocs" [(ngModel)]="notification.url.attachableDocuments" name="urlDocs">
+        </div>
+      </div>
+    </div>
+    
+    <div class="buttons">
+      <button class="cancel-button" (click)="cancel()">Cancel</button>
+      <button class="next-button" (click)="next()">Next</button>
+    </div>
+  </div>
+   -->
+
+   <div class="notification-edit">
     <h1>Enter Notification Details</h1>
   
     <div class="notification-details">

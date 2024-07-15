@@ -1,4 +1,4 @@
-.notification-edit {
+   /* .notification-edit {
     padding: 20px;
     font-family: 'Nunito Sans', sans-serif;
     background-color: #f7f7f7;
@@ -26,12 +26,6 @@
     margin-bottom: 15px;
   }
   
-  .details-form {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  
   .form-group {
     margin-bottom: 15px;
   }
@@ -56,49 +50,20 @@
     color: #aaa;
   }
   
-  .search-parameters input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #333;
+  .channel {
+    margin-bottom: 20px;
   }
   
-  .channels table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .channels th, .channels td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  .channels th {
-    background-color: #f9f9f9;
+  .channel-header {
     font-weight: bold;
-    color: #666;
-  }
-  
-  .channels td input, .channels td textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .channels td textarea {
-    resize: vertical;
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 10px;
   }
   
   .buttons {
     display: flex;
     justify-content: flex-end;
-    margin-top: 20px;
   }
   
   .cancel-button, .next-button {
@@ -128,4 +93,136 @@
   .cancel-button:hover {
     background-color: #bbb;
   }
-  
+     */
+
+     .notification-edit {
+        padding: 20px;
+        font-family: 'Nunito Sans', sans-serif;
+        background-color: #f7f7f7;
+      }
+      
+      h1 {
+        font-size: 28px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+      }
+      
+      .notification-details, .search-parameters, .channels {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+      
+      h2 {
+        font-size: 22px;
+        font-weight: bold;
+        color: #555;
+        margin-bottom: 15px;
+      }
+      
+      .details-form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      
+      .form-group {
+        margin-bottom: 15px;
+      }
+      
+      .form-group label {
+        display: block;
+        font-weight: bold;
+        color: #666;
+        margin-bottom: 5px;
+      }
+      
+      .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+      }
+      
+      .form-group input::placeholder, .form-group textarea::placeholder {
+        color: #aaa;
+      }
+      
+      .search-parameters input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+      }
+      
+      .channels table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      
+      .channels th, .channels td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+      
+      .channels th {
+        background-color: #f9f9f9;
+        font-weight: bold;
+        color: #666;
+      }
+      
+      .channels td input, .channels td textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        color: #333;
+      }
+      
+      .channels td textarea {
+        resize: vertical;
+      }
+      
+      .buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+      
+      .cancel-button, .next-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-family: 'Nunito Sans', sans-serif;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+      
+      .cancel-button {
+        background-color: #ccc;
+        color: #333;
+      }
+      
+      .next-button {
+        background-color: #ff4081;
+        color: white;
+      }
+      
+      .next-button:hover {
+        background-color: #e73370;
+      }
+      
+      .cancel-button:hover {
+        background-color: #bbb;
+      }
+          
