@@ -1,0 +1,88 @@
+.notification-details {
+    padding: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .details-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .label {
+    font-weight: 700;
+    color: #555;
+  }
+  
+  .value {
+    color: #333;
+  }
+  
+  .notification-table {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .notification-header, .notification-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .notification-header {
+    background: #f9f9f9;
+    font-weight: 700;
+    color: #555;
+  }
+  
+  .notification-column {
+    padding: 10px;
+  }
+  
+  .notification-row:last-child {
+    border-bottom: none;
+  }
+  
+  .close-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Nunito Sans', sans-serif;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  
+  .close-button:hover {
+    background-color: #e73370;
+  }
+  

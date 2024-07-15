@@ -1,0 +1,85 @@
+<div class="notification-details">
+    <h1>Notification Management &gt; View Details</h1>
+    <div class="details-container">
+      <h2>Notification Details</h2>
+      <div class="details-grid">
+        <div class="detail-item">
+          <span class="label">Service Type</span>
+          <span class="value">{{ notification.serviceType }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Event Trigger</span>
+          <span class="value">{{ notification.eventTrigger }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Party</span>
+          <span class="value">{{ notification.party }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Sender Parent is</span>
+          <span class="value">{{ notification.senderParent }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Grade</span>
+          <span class="value">{{ notification.grade }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Created By</span>
+          <span class="value">{{ notification.createdBy }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Created On</span>
+          <span class="value">{{ notification.createdOn }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Status</span>
+          <span class="value">{{ notification.status }}</span>
+        </div>
+      </div>
+  
+      <h2>In-App Notification</h2>
+      <div class="notification-table">
+        <div class="notification-header">
+          <div class="notification-column">Language</div>
+          <div class="notification-column">Header</div>
+          <div class="notification-column">Message Body</div>
+        </div>
+        <div class="notification-row">
+          <div class="notification-column">{{ notification.inAppNotification.language }}</div>
+          <div class="notification-column">{{ notification.inAppNotification.header }}</div>
+          <div class="notification-column">{{ notification.inAppNotification.messageBody }}</div>
+        </div>
+      </div>
+  
+      <h2>SMS</h2>
+      <div class="notification-table">
+        <div class="notification-header">
+          <div class="notification-column">Language</div>
+          <div class="notification-column">Header</div>
+          <div class="notification-column">Body</div>
+        </div>
+        <div class="notification-row">
+          <div class="notification-column">{{ notification.sms.language }}</div>
+          <div class="notification-column">{{ notification.sms.header }}</div>
+          <div class="notification-column">{{ notification.sms.body }}</div>
+        </div>
+      </div>
+  
+      <h2>Email</h2>
+      <div class="notification-table">
+        <div class="notification-header">
+          <div class="notification-column">Language</div>
+          <div class="notification-column">Header</div>
+          <div class="notification-column">Body</div>
+        </div>
+        <div class="notification-row">
+          <div class="notification-column">{{ notification.email.language }}</div>
+          <div class="notification-column">{{ notification.email.header }}</div>
+          <div class="notification-column">{{ notification.email.body }}</div>
+        </div>
+      </div>
+  
+      <button class="close-button" (click)="close()">CLOSE</button>
+    </div>
+  </div>
+  
