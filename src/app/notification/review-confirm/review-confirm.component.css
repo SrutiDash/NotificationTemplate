@@ -154,21 +154,21 @@ h4 {
 }
 
 .back-btn {
-    background-color: #ff4081;
+    background-color: #f2cbd8;
     color: white;
 }
 
 .confirm-btn {
-    background-color: #4caf50;
+    background-color: #ff4081;
     color: white;
 }
 
 .back-btn:hover {
-    background-color: #e73370;
+    background-color: #f7a3bf;
 }
 
 .confirm-btn:hover {
-    background-color: #45a049;
+    background-color: #e73370;
 }
 
 .cancel-btn:hover {
