@@ -9,6 +9,7 @@ import { FilterPromptComponent } from './notification/filter-prompt/filter-promp
 import { CreateNotificationComponent } from './notification/create-notification/create-notification.component';
 import { NotificationManagementComponent } from './notification/notification-management/notification-management.component';
 import { NotificationEditComponent } from './notification/notification-edit/notification-edit.component';
+import { ReviewConfirmComponent } from './notification/review-confirm/review-confirm.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NotificationEditComponent } from './notification/notification-edit/noti
     CreateNotificationComponent,
     NotificationManagementComponent,
     NotificationEditComponent,
+    ReviewConfirmComponent,
   ],
   imports: [
     BrowserModule,
