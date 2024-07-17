@@ -223,8 +223,8 @@
 // }
 
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-create-notification',
@@ -270,6 +270,13 @@ export class CreateNotificationComponent implements OnInit {
   showServiceTypeOptions: boolean = false;
   showEventTriggerOptions: boolean = false;
   showPartyOptions: boolean = false;
+
+  // Add missing properties
+  senderParent: string = '';
+  grade: string = '';
+  inAppNotifications: any[] = [];
+  smsNotifications: any[] = [];
+  emailNotifications: any[] = [];
 
   constructor(private dataService: DataService, private router: Router) { }
 
@@ -426,11 +433,12 @@ export class CreateNotificationComponent implements OnInit {
     this.dataService.selectedServiceType = this.selectedServiceType;
     this.dataService.selectedEventTrigger = this.selectedEventTrigger;
     this.dataService.selectedParty = this.selectedParty;
-    this.dataService.senderParent = this.dataService.senderParent;
-    this.dataService.grade = this.dataService.grade;
-    this.dataService.channels = this.dataService.channels;
-    this.dataService.inAppSmsNotifications = this.dataService.inAppSmsNotifications;
-    this.dataService.emailNotifications = this.dataService.emailNotifications;
+    this.dataService.senderParent = this.senderParent;
+    this.dataService.grade = this.grade;
+    this.dataService.channels = this.channels;
+    this.dataService.inAppNotifications = this.inAppNotifications;
+    this.dataService.smsNotifications = this.smsNotifications;
+    this.dataService.emailNotifications = this.emailNotifications;
 
     this.router.navigate(['/review-confirm']);
   }
