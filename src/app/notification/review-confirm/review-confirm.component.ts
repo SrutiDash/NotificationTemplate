@@ -17,6 +17,7 @@
 //   inAppNotifications: any[] = [];
 //   smsNotifications: any[] = [];
 //   emailNotifications: any[] = [];
+//   showPopup: boolean = false; // New property to control the popup visibility
 
 //   constructor(private dataService: DataService, private router: Router) { }
 
@@ -29,22 +30,30 @@
 //     this.grade = this.dataService.grade;
 //     this.channels = this.dataService.channels;
 
-//     this.inAppNotifications = this.dataService.inAppNotifications; // Corrected
-//     this.smsNotifications = this.dataService.smsNotifications; // Corrected
+//     this.inAppNotifications = this.dataService.inAppNotifications;
+//     this.smsNotifications = this.dataService.smsNotifications;
 //     this.emailNotifications = this.dataService.emailNotifications;
 //   }
 
 //   cancel() {
-//     // Handle cancel logic
 //     this.router.navigate(['/notification-management']);
 //   }
 
 //   back() {
-//     // Navigate back to the previous page
 //     this.router.navigate(['/create-notification']);
 //   }
 
 //   confirm() {
+//     // Show the popup dialog when confirm button is clicked
+//     this.showPopup = true;
+//   }
+
+//   closePopup() {
+//     // Hide the popup dialog
+//     this.showPopup = false;
+//   }
+
+//   confirmAction() {
 //     // Handle confirm logic
 //     // Save the data and redirect to the success page
 //     this.dataService.saveNotification().subscribe(() => {
@@ -72,7 +81,6 @@ export class ReviewConfirmComponent implements OnInit {
   inAppNotifications: any[] = [];
   smsNotifications: any[] = [];
   emailNotifications: any[] = [];
-  showPopup: boolean = false; // New property to control the popup visibility
 
   constructor(private dataService: DataService, private router: Router) { }
 
@@ -85,30 +93,22 @@ export class ReviewConfirmComponent implements OnInit {
     this.grade = this.dataService.grade;
     this.channels = this.dataService.channels;
 
-    this.inAppNotifications = this.dataService.inAppNotifications;
-    this.smsNotifications = this.dataService.smsNotifications;
+    this.inAppNotifications = this.dataService.inAppNotifications; // Corrected
+    this.smsNotifications = this.dataService.smsNotifications; // Corrected
     this.emailNotifications = this.dataService.emailNotifications;
   }
 
   cancel() {
+    // Handle cancel logic
     this.router.navigate(['/notification-management']);
   }
 
   back() {
-    this.router.navigate(['/create-notification']);
+    // Navigate back to the previous page
+    this.router.navigate(['/notification-edit']);
   }
 
   confirm() {
-    // Show the popup dialog when confirm button is clicked
-    this.showPopup = true;
-  }
-
-  closePopup() {
-    // Hide the popup dialog
-    this.showPopup = false;
-  }
-
-  confirmAction() {
     // Handle confirm logic
     // Save the data and redirect to the success page
     this.dataService.saveNotification().subscribe(() => {
@@ -116,3 +116,4 @@ export class ReviewConfirmComponent implements OnInit {
     });
   }
 }
+

@@ -1,103 +1,6 @@
 <!-- <div class="review-confirm">
     <h2>Review & Confirm</h2>
     <div class="details">
-        <h3>Notification Details</h3>
-        <div class="detail">
-            <span class="label">Service Type:</span>
-            <span class="value">{{ serviceType }}</span>
-        </div>
-        <div class="detail">
-            <span class="label">Event Trigger:</span>
-            <span class="value">{{ eventTrigger }}</span>
-        </div>
-        <div class="detail">
-            <span class="label">Party:</span>
-            <span class="value">{{ party }}</span>
-        </div>
-        <div class="detail">
-            <span class="label">Sender Parent:</span>
-            <span class="value">{{ senderParent }}</span>
-        </div>
-        <div class="detail">
-            <span class="label">Grade:</span>
-            <span class="value">{{ grade }}</span>
-        </div>
-    </div>
-
-    <h3>Channels</h3>
-
-    <div class="channel-table">
-        <h4>In-App Notification</h4>
-        <table>
-            <thead>
-                <tr>
-                    <th>Language</th>
-                    <th>Header</th>
-                    <th>Body</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let notification of inAppNotifications">
-                    <td>{{ notification.language }}</td>
-                    <td>{{ notification.header }}</td>
-                    <td>{{ notification.body }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="channel-table">
-        <h4>SMS</h4>
-        <table>
-            <thead>
-                <tr>
-                    <th>Language</th>
-                    <th>Header</th>
-                    <th>Body</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let sms of smsNotifications">
-                    <td>{{ sms.language }}</td>
-                    <td>{{ sms.header }}</td>
-                    <td>{{ sms.body }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="channel-table">
-        <h4>Email</h4>
-        <table>
-            <thead>
-                <tr>
-                    <th>Language</th>
-                    <th>Header</th>
-                    <th>Body</th>
-                    <th>Attachable Document</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let email of emailNotifications">
-                    <td>{{ email.language }}</td>
-                    <td>{{ email.header }}</td>
-                    <td>{{ email.body }}</td>
-                    <td>{{ email.attachableDocument }}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="buttons">
-        <button type="button" class="cancel-btn" (click)="cancel()">Cancel</button>
-        <button type="button" class="back-btn" (click)="back()">Back</button>
-        <button type="button" class="confirm-btn" (click)="confirm()">Confirm</button>
-    </div>
-</div> -->
-
-<div class="review-confirm">
-    <h2>Review & Confirm</h2>
-    <div class="details">
       <h3>Notification Details</h3>
       <div class="detail">
         <span class="label">Service Type:</span>
@@ -192,7 +95,6 @@
     </div>
   </div>
   
-  <!-- Popup Dialog -->
   <div class="popup" *ngIf="showPopup">
     <div class="popup-content">
       <h3>Are you sure you want to confirm?</h3>
@@ -202,4 +104,101 @@
       </div>
     </div>
   </div>
-  
+   -->
+
+   <div class="review-confirm">
+    <h2>Review & Confirm</h2>
+    <div class="details">
+        <h3>Notification Details</h3>
+        <div class="detail">
+            <span class="label">Service Type:</span>
+            <span class="value">{{ serviceType }}</span>
+        </div>
+        <div class="detail">
+            <span class="label">Event Trigger:</span>
+            <span class="value">{{ eventTrigger }}</span>
+        </div>
+        <div class="detail">
+            <span class="label">Party:</span>
+            <span class="value">{{ party }}</span>
+        </div>
+        <div class="detail">
+            <span class="label">Sender Parent:</span>
+            <span class="value">{{ senderParent }}</span>
+        </div>
+        <div class="detail">
+            <span class="label">Grade:</span>
+            <span class="value">{{ grade }}</span>
+        </div>
+    </div>
+
+    <h3>Channels</h3>
+
+    <div class="channel-table">
+        <h4>In-App Notification</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Language</th>
+                    <th>Header</th>
+                    <th>Body</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let notification of inAppNotifications">
+                    <td>{{ notification.language }}</td>
+                    <td>{{ notification.header }}</td>
+                    <td>{{ notification.messageBody }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="channel-table">
+        <h4>SMS</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Language</th>
+                    <th>Header</th>
+                    <th>Body</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sms of smsNotifications">
+                    <td>{{ sms.language }}</td>
+                    <td>{{ sms.header }}</td>
+                    <td>{{ sms.body }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="channel-table">
+        <h4>Email</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Language</th>
+                    <th>Header</th>
+                    <th>Body</th>
+                    <th>Attachable Document</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let email of emailNotifications">
+                    <td>{{ email.language }}</td>
+                    <td>{{ email.header }}</td>
+                    <td>{{ email.body }}</td>
+                    <td>{{ email.attachableDocuments }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="buttons">
+        <button type="button" class="cancel-btn" (click)="cancel()">Cancel</button>
+        <button type="button" class="back-btn" (click)="back()">Back</button>
+        <button type="button" class="confirm-btn" (click)="confirm()">Confirm</button>
+    </div>
+</div>
