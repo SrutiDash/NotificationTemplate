@@ -1,4 +1,3 @@
-
 // import { Component } from '@angular/core';
 // import { Router } from '@angular/router';
 
@@ -10,8 +9,6 @@
 // export class AppComponent {
 //   dropdownOpen = false;
 //   activeMenu: string | null = null;
-//   activeSubMenu: string | null = null;
-//   isFilterPromptVisible = false;
 
 //   constructor(private router: Router) {}
 
@@ -19,24 +16,13 @@
 //     this.dropdownOpen = !this.dropdownOpen;
 //   }
 
-//   toggleSubMenu(menu: string) {
-//     this.activeMenu = this.activeMenu === menu ? null : menu;
-//   }
-
-//   setActiveSubMenu(subMenu: string) {
-//     this.activeSubMenu = subMenu;
-//   }
-
-//   toggleFilterPrompt() {
-//     this.isFilterPromptVisible = !this.isFilterPromptVisible;
-//   }
-
 //   navigateTo(route: string) {
+//     this.activeMenu = route;
 //     this.router.navigate([route]);
 //   }
 
 //   logout() {
-    
+//     // Add logout logic here
 //   }
 // }
 
@@ -64,6 +50,6 @@ export class AppComponent {
   }
 
   logout() {
-    // Add logout logic here
+    // Implement logout logic
   }
 }

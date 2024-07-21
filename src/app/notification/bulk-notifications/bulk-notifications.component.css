@@ -1,9 +1,4 @@
-/* .bulk-notifications {
-    padding: 20px;
-  }
-   */
-
-   .bulk-notifications {
+   /* .bulk-notifications {
     padding: 20px;
     font-family: 'Nunito Sans', sans-serif;
   }
@@ -13,5 +8,123 @@
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
+  }
+   */
+
+   .bulk-notifications {
+    padding: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .header .create-new {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-family: Nunito Sans;
+    width: 185px;
+    height: 50px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20.46px;
+  }
+  
+  .header .create-new:hover {
+    background-color: #e73370;
+  }
+  
+  .filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .filter-section .filter {
+    position: relative;
+  }
+  
+  .filter-section .filter img {
+    cursor: pointer;
+  }
+  
+  .filter-section .filter .filter-dropdown {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+  }
+  
+  .filter-section .search-menu {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-section .search-menu input {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .table-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-container th, .table-container td {
+    text-align: left;
+    padding: 8px;
+    color: #B8B8B8;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+  }
+  
+  .table-container th {
+    background-color: #f2f2f2;
+  }
+  
+  .table-container th span {
+    cursor: pointer;
+  }
+  
+  .table-container .action-buttons button {
+    margin: 0 5px;
+    padding: 5px 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .table-container .action-buttons button img {
+    height: 16px;
   }
   

@@ -5,14 +5,16 @@
 // import { NotificationDetailsComponent } from './notification/notification-details/notification-details.component';
 // import { NotificationEditComponent } from './notification/notification-edit/notification-edit.component';
 // import { ReviewConfirmComponent } from './notification/review-confirm/review-confirm.component';
+// import { BulkNotificationsComponent } from './notification/bulk-notifications/bulk-notifications.component'; // Import the new component
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/notification-management', pathMatch: 'full' },
-//   { path: 'notification-management', component: NotificationManagementComponent },
+//   { path: 'notifications', component: NotificationManagementComponent },
 //   { path: 'create-notification', component: CreateNotificationComponent },
 //   { path: 'notification-details/:id', component: NotificationDetailsComponent },
 //   { path: 'notification-edit/:id', component: NotificationEditComponent },
-//   { path: 'review-confirm', component: ReviewConfirmComponent }
+//   { path: 'review-confirm', component: ReviewConfirmComponent },
+//   { path: 'bulk-notifications', component: BulkNotificationsComponent } // Add the new route
 // ];
 
 // @NgModule({
@@ -28,16 +30,16 @@ import { CreateNotificationComponent } from './notification/create-notification/
 import { NotificationDetailsComponent } from './notification/notification-details/notification-details.component';
 import { NotificationEditComponent } from './notification/notification-edit/notification-edit.component';
 import { ReviewConfirmComponent } from './notification/review-confirm/review-confirm.component';
-import { BulkNotificationsComponent } from './notification/bulk-notifications/bulk-notifications.component'; // Import the new component
+import { BulkNotificationsComponent } from './notification/bulk-notifications/bulk-notifications.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/notification-management', pathMatch: 'full' },
+  { path: '', redirectTo: '/notifications', pathMatch: 'full' },
   { path: 'notifications', component: NotificationManagementComponent },
   { path: 'create-notification', component: CreateNotificationComponent },
   { path: 'notification-details/:id', component: NotificationDetailsComponent },
   { path: 'notification-edit/:id', component: NotificationEditComponent },
   { path: 'review-confirm', component: ReviewConfirmComponent },
-  { path: 'bulk-notifications', component: BulkNotificationsComponent } // Add the new route
+  { path: 'bulk-notifications', component: BulkNotificationsComponent }
 ];
 
 @NgModule({

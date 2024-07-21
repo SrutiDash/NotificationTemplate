@@ -1,11 +1,48 @@
-<!-- 
-<div class="bulk-notifications">
+  <!-- <div class="bulk-notifications">
     <h2>Bulk Notifications</h2>
-  
+    
   </div> -->
   
   <div class="bulk-notifications">
     <h2>Bulk Notifications</h2>
-    <!-- Add the necessary UI elements here -->
+    <div class="tabs">
+      <button class="tab-button" [class.active]="selectedTab === 'customer'" (click)="selectTab('customer')">Customer</button>
+      <button class="tab-button" [class.active]="selectedTab === 'business'" (click)="selectTab('business')">Business</button>
+    </div>
+    <div class="actions">
+      <button (click)="toggleFilter()">Filter</button>
+      <button (click)="createNew()">Create New</button>
+    </div>
+    <div class="filter" *ngIf="showFilter">
+      <!-- Filter form goes here -->
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Notification Name</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Created By</th>
+          <th>Created On</th>
+          <th>Approval Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let notification of notifications">
+          <td>{{ notification.name }}</td>
+          <td>{{ notification.startDate }}</td>
+          <td>{{ notification.endDate }}</td>
+          <td>{{ notification.createdBy }}</td>
+          <td>{{ notification.createdOn }}</td>
+          <td>{{ notification.approvalStatus }}</td>
+          <td>
+            <button (click)="viewNotification(notification)">View</button>
+            <button (click)="editNotification(notification)">Edit</button>
+            <button (click)="deleteNotification(notification)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   
