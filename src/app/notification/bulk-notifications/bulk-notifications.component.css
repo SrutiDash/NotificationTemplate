@@ -1,57 +1,17 @@
 /* .bulk-notifications {
     padding: 20px;
+  }
+   */
+
+   .bulk-notifications {
+    padding: 20px;
     font-family: 'Nunito Sans', sans-serif;
   }
   
-  .bulk-notifications h1 {
+  h2 {
     font-size: 28px;
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;
-  }
-  
-  .notification-list {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .notification-list table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .notification-list th,
-  .notification-list td {
-    text-align: left;
-    padding: 8px;
-    color: #B8B8B8;
-    border-bottom: 1px solid #ddd;
-    font-size: 15px;
-  }
-  
-  .notification-list th {
-    background-color: #f2f2f2;
-  }
-  
-  .notification-list button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    background-color: #ff4081;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .notification-list button:hover {
-    background-color: #e73370;
-  }
-   */
-
-   /* bulk-notifications.component.css */
-.bulk-notifications {
-    padding: 20px;
   }
   

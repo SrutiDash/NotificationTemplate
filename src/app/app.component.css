@@ -1,4 +1,4 @@
-.navbar {
+/* .navbar {
   display: flex;
   align-items: center;
   background-color: white;
@@ -116,6 +116,119 @@
 }
 
 .sub-menu li.active {
+  font-weight: bold;
+  color: #f44336;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+} */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.last-login,
+.date {
+  margin-right: 20px;
+}
+
+.notification img {
+  height: 20px;
+  margin-right: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.profile-pic {
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-details span {
+  display: block;
+}
+
+.user-details .role {
+  font-size: 12px;
+  color: gray;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-menu li img {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-right: 1px solid #e7e7e7;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar .icons {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.sidebar .icons img {
+  height: 20px;
+  margin-right: 10px;
+}
+
+.sidebar .icons li {
+  margin: 0;
+}
+
+.sidebar .icons li.active {
   font-weight: bold;
   color: #f44336;
 }
