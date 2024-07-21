@@ -45,6 +45,7 @@ import { NotificationManagementComponent } from './notification/notification-man
 import { NotificationEditComponent } from './notification/notification-edit/notification-edit.component';
 import { ReviewConfirmComponent } from './notification/review-confirm/review-confirm.component';
 import { BulkNotificationsComponent } from './notification/bulk-notifications/bulk-notifications.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { BulkNotificationsComponent } from './notification/bulk-notifications/bu
     NotificationEditComponent,
     ReviewConfirmComponent,
     BulkNotificationsComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

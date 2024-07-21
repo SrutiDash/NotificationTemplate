@@ -1,12 +1,56 @@
-// import { Component } from '@angular/core';
+// import { Component, OnInit } from '@angular/core';
 
 // @Component({
 //   selector: 'app-bulk-notifications',
 //   templateUrl: './bulk-notifications.component.html',
 //   styleUrls: ['./bulk-notifications.component.css']
 // })
-// export class BulkNotificationsComponent {
-//   // Add any necessary logic here
+// export class BulkNotificationsComponent implements OnInit {
+//   selectedTab: string = 'customer';
+//   notifications: any[] = [
+//     {
+//       name: 'Multicurrency wallets',
+//       startDate: '02/06/2022 06:00',
+//       endDate: '02/07/2022 06:00',
+//       createdBy: 'Admin1',
+//       createdOn: '12/07/2020 11:00hrs',
+//       approvalStatus: 'Approved'
+//     },
+    
+//   ];
+
+//   constructor() { }
+
+//   ngOnInit(): void {
+//   }
+
+//   selectTab(tab: string): void {
+//     this.selectedTab = tab;
+//   }
+
+//   sort(property: string): void {
+//     this.notifications.sort((a, b) => {
+//       if (a[property] < b[property]) {
+//         return -1;
+//       } else if (a[property] > b[property]) {
+//         return 1;
+//       } else {
+//         return 0;
+//       }
+//     });
+//   }
+
+//   viewNotification(notification: any): void {
+//     // Logic to view notification
+//   }
+
+//   editNotification(notification: any): void {
+//     // Logic to edit notification
+//   }
+
+//   deleteNotification(notification: any): void {
+//     // Logic to delete notification
+//   }
 // }
 
 import { Component, OnInit } from '@angular/core';
@@ -17,40 +61,55 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bulk-notifications.component.css']
 })
 export class BulkNotificationsComponent implements OnInit {
-  selectedTab: string = 'customer';
-  showFilter: boolean = false;
-  notifications: any[] = [
-    // Sample data, replace with your actual data
-    { name: 'Notification 1', startDate: '01-01-2023', endDate: '01-02-2023', createdBy: 'User 1', createdOn: '01-01-2023', approvalStatus: 'Pending' },
+  notifications = [
+    // Sample data, replace with actual data
+    {
+      name: 'Multicurrency wallets',
+      startDate: '02/06/2022 06:00',
+      endDate: '02/07/2022 06:00',
+      createdBy: 'Admin1',
+      createdOn: '12/07/2020 11:00hrs',
+      approvalStatus: 'Approved'
+    }
     // Add more sample notifications as needed
   ];
 
-  constructor() { }
+  activeTab = 'customer';
+  searchTerm = '';
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  setActiveTab(tab: string): void {
+    this.activeTab = tab;
   }
 
-  selectTab(tab: string) {
-    this.selectedTab = tab;
+  openFilter(): void {
+    // Implement filter logic here
   }
 
-  toggleFilter() {
-    this.showFilter = !this.showFilter;
+  createNotification(): void {
+    // Implement create notification logic here
   }
 
-  createNew() {
-    // Logic to create a new bulk notification
+  viewNotification(notification: any): void {
+    // Implement view notification logic here
   }
 
-  viewNotification(notification: any) {
-    // Logic to view a notification
+  pauseNotification(notification: any): void {
+    // Implement delete notification logic here
   }
 
-  editNotification(notification: any) {
-    // Logic to edit a notification
+  editNotification(notification: any): void {
+    // Implement edit notification logic here
   }
 
-  deleteNotification(notification: any) {
-    // Logic to delete a notification
+  dropNotification(notification: any): void {
+    // Implement edit notification logic here
+  }
+
+  sort(property: string): void {
+    // Implement sorting logic here
   }
 }
