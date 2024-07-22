@@ -390,7 +390,7 @@
   </div>
    -->
 
-   <div class="create-bulk-notification">
+   <!-- <div class="create-bulk-notification">
     <h1>Create Bulk Notification</h1>
     <div class="tabs">
       <div class="tab" [class.active]="activeTab === 'create'" (click)="setActiveTab('create')">Create Notification</div>
@@ -417,6 +417,50 @@
             <ul *ngIf="channel.showOptions" class="searchable-dropdown">
               <li *ngFor="let option of channel.filteredOptions" (click)="selectOption(channel, option)">{{ option }}</li>
             </ul>
+          </td>
+          <td><input type="text" [(ngModel)]="channel.language"></td>
+          <td><input type="text" [(ngModel)]="channel.header"></td>
+          <td><textarea [(ngModel)]="channel.body"></textarea></td>
+          <td><input type="file" accept="image/*" (change)="onFileChange($event, channel)"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="buttons">
+      <button class="cancel-btn" (click)="cancel()">Cancel</button>
+      <button class="next-btn" (click)="next()">Next</button>
+    </div>
+  </div>
+   -->
+
+   <div class="create-bulk-notification">
+    <h1>Create Bulk Notification</h1>
+    <div class="tabs">
+      <div class="tab" [class.active]="activeTab === 'create'" (click)="setActiveTab('create')">Create Notification</div>
+      <div class="tab" [class.active]="activeTab === 'schedule'" (click)="setActiveTab('schedule')">Schedule</div>
+      <div class="tab" [class.active]="activeTab === 'review'" (click)="setActiveTab('review')">Review & Confirm</div>
+    </div>
+    <div class="controls">
+      <input type="text" placeholder="Search" class="search-box">
+    </div>
+    <table class="channel-table">
+      <thead>
+        <tr>
+          <th>Channel</th>
+          <th>Language</th>
+          <th>Message Header</th>
+          <th>Message Body</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let channel of channels">
+          <td>
+            <div class="dropdown-wrapper">
+              <input type="text" [(ngModel)]="channel.name" placeholder="Search channel" (focus)="showOptions(channel)" (input)="filterOptions(channel)" (blur)="hideOptions(channel)">
+              <ul *ngIf="channel.showOptions" class="searchable-dropdown">
+                <li *ngFor="let option of channel.filteredOptions" (mousedown)="selectOption(channel, option)">{{ option }}</li>
+              </ul>
+            </div>
           </td>
           <td><input type="text" [(ngModel)]="channel.language"></td>
           <td><input type="text" [(ngModel)]="channel.header"></td>
