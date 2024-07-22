@@ -1,5 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
-body {
+/* body {
     font-family: 'Nunito Sans';
   }
-  
+   */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap');
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+} */
+
+/* src/styles.css */
+
+/* Nunito Sans */
+/* @font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/nunito-sans/NunitoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/nunito-sans/NunitoSans-Bold.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+Other styles... */
+
+/* src/styles.css */
+
+/* @font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/nunito-sans/NunitoSans-Regular.woff2') format('woff2'),
+       url('/assets/fonts/nunito-sans/NunitoSans-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/nunito-sans/NunitoSans-Bold.woff2') format('woff2'),
+       url('/assets/fonts/nunito-sans/NunitoSans-Bold.woff') format('woff');
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+} */
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/nunito-sans/NunitoSans-Regular.woff2') format('woff2'),
+       url('/assets/fonts/nunito-sans/NunitoSans-Regular.woff') format('woff'),
+       url('/assets/fonts/nunito-sans/NunitoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/nunito-sans/NunitoSans-Bold.woff2') format('woff2'),
+       url('/assets/fonts/nunito-sans/NunitoSans-Bold.woff') format('woff'),
+       url('/assets/fonts/nunito-sans/NunitoSans-Bold.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
