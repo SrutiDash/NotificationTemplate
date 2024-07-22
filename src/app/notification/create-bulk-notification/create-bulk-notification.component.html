@@ -1,0 +1,38 @@
+   <div class="create-bulk-notification">
+    <h2>Create Bulk Notification</h2>
+    <div class="steps">
+      <div class="step active">Create Notification</div>
+      <div class="step">Schedule</div>
+      <div class="step">Review & Confirm</div>
+    </div>
+    <div class="controls">
+      <input type="text" placeholder="Search..." class="search-box">
+    </div>
+    <div class="channel-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Channel</th>
+            <th>Language</th>
+            <th>Message Header</th>
+            <th>Message Body</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let channel of channels">
+            <td>{{ channel.name }}</td>
+            <td><input type="text" placeholder="Language"></td>
+            <td><input type="text" placeholder="Message Header"></td>
+            <td><input type="text" placeholder="Message Body"></td>
+            <td><input type="file" accept="image/*"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="buttons">
+      <button type="button" class="cancel-btn" (click)="cancel()">Cancel</button>
+      <button type="button" class="next-btn" (click)="next()">Next</button>
+    </div>
+  </div>
+  
