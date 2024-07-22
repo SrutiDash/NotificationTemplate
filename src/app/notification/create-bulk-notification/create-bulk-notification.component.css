@@ -1,4 +1,4 @@
-     .create-bulk-notification {
+     /* .create-bulk-notification {
       padding: 20px;
     }
     
@@ -106,4 +106,114 @@
     .cancel-btn:hover {
       background-color: #bbb;
     }
+         */
+
+         .create-bulk-notification {
+          padding: 20px;
+        }
+        
+        h1 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+        
+        .tabs {
+          display: flex;
+          margin-bottom: 20px;
+        }
+        
+        .tab {
+          padding: 10px 20px;
+          cursor: pointer;
+          border-bottom: 2px solid transparent;
+        }
+        
+        .tab.active {
+          border-bottom: 2px solid #ff4081;
+          font-weight: bold;
+        }
+        
+        .controls {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+        
+        .search-box {
+          flex-grow: 1;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          margin-right: 10px;
+        }
+        
+        .channel-table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        
+        th, td {
+          padding: 10px;
+          border: 1px solid #ddd;
+        }
+        
+        .dropdown-wrapper {
+          position: relative;
+        }
+        
+        .searchable-dropdown {
+          position: absolute;
+          background-color: white;
+          border: 1px solid #ddd;
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+          max-height: 150px;
+          overflow-y: auto;
+          z-index: 1000;
+          width: 100%;
+        }
+        
+        .searchable-dropdown li {
+          padding: 10px;
+          cursor: pointer;
+        }
+        
+        .searchable-dropdown li:hover {
+          background-color: #eee;
+        }
+        
+        .buttons {
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 20px;
+        }
+        
+        .cancel-btn, .next-btn {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-family: 'Nunito Sans', sans-serif;
+          font-size: 16px;
+          margin-left: 10px;
+        }
+        
+        .cancel-btn {
+          background-color: #ccc;
+          color: #333;
+        }
+        
+        .next-btn {
+          background-color: #ff4081;
+          color: white;
+        }
+        
+        .next-btn:hover {
+          background-color: #e73370;
+        }
+        
+        .cancel-btn:hover {
+          background-color: #bbb;
+        }
         
