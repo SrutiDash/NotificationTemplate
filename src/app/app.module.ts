@@ -63,6 +63,7 @@ import { FileDialogComponent } from './notification/file-dialog/file-dialog.comp
 import { ScheduleComponent } from './notification/schedule/schedule.component';
 import { NextDialogComponent } from './notification/next-dialog/next-dialog.component';
 import { RecordUploadComponent } from './notification/record-upload/record-upload.component';
+import { BulkReviewConfirmComponent } from './notification/bulk-review-confirm/bulk-review-confirm.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { RecordUploadComponent } from './notification/record-upload/record-uploa
     ScheduleComponent,
     NextDialogComponent,
     RecordUploadComponent,
+    BulkReviewConfirmComponent,
   ],
   imports: [
     BrowserModule,
