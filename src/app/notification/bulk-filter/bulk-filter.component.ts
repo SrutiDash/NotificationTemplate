@@ -7,7 +7,7 @@
 // })
 // export class BulkFilterComponent {
 //   @Input() isVisible = false;
-//   @Output() close = new EventEmitter<void>();
+//   @Output() closeDialog = new EventEmitter<void>(); // Renamed
 //   @Output() applyFilters = new EventEmitter<any>();
 
 //   filters = {
@@ -18,7 +18,7 @@
 //   };
 
 //   close(): void {
-//     this.close.emit();
+//     this.closeDialog.emit(); // Renamed
 //   }
 
 //   apply(): void {
@@ -44,18 +44,32 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class BulkFilterComponent {
   @Input() isVisible = false;
-  @Output() closeDialog = new EventEmitter<void>(); // Renamed
+  @Output() closeDialog = new EventEmitter<void>();
   @Output() applyFilters = new EventEmitter<any>();
 
   filters = {
-    notificationName: '',
-    startDate: '',
-    endDate: '',
-    status: ''
+    approvalStatus: {
+      approved: false,
+      initiated: false,
+      rejected: false
+    },
+    status: {
+      active: false,
+      scheduled: false,
+      paused: false,
+      resumed: false,
+      deleted: false,
+      completed: false
+    },
+    dateRange: {
+      startDate: '',
+      endDate: ''
+    },
+    creationDate: ''
   };
 
   close(): void {
-    this.closeDialog.emit(); // Renamed
+    this.closeDialog.emit();
   }
 
   apply(): void {
@@ -64,10 +78,24 @@ export class BulkFilterComponent {
 
   clear(): void {
     this.filters = {
-      notificationName: '',
-      startDate: '',
-      endDate: '',
-      status: ''
+      approvalStatus: {
+        approved: false,
+        initiated: false,
+        rejected: false
+      },
+      status: {
+        active: false,
+        scheduled: false,
+        paused: false,
+        resumed: false,
+        deleted: false,
+        completed: false
+      },
+      dateRange: {
+        startDate: '',
+        endDate: ''
+      },
+      creationDate: ''
     };
   }
 }

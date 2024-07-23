@@ -45,7 +45,7 @@
 //   }
 
 //   applyFilter(filters: any): void {
-//     // Implement the filter logic here, for now we just log the filters
+//     // Apply the filter logic here, for now we just log the filters
 //     console.log('Filters applied:', filters);
 //     this.closeFilter();
 //   }
@@ -99,10 +99,24 @@ export class BulkNotificationsComponent implements OnInit {
   searchTerm = '';
   isFilterVisible = false;
   filters = {
-    notificationName: '',
-    startDate: '',
-    endDate: '',
-    status: ''
+    approvalStatus: {
+      approved: false,
+      initiated: false,
+      rejected: false
+    },
+    status: {
+      active: false,
+      scheduled: false,
+      paused: false,
+      resumed: false,
+      deleted: false,
+      completed: false
+    },
+    dateRange: {
+      startDate: '',
+      endDate: ''
+    },
+    creationDate: ''
   };
 
   constructor(private router: Router) {}
