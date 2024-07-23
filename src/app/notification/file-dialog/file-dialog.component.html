@@ -1,0 +1,27 @@
+<!-- <h1 mat-dialog-title>Choose File</h1>
+<div mat-dialog-content>
+  
+  <p>Select the file you want to upload.</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="chooseFile()">Choose File</button>
+</div> -->
+
+<!-- <div class="modal" *ngIf="showModal">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+      <h2>Select a File</h2>
+      <input type="file" (change)="onFileSelected($event)">
+    </div>
+  </div> -->
+
+  <div class="file-dialog">
+    <div class="dialog-content">
+      <h2>Select File</h2>
+      <input type="file" (change)="onFileChange($event)">
+      <button (click)="closeDialog()">Cancel</button>
+    </div>
+  </div>
+  
+  
