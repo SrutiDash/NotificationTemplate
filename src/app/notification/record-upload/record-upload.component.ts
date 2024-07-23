@@ -9,7 +9,7 @@
 // export class RecordUploadComponent {
 //   activeTab = 'record-upload';
 //   progress = 48; // Example progress value, you can update this dynamically
-//   isUploadComplete = false;
+//   isUploadComplete = true; // Set to true for demo, update logic as needed
 
 //   constructor(private router: Router) {}
 
@@ -23,7 +23,7 @@
 
 //   next(): void {
 //     if (this.isUploadComplete) {
-//       this.router.navigate(['/next-page']); // Replace with actual next page route
+//       this.router.navigate(['/bulk-review-confirm']);
 //     }
 //   }
 // }
