@@ -20,36 +20,36 @@
       </div>
       <div class="buttons">
         <button class="cancel-btn" (click)="cancel()">Cancel</button>
-        <button class="confirm-btn" [disabled]="!isConfirmEnabled" (click)="confirm()">Confirm</button>
-      </div>
-    </form>
-  </div>
-   -->
-
-   <div class="schedule-page">
-    <h1>Schedule Notification</h1>
-    <div class="tabs">
-      <div class="tab" [class.active]="activeTab === 'create'" (click)="setActiveTab('create')">Create Notification</div>
-      <div class="tab" [class.active]="activeTab === 'schedule'" (click)="setActiveTab('schedule')">Schedule</div>
-      <div class="tab" [class.active]="activeTab === 'review'" (click)="setActiveTab('review')">Review & Confirm</div>
-    </div>
-    <form>
-      <div class="form-group">
-        <label for="notificationName">Notification Name</label>
-        <input type="text" id="notificationName" [(ngModel)]="notification.name" name="notificationName">
-      </div>
-      <div class="form-group">
-        <label for="startDate">Start Date</label>
-        <input type="date" id="startDate" [(ngModel)]="notification.startDate" name="startDate">
-      </div>
-      <div class="form-group">
-        <label for="endDate">End Date</label>
-        <input type="date" id="endDate" [(ngModel)]="notification.endDate" name="endDate">
-      </div>
-      <div class="buttons">
-        <button class="cancel-btn" (click)="cancel()">Cancel</button>
         <button class="confirm-btn" [disabled]="!isConfirmEnabled" (click)="confirm()">Next</button>
       </div>
     </form>
   </div>
-   
+    -->
+
+    <div class="schedule-page">
+      <h1>Schedule Notification</h1>
+      <div class="tabs">
+        <div class="tab" [class.active]="activeTab === 'create'" (click)="setActiveTab('create')">Create Notification</div>
+        <div class="tab" [class.active]="activeTab === 'schedule'" (click)="setActiveTab('schedule')">Schedule</div>
+        <div class="tab" [class.active]="activeTab === 'review'" (click)="setActiveTab('review')">Review & Confirm</div>
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="notificationName">Notification Name</label>
+          <input type="text" id="notificationName" [(ngModel)]="notification.name" name="notificationName" (input)="checkIfNextCanBeEnabled()">
+        </div>
+        <div class="form-group">
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" [(ngModel)]="notification.startDate" name="startDate" (input)="checkIfNextCanBeEnabled()">
+        </div>
+        <div class="form-group">
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" [(ngModel)]="notification.endDate" name="endDate" (input)="checkIfNextCanBeEnabled()">
+        </div>
+        <div class="buttons">
+          <button class="cancel-btn" (click)="cancel()">Cancel</button>
+          <button class="confirm-btn" [disabled]="!isConfirmEnabled" (click)="next()">Next</button>
+        </div>
+      </form>
+    </div>
+    

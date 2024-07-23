@@ -62,6 +62,7 @@ import { CreateBulkNotificationComponent } from './notification/create-bulk-noti
 import { FileDialogComponent } from './notification/file-dialog/file-dialog.component';
 import { ScheduleComponent } from './notification/schedule/schedule.component';
 import { NextDialogComponent } from './notification/next-dialog/next-dialog.component';
+import { RecordUploadComponent } from './notification/record-upload/record-upload.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { NextDialogComponent } from './notification/next-dialog/next-dialog.comp
     FileDialogComponent,
     ScheduleComponent,
     NextDialogComponent,
+    RecordUploadComponent,
   ],
   imports: [
     BrowserModule,
