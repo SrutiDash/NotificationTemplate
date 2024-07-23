@@ -1,124 +1,121 @@
 <!-- <div class="bulk-notifications">
-                  <h1>Bulk Notification Management</h1>
-                  <div class="tabs">
-                    <div class="tab" [class.active]="activeTab === 'customer'" (click)="setActiveTab('customer')">Customer</div>
-                    <div class="tab" [class.active]="activeTab === 'business'" (click)="setActiveTab('business')">Business</div>
-                  </div>
-                  <div class="controls">
-                    <button class="filter-button" (click)="openFilter()">
-                      <img src="https://i.ibb.co/92NP41G/Icon-awesome-filter.png" alt="Icon-awesome-filter">
-                    </button>
-                    <input type="text" placeholder="Search by notification name" [(ngModel)]="searchTerm" class="search-box">
-                    <button class="create-button" (click)="createNotification()">Create New</button>
-                  </div>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>NOTIFICATION NAME</th>
-                        <th>START DATE</th>
-                        <th>END DATE</th>
-                        <th>CREATED BY</th>
-                        <th (click)="sort('createdOn')">CREATED ON &uarr;&darr;</th>
-                        <th>APPROVAL STATUS</th>
-                        <th>ACTION</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr *ngFor="let notification of notifications | filter:searchTerm">
-                        <td>{{ notification.name }}</td>
-                        <td>{{ notification.startDate }}</td>
-                        <td>{{ notification.endDate }}</td>
-                        <td>{{ notification.createdBy }}</td>
-                        <td>{{ notification.createdOn }}</td>
-                        <td><span [class]="notification.approvalStatus.toLowerCase()">{{ notification.approvalStatus }}</span></td>
-                        <td>
-                          <button class="action-button" (click)="viewNotification(notification)">
-                            <img src="https://i.ibb.co/NmhQtTh/Component-103-65-1.png" alt="Component-103-65-1">
-                          </button>
-                          <button class="action-button" (click)="pauseNotification(notification)">
-                            <img src="https://i.ibb.co/6sVnfLM/Component-138-1.png" alt="Component-138-1">
-                          </button>
-                          <button class="action-button" (click)="editNotification(notification)">
-                            <img src="https://i.ibb.co/f27Bq7P/pencil-1.png" alt="pencil-1">
-                          </button>
-                          <button class="action-button" (click)="dropNotification(notification)">
-                            <img src="https://i.ibb.co/BG5Rv0Q/Component-137-3.png" alt="Component-137-3">
-                          </button>
-                          <select class="status-dropdown">
-                            <option value="active">Active</option>
-                            <option value="inactive">Inactive</option>
-                          </select>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <app-bulk-filter
-                    [isVisible]="isFilterVisible"
-                    (closeDialog)="closeFilter()"
-                    (applyFilters)="applyFilter($event)">
-                  </app-bulk-filter>
-                </div>
-                                  -->
+  <h1>Bulk Notification Management</h1>
+  <div class="tabs">
+    <div class="tab" [class.active]="activeTab === 'customer'" (click)="setActiveTab('customer')">Customer</div>
+    <div class="tab" [class.active]="activeTab === 'business'" (click)="setActiveTab('business')">Business</div>
+  </div>
+  <div class="controls">
+    <button class="filter-button" (click)="openFilter()">
+      <img src="https://i.ibb.co/92NP41G/Icon-awesome-filter.png" alt="Icon-awesome-filter">
+    </button>
+    <input type="text" placeholder="Search by notification name" [(ngModel)]="searchTerm" class="search-box">
+    <button class="create-button" (click)="createNotification()">Create New</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>NOTIFICATION NAME</th>
+        <th>START DATE</th>
+        <th>END DATE</th>
+        <th>CREATED BY</th>
+        <th (click)="sort('createdOn')">CREATED ON &uarr;&darr;</th>
+        <th>APPROVAL STATUS</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let notification of notifications | filter:searchTerm">
+        <td>{{ notification.name }}</td>
+        <td>{{ notification.startDate }}</td>
+        <td>{{ notification.endDate }}</td>
+        <td>{{ notification.createdBy }}</td>
+        <td>{{ notification.createdOn }}</td>
+        <td><span [class]="notification.approvalStatus.toLowerCase()">{{ notification.approvalStatus }}</span></td>
+        <td>
+          <button class="action-button" (click)="viewNotification(notification)">
+            <img src="https://i.ibb.co/NmhQtTh/Component-103-65-1.png" alt="Component-103-65-1">
+          </button>
+          <button class="action-button" (click)="pauseNotification(notification)">
+            <img src="https://i.ibb.co/6sVnfLM/Component-138-1.png" alt="Component-138-1">
+          </button>
+          <button class="action-button" (click)="editNotification(notification)">
+            <img src="https://i.ibb.co/f27Bq7P/pencil-1.png" alt="pencil-1">
+          </button>
+          <button class="action-button" (click)="dropNotification(notification)">
+            <img src="https://i.ibb.co/BG5Rv0Q/Component-137-3.png" alt="Component-137-3">
+          </button>
+          <select class="status-dropdown">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-bulk-filter
+    [isVisible]="isFilterVisible"
+    (closeDialog)="closeFilter()"
+    (applyFilters)="applyFilter($event)">
+  </app-bulk-filter>
+</div> -->
 
-                                  
-                                  <div class="bulk-notifications">
-                                    <h1>Bulk Notification Management</h1>
-                                    <div class="tabs">
-                                      <div class="tab" [class.active]="activeTab === 'customer'" (click)="setActiveTab('customer')">Customer</div>
-                                      <div class="tab" [class.active]="activeTab === 'business'" (click)="setActiveTab('business')">Business</div>
-                                    </div>
-                                    <div class="controls">
-                                      <button class="filter-button" (click)="openFilter()">
-                                        <img src="https://i.ibb.co/92NP41G/Icon-awesome-filter.png" alt="Icon-awesome-filter">
-                                      </button>
-                                      <input type="text" placeholder="Search by notification name" [(ngModel)]="searchTerm" class="search-box">
-                                      <button class="create-button" (click)="createNotification()">Create New</button>
-                                    </div>
-                                    <table>
-                                      <thead>
-                                        <tr>
-                                          <th>NOTIFICATION NAME</th>
-                                          <th>START DATE</th>
-                                          <th>END DATE</th>
-                                          <th>CREATED BY</th>
-                                          <th (click)="sort('createdOn')">CREATED ON &uarr;&darr;</th>
-                                          <th>APPROVAL STATUS</th>
-                                          <th>ACTION</th>
-                                        </tr>
-                                      </thead>
-                                      <tbody>
-                                        <tr *ngFor="let notification of notifications | filter:searchTerm">
-                                          <td>{{ notification.name }}</td>
-                                          <td>{{ notification.startDate }}</td>
-                                          <td>{{ notification.endDate }}</td>
-                                          <td>{{ notification.createdBy }}</td>
-                                          <td>{{ notification.createdOn }}</td>
-                                          <td><span [class]="notification.approvalStatus.toLowerCase()">{{ notification.approvalStatus }}</span></td>
-                                          <td>
-                                            <button class="action-button" (click)="viewNotification(notification)">
-                                              <img src="https://i.ibb.co/NmhQtTh/Component-103-65-1.png" alt="Component-103-65-1">
-                                            </button>
-                                            <button class="action-button" (click)="pauseNotification(notification)">
-                                              <img src="https://i.ibb.co/6sVnfLM/Component-138-1.png" alt="Component-138-1">
-                                            </button>
-                                            <button class="action-button" (click)="editNotification(notification)">
-                                              <img src="https://i.ibb.co/f27Bq7P/pencil-1.png" alt="pencil-1">
-                                            </button>
-                                            <button class="action-button" (click)="dropNotification(notification)">
-                                              <img src="https://i.ibb.co/BG5Rv0Q/Component-137-3.png" alt="Component-137-3">
-                                            </button>
-                                            <select class="status-dropdown">
-                                              <option value="active">Active</option>
-                                              <option value="inactive">Inactive</option>
-                                            </select>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                    <app-bulk-filter
-                                      [isVisible]="isFilterVisible"
-                                      (closeDialog)="closeFilter()"
-                                      (applyFilters)="applyFilter($event)">
-                                    </app-bulk-filter>
-                                  </div>
-                                                                   
+<div class="bulk-notifications">
+  <h1>Bulk Notification Management</h1>
+  <div class="tabs">
+    <div class="tab" [class.active]="activeTab === 'customer'" (click)="setActiveTab('customer')">Customer</div>
+    <div class="tab" [class.active]="activeTab === 'business'" (click)="setActiveTab('business')">Business</div>
+  </div>
+  <div class="controls" style="position: relative;">
+    <button class="filter-button" (click)="openFilter()">
+      <img src="https://i.ibb.co/92NP41G/Icon-awesome-filter.png" alt="Icon-awesome-filter">
+    </button>
+    <input type="text" placeholder="Search by notification name" [(ngModel)]="searchTerm" class="search-box">
+    <button class="create-button" (click)="createNotification()">Create New</button>
+    <app-bulk-filter
+      [isVisible]="isFilterVisible"
+      (closeDialog)="closeFilter()"
+      (applyFilters)="applyFilter($event)">
+    </app-bulk-filter>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>NOTIFICATION NAME</th>
+        <th>START DATE</th>
+        <th>END DATE</th>
+        <th>CREATED BY</th>
+        <th (click)="sort('createdOn')">CREATED ON &uarr;&darr;</th>
+        <th>APPROVAL STATUS</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let notification of notifications | filter:searchTerm">
+        <td>{{ notification.name }}</td>
+        <td>{{ notification.startDate }}</td>
+        <td>{{ notification.endDate }}</td>
+        <td>{{ notification.createdBy }}</td>
+        <td>{{ notification.createdOn }}</td>
+        <td><span [class]="notification.approvalStatus.toLowerCase()">{{ notification.approvalStatus }}</span></td>
+        <td>
+          <button class="action-button" (click)="viewNotification(notification)">
+            <img src="https://i.ibb.co/NmhQtTh/Component-103-65-1.png" alt="Component-103-65-1">
+          </button>
+          <button class="action-button" (click)="pauseNotification(notification)">
+            <img src="https://i.ibb.co/6sVnfLM/Component-138-1.png" alt="Component-138-1">
+          </button>
+          <button class="action-button" (click)="editNotification(notification)">
+            <img src="https://i.ibb.co/f27Bq7P/pencil-1.png" alt="pencil-1">
+          </button>
+          <button class="action-button" (click)="dropNotification(notification)">
+            <img src="https://i.ibb.co/BG5Rv0Q/Component-137-3.png" alt="Component-137-3">
+          </button>
+          <select class="status-dropdown">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,87 +1,114 @@
-<!-- <div class="bulk-filter-dialog" *ngIf="isVisible">
-        <div class="filter-header">
-          <h3>Filter Notifications</h3>
-          <button class="close-btn" (click)="close()">×</button>
-        </div>
-        <div class="filter-body">
-          <div class="form-group">
-            <label for="notificationName">Notification Name</label>
-            <input type="text" id="notificationName" [(ngModel)]="filters.notificationName">
-          </div>
-          <div class="form-group">
-            <label for="startDate">Start Date</label>
-            <input type="date" id="startDate" [(ngModel)]="filters.startDate">
-          </div>
-          <div class="form-group">
-            <label for="endDate">End Date</label>
-            <input type="date" id="endDate" [(ngModel)]="filters.endDate">
-          </div>
-          <div class="form-group">
-            <label for="status">Status</label>
-            <select id="status" [(ngModel)]="filters.status">
-              <option value="">All</option>
-              <option value="Success">Success</option>
-              <option value="Failed">Failed</option>
-              <option value="Pending">Pending</option>
-            </select>
-          </div>
-        </div>
-        <div class="filter-footer">
-          <button class="apply-btn" (click)="apply()">Apply</button>
-          <button class="clear-btn" (click)="clear()">Clear</button>
-        </div>
-      </div>
-          -->
+                    <!-- <div class="bulk-filter-dialog" *ngIf="isVisible">
+                        <div class="filter-header">
+                          <h3>Filters</h3>
+                          <button class="close-btn" (click)="close()">×</button>
+                        </div>
+                        <div class="filter-body">
+                          <div class="form-group">
+                            <label>Approval Status</label>
+                            <div class="checkbox-group">
+                              <input type="checkbox" id="approved" [(ngModel)]="filters.approvalStatus.approved">
+                              <label for="approved">Approved</label>
+                              <input type="checkbox" id="initiated" [(ngModel)]="filters.approvalStatus.initiated">
+                              <label for="initiated">Initiated</label>
+                              <input type="checkbox" id="rejected" [(ngModel)]="filters.approvalStatus.rejected">
+                              <label for="rejected">Rejected</label>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Status</label>
+                            <div class="checkbox-group">
+                              <input type="checkbox" id="active" [(ngModel)]="filters.status.active">
+                              <label for="active">Active</label>
+                              <input type="checkbox" id="scheduled" [(ngModel)]="filters.status.scheduled">
+                              <label for="scheduled">Scheduled</label>
+                              <input type="checkbox" id="paused" [(ngModel)]="filters.status.paused">
+                              <label for="paused">Paused</label>
+                              <input type="checkbox" id="resumed" [(ngModel)]="filters.status.resumed">
+                              <label for="resumed">Resumed</label>
+                              <input type="checkbox" id="deleted" [(ngModel)]="filters.status.deleted">
+                              <label for="deleted">Deleted</label>
+                              <input type="checkbox" id="completed" [(ngModel)]="filters.status.completed">
+                              <label for="completed">Completed</label>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Date Range</label>
+                            <div class="date-range">
+                              <input type="date" placeholder="Start date" [(ngModel)]="filters.dateRange.startDate">
+                              <input type="date" placeholder="End date" [(ngModel)]="filters.dateRange.endDate">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Creation Date</label>
+                            <input type="date" [(ngModel)]="filters.creationDate">
+                          </div>
+                        </div>
+                        <div class="filter-footer">
+                          <button class="clear-btn" (click)="clear()">CLEAR</button>
+                          <button class="apply-btn" (click)="apply()">APPLY</button>
+                        </div>
+                      </div>
+                                          -->
 
-          <div class="bulk-filter-dialog" *ngIf="isVisible">
-            <div class="filter-header">
-              <h3>Filter Notifications</h3>
-              <button class="close-btn" (click)="close()">×</button>
-            </div>
-            <div class="filter-body">
-              <div class="form-group">
-                <label>Approval Status</label>
-                <div class="checkbox-group">
-                  <input type="checkbox" id="approved" [(ngModel)]="filters.approvalStatus.approved">
-                  <label for="approved">Approved</label>
-                  <input type="checkbox" id="initiated" [(ngModel)]="filters.approvalStatus.initiated">
-                  <label for="initiated">Initiated</label>
-                  <input type="checkbox" id="rejected" [(ngModel)]="filters.approvalStatus.rejected">
-                  <label for="rejected">Rejected</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Status</label>
-                <div class="checkbox-group">
-                  <input type="checkbox" id="active" [(ngModel)]="filters.status.active">
-                  <label for="active">Active</label>
-                  <input type="checkbox" id="scheduled" [(ngModel)]="filters.status.scheduled">
-                  <label for="scheduled">Scheduled</label>
-                  <input type="checkbox" id="paused" [(ngModel)]="filters.status.paused">
-                  <label for="paused">Paused</label>
-                  <input type="checkbox" id="resumed" [(ngModel)]="filters.status.resumed">
-                  <label for="resumed">Resumed</label>
-                  <input type="checkbox" id="deleted" [(ngModel)]="filters.status.deleted">
-                  <label for="deleted">Deleted</label>
-                  <input type="checkbox" id="completed" [(ngModel)]="filters.status.completed">
-                  <label for="completed">Completed</label>
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Date Range</label>
-                <div class="date-range">
-                  <input type="date" placeholder="Start date" [(ngModel)]="filters.dateRange.startDate">
-                  <input type="date" placeholder="End date" [(ngModel)]="filters.dateRange.endDate">
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Creation Date</label>
-                <input type="date" [(ngModel)]="filters.creationDate">
-              </div>
-            </div>
-            <div class="filter-footer">
-              <button class="apply-btn" (click)="apply()">Apply</button>
-              <button class="clear-btn" (click)="clear()">Clear</button>
-            </div>
-          </div>
-                   
+                                          <div class="bulk-filter-dialog" *ngIf="isVisible">
+                                            <div class="filter-header">
+                                              <h3>Filters</h3>
+                                              <button class="close-btn" (click)="close()">×</button>
+                                            </div>
+                                            <div class="filter-body">
+                                              <div class="form-group">
+                                                <label>Approval Status</label>
+                                                <div class="checkbox-group">
+                                                  <input type="checkbox" id="approved" [(ngModel)]="filters.approvalStatus.approved">
+                                                  <label for="approved">Approved</label>
+                                                  <input type="checkbox" id="initiated" [(ngModel)]="filters.approvalStatus.initiated">
+                                                  <label for="initiated">Initiated</label>
+                                                  <input type="checkbox" id="rejected" [(ngModel)]="filters.approvalStatus.rejected">
+                                                  <label for="rejected">Rejected</label>
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label>Status</label>
+                                                <div class="checkbox-group">
+                                                  <input type="checkbox" id="active" [(ngModel)]="filters.status.active">
+                                                  <label for="active">Active</label>
+                                                  <input type="checkbox" id="scheduled" [(ngModel)]="filters.status.scheduled">
+                                                  <label for="scheduled">Scheduled</label>
+                                                  <input type="checkbox" id="paused" [(ngModel)]="filters.status.paused">
+                                                  <label for="paused">Paused</label>
+                                                  <input type="checkbox" id="resumed" [(ngModel)]="filters.status.resumed">
+                                                  <label for="resumed">Resumed</label>
+                                                  <input type="checkbox" id="deleted" [(ngModel)]="filters.status.deleted">
+                                                  <label for="deleted">Deleted</label>
+                                                  <input type="checkbox" id="completed" [(ngModel)]="filters.status.completed">
+                                                  <label for="completed">Completed</label>
+                                                </div>
+                                              </div>
+                                              <div class="form-group">
+                                                <label>Date Range</label>
+                                                <div class="date-range">
+                                                  <div>
+                                                    <label>Start date</label>
+                                                    <input type="date" placeholder="Start date" [(ngModel)]="filters.dateRange.startDate">
+                                                  </div>
+                                                  <div>
+                                                    <label>End date</label>
+                                                    <input type="date" placeholder="End date" [(ngModel)]="filters.dateRange.endDate">
+                                                  </div>
+                                                </div>
+                                                <!-- <div>
+                                                  <label>for each</label>
+                                                </div> -->
+                                              </div>
+                                              <div class="form-group">
+                                                <label>Creation Date</label>
+                                                <input type="date" [(ngModel)]="filters.creationDate">
+                                              </div>
+                                            </div>
+                                            <div class="filter-footer">
+                                              <button class="clear-btn" (click)="clear()">CLEAR</button>
+                                              <button class="apply-btn" (click)="apply()">APPLY</button>
+                                            </div>
+                                          </div>
+                                                                                   
