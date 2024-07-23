@@ -59,6 +59,28 @@
 //   }
 // }
 
+// import { Component, EventEmitter, Output } from '@angular/core';
+
+// @Component({
+//   selector: 'app-file-dialog',
+//   templateUrl: './file-dialog.component.html',
+//   styleUrls: ['./file-dialog.component.css']
+// })
+// export class FileDialogComponent {
+//   @Output() fileSelected = new EventEmitter<File | null>();
+
+//   onFileChange(event: any): void {
+//     const input = event.target as HTMLInputElement;
+//     if (input.files && input.files.length > 0) {
+//       this.fileSelected.emit(input.files[0]);
+//     }
+//   }
+
+//   closeDialog(): void {
+//     this.fileSelected.emit(null);
+//   }
+// }
+
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -80,3 +102,4 @@ export class FileDialogComponent {
     this.fileSelected.emit(null);
   }
 }
+
