@@ -1,4 +1,4 @@
-<div class="record-upload-page">
+<!-- <div class="record-upload-page">
     <h1>Record Upload</h1>
     <div class="tabs">
       <div class="tab" [class.active]="activeTab === 'create'" (click)="setActiveTab('create')">Create Notification</div>
@@ -16,4 +16,129 @@
       </div>
     </form>
   </div>
-  
+   -->
+
+   <!-- <div class="record-upload-page">
+    <h1>Record Upload</h1>
+    <div class="tabs">
+      <div class="tab" [class.active]="activeTab === 'create'" (click)="setActiveTab('create')">Create Notification</div>
+      <div class="tab" [class.active]="activeTab === 'schedule'" (click)="setActiveTab('schedule')">Schedule</div>
+      <div class="tab" [class.active]="activeTab === 'review'" (click)="setActiveTab('review')">Review & Confirm</div>
+    </div>
+    <form>
+      <div class="form-group">
+        <label for="totalRecords">Total Number of Records</label>
+        <input type="text" id="totalRecords" [(ngModel)]="record.totalRecords" name="totalRecords">
+      </div>
+      <div class="buttons">
+        <button class="cancel-btn" (click)="cancel()">Cancel</button>
+        <button class="confirm-btn" (click)="confirm()">Confirm</button>
+      </div>
+    </form>
+  </div>
+    -->
+
+    <!-- <div class="record-upload-page">
+        <h1>Record Upload</h1>
+        <div class="tabs">
+          <div class="tab" [class.active]="activeTab === 'create'" (click)="setActiveTab('create')">Create Notification</div>
+          <div class="tab" [class.active]="activeTab === 'schedule'" (click)="setActiveTab('schedule')">Schedule</div>
+          <div class="tab" [class.active]="activeTab === 'review'" (click)="setActiveTab('review')">Review & Confirm</div>
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="totalRecords">Total Number of Records</label>
+            <input type="text" id="totalRecords" [(ngModel)]="record.totalRecords" name="totalRecords">
+          </div>
+          <div class="buttons">
+            <button class="cancel-btn" (click)="cancel()">Cancel</button>
+            <button class="confirm-btn" (click)="confirm()">Confirm</button>
+          </div>
+        </form>
+      </div>
+       -->
+<!-- 
+       <div class="record-upload-page">
+        <h1>Record Upload</h1>
+        <div class="tabs">
+          <div class="tab" [class.active]="activeTab === 'create'" (click)="setActiveTab('create')">Create Notification</div>
+          <div class="tab" [class.active]="activeTab === 'schedule'" (click)="setActiveTab('schedule')">Schedule</div>
+          <div class="tab" [class.active]="activeTab === 'review'" (click)="setActiveTab('review')">Review & Confirm</div>
+        </div>
+        <div class="upload-status">
+          <div>Uploading 28 mins remaining</div>
+          <div class="progress-bar">
+            <div class="progress" [style.width]="progress + '%'"></div>
+          </div>
+          <div>{{ progress }}%</div>
+        </div>
+        <div class="record-status">
+          <div>
+            <span>Total number of records:</span>
+            <span>1,200</span>
+          </div>
+          <div>
+            <span>Uploaded Successfully:</span>
+            <span>560</span>
+          </div>
+          <div>
+            <span>Failed:</span>
+            <span>30</span>
+          </div>
+          <div>
+            <span>Pending:</span>
+            <span>610</span>
+          </div>
+        </div>
+        <div class="alert">
+          ALERT: During upload of records, do not navigate away from this page else upload progress will fail
+        </div>
+        <div class="buttons">
+          <button class="cancel-btn" (click)="cancel()">Cancel</button>
+          <button class="next-btn" [disabled]="!isUploadComplete" (click)="next()">Next</button>
+        </div>
+      </div> -->
+
+
+      <div class="record-upload-page">
+        <h1>Record Upload</h1>
+        <div class="tabs">
+          <div class="tab" [class.active]="activeTab === 'create'" (click)="setActiveTab('create')">Create Notification</div>
+          <div class="tab" [class.active]="activeTab === 'schedule'" (click)="setActiveTab('schedule')">Schedule</div>
+          <div class="tab" [class.active]="activeTab === 'review'" (click)="setActiveTab('review')">Review & Confirm</div>
+        </div>
+        <div class="upload-status">
+          <div>Uploading 28 mins remaining</div>
+          <div class="progress-bar">
+            <div class="progress" [style.width]="progress + '%'"></div>
+          </div>
+          <div>{{ progress }}%</div>
+        </div>
+        <div class="record-status">
+          <div>
+            <span>Total number of records:</span>
+            <span>1,200</span>
+          </div>
+          <div>
+            <span>Uploaded Successfully:</span>
+            <span>560</span>
+          </div>
+          <div>
+            <span>Failed:</span>
+            <span>30</span>
+          </div>
+          <div>
+            <span>Pending:</span>
+            <span>610</span>
+          </div>
+        </div>
+        <div class="alert">
+          ALERT: During upload of records, do not navigate away from this page else upload progress will fail
+        </div>
+        <div class="buttons">
+          <button class="cancel-btn" (click)="cancel()">Cancel</button>
+          <button class="next-btn" [disabled]="!isUploadComplete" (click)="next()">Next</button>
+        </div>
+      </div>
+           
+      

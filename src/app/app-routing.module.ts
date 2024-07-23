@@ -7,9 +7,11 @@
 // import { ReviewConfirmComponent } from './notification/review-confirm/review-confirm.component';
 // import { BulkNotificationsComponent } from './notification/bulk-notifications/bulk-notifications.component';
 // import { CreateBulkNotificationComponent } from './notification/create-bulk-notification/create-bulk-notification.component';
+// import { ScheduleComponent } from './notification/schedule/schedule.component';
+// import { RecordUploadComponent } from './notification/record-upload/record-upload.component';
 
 // const routes: Routes = [
-//   { path: '', redirectTo: '/notifications', pathMatch: 'full' },
+//   { path: '', redirectTo: '/create-bulk-notification', pathMatch: 'full' },
 //   { path: 'notifications', component: NotificationManagementComponent },
 //   { path: 'create-notification', component: CreateNotificationComponent },
 //   { path: 'notification-details/:id', component: NotificationDetailsComponent },
@@ -17,6 +19,8 @@
 //   { path: 'review-confirm', component: ReviewConfirmComponent },
 //   { path: 'bulk-notifications', component: BulkNotificationsComponent },
 //   { path: 'create-bulk-notification', component: CreateBulkNotificationComponent },
+//   { path: 'schedule', component: ScheduleComponent },
+//   { path: 'record-upload', component: RecordUploadComponent }
 // ];
 
 // @NgModule({
@@ -35,6 +39,7 @@ import { ReviewConfirmComponent } from './notification/review-confirm/review-con
 import { BulkNotificationsComponent } from './notification/bulk-notifications/bulk-notifications.component';
 import { CreateBulkNotificationComponent } from './notification/create-bulk-notification/create-bulk-notification.component';
 import { ScheduleComponent } from './notification/schedule/schedule.component';
+import { RecordUploadComponent } from './notification/record-upload/record-upload.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/create-bulk-notification', pathMatch: 'full' },
@@ -45,7 +50,8 @@ const routes: Routes = [
   { path: 'review-confirm', component: ReviewConfirmComponent },
   { path: 'bulk-notifications', component: BulkNotificationsComponent },
   { path: 'create-bulk-notification', component: CreateBulkNotificationComponent },
-  { path: 'schedule', component: ScheduleComponent }
+  { path: 'schedule', component: ScheduleComponent },
+  { path: 'record-upload', component: RecordUploadComponent }
 ];
 
 @NgModule({

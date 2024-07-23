@@ -1,0 +1,181 @@
+/* .record-upload-page {
+    padding: 20px;
+  }
+  
+  .tabs {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .tab.active {
+    border-bottom: 2px solid #ff4081;
+    font-weight: bold;
+  }
+  
+  .upload-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .progress {
+    height: 20px;
+    background-color: #4caf50;
+  }
+  
+  .record-status {
+    margin-bottom: 20px;
+  }
+  
+  .record-status div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .alert {
+    background-color: #ffcccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .cancel-btn, .next-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  
+  .cancel-btn {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .next-btn {
+    background-color: #ff4081;
+    color: white;
+  }
+  
+  .next-btn:hover {
+    background-color: #e73370;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #bbb;
+  }
+   */
+
+   .record-upload-page {
+    padding: 20px;
+  }
+  
+  .tabs {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .tab.active {
+    border-bottom: 2px solid #ff4081;
+    font-weight: bold;
+  }
+  
+  .upload-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .progress-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+  }
+  
+  .progress {
+    height: 20px;
+    background-color: #4caf50;
+  }
+  
+  .record-status {
+    margin-bottom: 20px;
+  }
+  
+  .record-status div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+  }
+  
+  .alert {
+    background-color: #ffcccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .cancel-btn, .next-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  
+  .cancel-btn {
+    background-color: #ccc;
+    color: #333;
+  }
+  
+  .next-btn {
+    background-color: #ff4081;
+    color: white;
+  }
+  
+  .next-btn:hover {
+    background-color: #e73370;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #bbb;
+  }
+  

@@ -27,13 +27,18 @@
 //     this.activeTab = tab;
 //   }
 
+//   checkIfNextCanBeEnabled(): void {
+//     this.isConfirmEnabled = !!(this.notification.name && this.notification.startDate && this.notification.endDate);
+//   }
+
 //   cancel(): void {
 //     // Implement cancel logic
 //   }
 
-//   confirm(): void {
-//     // Implement confirm logic
-//     this.router.navigate(['/nextPage']);
+//   next(): void {
+//     if (this.isConfirmEnabled) {
+//       this.router.navigate(['/record-upload']);
+//     }
 //   }
 // }
 
@@ -67,7 +72,7 @@
 //   }
 
 //   checkIfNextCanBeEnabled(): void {
-//     this.isConfirmEnabled = this.notification.name && this.notification.startDate && this.notification.endDate;
+//     this.isConfirmEnabled = !!(this.notification.name && this.notification.startDate && this.notification.endDate);
 //   }
 
 //   cancel(): void {
@@ -102,7 +107,7 @@ export class ScheduleComponent {
     startDate: '',
     endDate: ''
   };
-  isConfirmEnabled = false;
+  isNextEnabled = false;
 
   constructor(private router: Router) {}
 
@@ -111,7 +116,7 @@ export class ScheduleComponent {
   }
 
   checkIfNextCanBeEnabled(): void {
-    this.isConfirmEnabled = !!(this.notification.name && this.notification.startDate && this.notification.endDate);
+    this.isNextEnabled = !!(this.notification.name && this.notification.startDate && this.notification.endDate);
   }
 
   cancel(): void {
@@ -119,8 +124,9 @@ export class ScheduleComponent {
   }
 
   next(): void {
-    if (this.isConfirmEnabled) {
+    if (this.isNextEnabled) {
       this.router.navigate(['/record-upload']);
     }
   }
 }
+
