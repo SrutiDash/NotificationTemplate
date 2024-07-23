@@ -18,6 +18,7 @@ import { ScheduleComponent } from './notification/schedule/schedule.component';
 import { NextDialogComponent } from './notification/next-dialog/next-dialog.component';
 import { RecordUploadComponent } from './notification/record-upload/record-upload.component';
 import { BulkReviewConfirmComponent } from './notification/bulk-review-confirm/bulk-review-confirm.component';
+import { BulkFilterComponent } from './notification/bulk-filter/bulk-filter.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { BulkReviewConfirmComponent } from './notification/bulk-review-confirm/b
     NextDialogComponent,
     RecordUploadComponent,
     BulkReviewConfirmComponent,
+    BulkFilterComponent,
   ],
   imports: [
     BrowserModule,
