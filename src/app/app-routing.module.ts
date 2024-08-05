@@ -1,4 +1,4 @@
-// //new2
+// //new3
 
 // import { NgModule } from '@angular/core';
 // import { RouterModule, Routes } from '@angular/router';
@@ -13,6 +13,7 @@
 // import { RecordUploadComponent } from './notification/record-upload/record-upload.component';
 // import { ViewBulkNotificationComponent } from './notification/view-bulk-notification/view-bulk-notification.component';
 // import { BulkEditComponent } from './notification/bulk-edit/bulk-edit.component';
+// import { BulkEditReviewComponent } from './notification/bulk-edit-review/bulk-edit-review.component';
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/create-bulk-notification', pathMatch: 'full' },
@@ -26,7 +27,8 @@
 //   { path: 'schedule', component: ScheduleComponent },
 //   { path: 'record-upload', component: RecordUploadComponent },
 //   { path: 'view-bulk-notification', component: ViewBulkNotificationComponent },
-//   { path: 'bulk-edit', component: BulkEditComponent }
+//   { path: 'bulk-edit', component: BulkEditComponent },
+//   { path: 'bulk-edit-review', component: BulkEditReviewComponent }
 // ];
 
 // @NgModule({
@@ -34,8 +36,6 @@
 //   exports: [RouterModule]
 // })
 // export class AppRoutingModule { }
-
-//new3
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -50,7 +50,7 @@ import { ScheduleComponent } from './notification/schedule/schedule.component';
 import { RecordUploadComponent } from './notification/record-upload/record-upload.component';
 import { ViewBulkNotificationComponent } from './notification/view-bulk-notification/view-bulk-notification.component';
 import { BulkEditComponent } from './notification/bulk-edit/bulk-edit.component';
-import { BulkEditReviewComponent } from './notification/bulk-edit-review/bulk-edit-review.component';
+import { NotificationReviewComponent } from './notification/notification-review/notification-review.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/create-bulk-notification', pathMatch: 'full' },
@@ -65,7 +65,7 @@ const routes: Routes = [
   { path: 'record-upload', component: RecordUploadComponent },
   { path: 'view-bulk-notification', component: ViewBulkNotificationComponent },
   { path: 'bulk-edit', component: BulkEditComponent },
-  { path: 'bulk-edit-review', component: BulkEditReviewComponent }
+  { path: 'notification-review', component: NotificationReviewComponent }
 ];
 
 @NgModule({
@@ -73,3 +73,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
