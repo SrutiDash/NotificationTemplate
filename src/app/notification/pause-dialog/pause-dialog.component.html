@@ -1,0 +1,11 @@
+<div class="dialog-overlay" *ngIf="isVisible">
+    <div class="dialog">
+      <h1>Pause Notification</h1>
+      <p>Are you sure you want to pause this notification?</p>
+      <div class="dialog-actions">
+        <button (click)="confirm()">Yes</button>
+        <button (click)="cancel()">No</button>
+      </div>
+    </div>
+  </div>
+  

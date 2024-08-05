@@ -4,12 +4,17 @@
     <div class="tab" [class.active]="activeTab === 'customer'" (click)="setActiveTab('customer')">Customer</div>
     <div class="tab" [class.active]="activeTab === 'business'" (click)="setActiveTab('business')">Business</div>
   </div>
-  <div class="controls">
+  <div class="controls" style="position: relative;">
     <button class="filter-button" (click)="openFilter()">
       <img src="https://i.ibb.co/92NP41G/Icon-awesome-filter.png" alt="Icon-awesome-filter">
     </button>
     <input type="text" placeholder="Search by notification name" [(ngModel)]="searchTerm" class="search-box">
     <button class="create-button" (click)="createNotification()">Create New</button>
+    <app-bulk-filter
+      [isVisible]="isFilterVisible"
+      (closeDialog)="closeFilter()"
+      (applyFilters)="applyFilter($event)">
+    </app-bulk-filter>
   </div>
   <table>
     <thead>
@@ -52,12 +57,9 @@
       </tr>
     </tbody>
   </table>
-  <app-bulk-filter
-    [isVisible]="isFilterVisible"
-    (closeDialog)="closeFilter()"
-    (applyFilters)="applyFilter($event)">
-  </app-bulk-filter>
 </div> -->
+
+<!-- new -->
 
 <div class="bulk-notifications">
   <h1>Bulk Notification Management</h1>
@@ -118,4 +120,5 @@
       </tr>
     </tbody>
   </table>
+  <app-pause-dialog></app-pause-dialog>
 </div>

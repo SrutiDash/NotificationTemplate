@@ -1,3 +1,5 @@
+//new
+
 // import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
 
@@ -14,33 +16,21 @@
 //       endDate: '02/07/2022 06:00',
 //       createdBy: 'Admin1',
 //       createdOn: '12/07/2020 11:00hrs',
-//       approvalStatus: 'Approved'
+//       approvalStatus: 'Approved',
+//       language: 'English',
+//       messageHeader: 'Header',
+//       messageBody: 'Body',
+//       submitTime: '06:00',
+//       repeat: 'Daily',
+//       days: 'Monday to Friday',
+//       sendTo: 'All users',
+//       totalRecords: 1000
 //     }
 //   ];
 
 //   activeTab = 'customer';
 //   searchTerm = '';
 //   isFilterVisible = false;
-//   filters = {
-//     approvalStatus: {
-//       approved: false,
-//       initiated: false,
-//       rejected: false
-//     },
-//     status: {
-//       active: false,
-//       scheduled: false,
-//       paused: false,
-//       resumed: false,
-//       deleted: false,
-//       completed: false
-//     },
-//     dateRange: {
-//       startDate: '',
-//       endDate: ''
-//     },
-//     creationDate: ''
-//   };
 
 //   constructor(private router: Router) {}
 
@@ -59,7 +49,6 @@
 //   }
 
 //   applyFilter(filters: any): void {
-//     // Apply the filter logic here, for now we just log the filters
 //     console.log('Filters applied:', filters);
 //     this.closeFilter();
 //   }
@@ -69,7 +58,7 @@
 //   }
 
 //   viewNotification(notification: any): void {
-//     // Implement view notification logic here
+//     this.router.navigate(['/view-bulk-notification'], { state: { notification } });
 //   }
 
 //   pauseNotification(notification: any): void {
@@ -89,11 +78,99 @@
 //   }
 // }
 
+// import { Component, OnInit } from '@angular/core';
+// import { Router } from '@angular/router';
+// import { MatDialog } from '@angular/material/dialog';
+// import { PauseDialogComponent } from '../pause-dialog/pause-dialog.component';
+
+// @Component({
+//   selector: 'app-bulk-notifications',
+//   templateUrl: './bulk-notifications.component.html',
+//   styleUrls: ['./bulk-notifications.component.css']
+// })
+// export class BulkNotificationsComponent implements OnInit {
+//   notifications = [
+//     {
+//       name: 'Multicurrency wallets',
+//       startDate: '02/06/2022 06:00',
+//       endDate: '02/07/2022 06:00',
+//       createdBy: 'Admin1',
+//       createdOn: '12/07/2020 11:00hrs',
+//       approvalStatus: 'Approved',
+//       language: 'English',
+//       messageHeader: 'Header',
+//       messageBody: 'Body',
+//       submitTime: '06:00',
+//       repeat: 'Daily',
+//       days: 'Monday to Friday',
+//       sendTo: 'All users',
+//       totalRecords: 1000
+//     }
+//   ];
+
+//   activeTab = 'customer';
+//   searchTerm = '';
+//   isFilterVisible = false;
+
+//   constructor(private router: Router, public dialog: MatDialog) {}
+
+//   ngOnInit(): void {}
+
+//   setActiveTab(tab: string): void {
+//     this.activeTab = tab;
+//   }
+
+//   openFilter(): void {
+//     this.isFilterVisible = true;
+//   }
+
+//   closeFilter(): void {
+//     this.isFilterVisible = false;
+//   }
+
+//   applyFilter(filters: any): void {
+//     console.log('Filters applied:', filters);
+//     this.closeFilter();
+//   }
+
+//   createNotification(): void {
+//     this.router.navigate(['/create-bulk-notification']);
+//   }
+
+//   viewNotification(notification: any): void {
+//     this.router.navigate(['/view-bulk-notification'], { state: { notification } });
+//   }
+
+//   pauseNotification(notification: any): void {
+//     const dialogRef = this.dialog.open(PauseDialogComponent);
+
+//     dialogRef.afterClosed().subscribe((result: any) => {
+//       if (result) {
+//         // Implement pause notification logic here
+//         console.log('Notification paused');
+//       }
+//     });
+//   }
+
+//   editNotification(notification: any): void {
+//     // Implement edit notification logic here
+//   }
+
+//   dropNotification(notification: any): void {
+//     // Implement drop notification logic here
+//   }
+
+//   sort(property: string): void {
+//     // Implement sorting logic here
+//   }
+// }
+
 
 //new
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { PauseDialogComponent } from '../pause-dialog/pause-dialog.component';
 
 @Component({
   selector: 'app-bulk-notifications',
@@ -101,6 +178,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./bulk-notifications.component.css']
 })
 export class BulkNotificationsComponent implements OnInit {
+  @ViewChild(PauseDialogComponent) pauseDialog!: PauseDialogComponent;
+
   notifications = [
     {
       name: 'Multicurrency wallets',
@@ -154,7 +233,12 @@ export class BulkNotificationsComponent implements OnInit {
   }
 
   pauseNotification(notification: any): void {
-    // Implement pause notification logic here
+    this.pauseDialog.show();
+    this.pauseDialog.confirmed.subscribe((result: boolean) => {
+      if (result) {
+        console.log('Notification paused');
+      }
+    });
   }
 
   editNotification(notification: any): void {
