@@ -36,7 +36,7 @@
   </div>
    -->
 
-   <div class="bulk-edit">
+   <!-- <div class="bulk-edit">
     <h1>Edit Bulk Notification</h1>
     <form>
       <div class="form-group">
@@ -101,4 +101,56 @@
       </div>
     </form>
   </div>
-   
+    -->
+
+    <div class="bulk-edit">
+        <h1>Edit Bulk Notification</h1>
+        <form>
+          <div class="form-group">
+            <label for="notificationName">Notification Name</label>
+            <input type="text" id="notificationName" name="notificationName" [(ngModel)]="notification.name" />
+          </div>
+      
+          <h2>Set Channels</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Channel</th>
+                <th>Language</th>
+                <th>Message Header</th>
+                <th>Message Body</th>
+                <th>Notification Con</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>In-App Notification</td>
+                <td><input type="text" value="English" readonly /></td>
+                <td><input type="text" [(ngModel)]="notification.inAppMessageHeader" /></td>
+                <td><textarea [(ngModel)]="notification.inAppMessageBody"></textarea></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>SMS</td>
+                <td><input type="text" value="English" readonly /></td>
+                <td><input type="text" [(ngModel)]="notification.smsMessageHeader" /></td>
+                <td><textarea [(ngModel)]="notification.smsMessageBody"></textarea></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td><input type="text" value="English" readonly /></td>
+                <td><input type="text" [(ngModel)]="notification.emailMessageHeader" /></td>
+                <td><textarea [(ngModel)]="notification.emailMessageBody"></textarea></td>
+                <td><button type="button">Upload</button></td>
+              </tr>
+            </tbody>
+          </table>
+      
+          <div class="form-actions">
+            <button type="button" (click)="cancel()">Close</button>
+            <button type="button" (click)="next()">Next</button>
+          </div>
+        </form>
+      </div>
+      

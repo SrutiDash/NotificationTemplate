@@ -1,0 +1,80 @@
+<div class="bulk-edit-review">
+    <h1>Review and Confirm Notification</h1>
+  
+    <h2>Create Notification</h2>
+    <div class="form-group">
+      <label for="notificationName">Notification Name</label>
+      <input type="text" id="notificationName" name="notificationName" [(ngModel)]="notification.name" readonly />
+    </div>
+  
+    <h2>Set Channels</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Channel</th>
+          <th>Language</th>
+          <th>Message Header</th>
+          <th>Message Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>In-App Notification</td>
+          <td><input type="text" value="English" readonly /></td>
+          <td><input type="text" [(ngModel)]="notification.inAppMessageHeader" readonly /></td>
+          <td><textarea [(ngModel)]="notification.inAppMessageBody" readonly></textarea></td>
+        </tr>
+        <tr>
+          <td>SMS</td>
+          <td><input type="text" value="English" readonly /></td>
+          <td><input type="text" [(ngModel)]="notification.smsMessageHeader" readonly /></td>
+          <td><textarea [(ngModel)]="notification.smsMessageBody" readonly></textarea></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="text" value="English" readonly /></td>
+          <td><input type="text" [(ngModel)]="notification.emailMessageHeader" readonly /></td>
+          <td><textarea [(ngModel)]="notification.emailMessageBody" readonly></textarea></td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <h2>Schedule</h2>
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input type="text" id="startDate" name="startDate" [(ngModel)]="notification.startDate" readonly />
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <input type="text" id="endDate" name="endDate" [(ngModel)]="notification.endDate" readonly />
+    </div>
+    <div class="form-group">
+      <label for="submitTime">Submit Time</label>
+      <input type="text" id="submitTime" name="submitTime" [(ngModel)]="notification.submitTime" readonly />
+    </div>
+    <div class="form-group">
+      <label for="repeat">Repeat</label>
+      <input type="text" id="repeat" name="repeat" [(ngModel)]="notification.repeat" readonly />
+    </div>
+    <div class="form-group">
+      <label for="days">Days</label>
+      <input type="text" id="days" name="days" [(ngModel)]="notification.days" readonly />
+    </div>
+  
+    <h2>Send To</h2>
+    <div class="form-group">
+      <label for="sendTo">Send To</label>
+      <input type="text" id="sendTo" name="sendTo" [(ngModel)]="notification.sendTo" readonly />
+    </div>
+    <div class="form-group">
+      <label for="totalRecords">Total Number of Records</label>
+      <input type="text" id="totalRecords" name="totalRecords" [(ngModel)]="notification.totalRecords" readonly />
+    </div>
+  
+    <div class="form-actions">
+      <button type="button" (click)="cancel()">Cancel</button>
+      <button type="button" (click)="back()">Back</button>
+      <button type="button" (click)="submit()">Submit</button>
+    </div>
+  </div>
+  

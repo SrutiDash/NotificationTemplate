@@ -1,4 +1,4 @@
-/* .bulk-edit {
+   /* .bulk-edit {
     padding: 20px;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
@@ -23,12 +23,26 @@
   }
   
   .form-group input,
-  .form-group select,
   .form-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+  }
+  
+  .channels {
+    margin-top: 20px;
+  }
+  
+  .channel {
+    margin-bottom: 20px;
+  }
+  
+  h2, h3 {
+    color: #ff4081;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ff4081;
+    padding-bottom: 5px;
   }
   
   .form-actions {
@@ -88,19 +102,25 @@
     border-radius: 4px;
   }
   
-  .channels {
+  table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
   }
   
-  .channel {
-    margin-bottom: 20px;
+  th,
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
   }
   
-  h2, h3 {
-    color: #ff4081;
-    margin-bottom: 10px;
-    border-bottom: 2px solid #ff4081;
-    padding-bottom: 5px;
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  textarea {
+    resize: vertical;
   }
   
   .form-actions {
