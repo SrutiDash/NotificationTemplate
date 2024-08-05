@@ -77,6 +77,7 @@ import { BulkReviewConfirmComponent } from './notification/bulk-review-confirm/b
 import { BulkFilterComponent } from './notification/bulk-filter/bulk-filter.component';
 import { ViewBulkNotificationComponent } from './notification/view-bulk-notification/view-bulk-notification.component';
 import { PauseDialogComponent } from './notification/pause-dialog/pause-dialog.component';
+import { BulkEditComponent } from './notification/bulk-edit/bulk-edit.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { PauseDialogComponent } from './notification/pause-dialog/pause-dialog.c
     BulkReviewConfirmComponent,
     BulkFilterComponent,
     ViewBulkNotificationComponent,
-    PauseDialogComponent
+    PauseDialogComponent,
+    BulkEditComponent
   ],
   imports: [
     BrowserModule,
