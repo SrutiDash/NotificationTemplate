@@ -66,6 +66,23 @@ import { Observable } from 'rxjs';
 export class DataService {
   private baseUrl = 'http://localhost:5000/api';
 
+  private notification = {
+    serviceType: '',
+    eventTrigger: '',
+    party: '',
+    parameters: [
+      { channel: '', language: 'English', header: '', body: '', documents: '', filteredChannels: [] }
+    ]
+  };
+
+  setNotification(notification: any) {
+    this.notification = notification;
+  }
+
+  getNotification() {
+    return this.notification;
+  }
+
   selectedServiceType: string = '';
   selectedEventTrigger: string = '';
   selectedParty: string = '';

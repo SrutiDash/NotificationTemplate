@@ -1,5 +1,3 @@
-// //new3
-
 // import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
 // import { DataService } from '../../services/data.service';
@@ -15,19 +13,9 @@
 //     eventTrigger: '',
 //     party: '',
 //     parameters: [
-//       { channel: '', language: 'English', header: '', body: '', documents: '' }
+//       { channel: '', language: 'English', header: '', body: '', documents: '', filteredChannels: [] }
 //     ]
 //   };
-
-//   selectedServiceType: string = '';
-//   selectedEventTrigger: string = '';
-//   selectedParty: string = '';
-//   selectedParameter: string = '';
-//   isServiceTypeSelected: boolean = false;
-//   documents: string[] = ['Document 1', 'Document 2', 'Document 3'];
-//   searchParameters = [
-//     { channel: '', language: 'English', header: '', body: '', attachable: '', documents: '', filteredChannels: [] }
-//   ];
 
 //   serviceTypes: string[] = [];
 //   filteredServiceTypes: string[] = [];
@@ -38,6 +26,7 @@
 //   parameters: string[] = [];
 //   filteredParameters: string[] = [];
 //   channels: string[] = ['In-App Notification', 'SMS', 'Email', 'URL'];
+//   documents: string[] = ['Document 1', 'Document 2', 'Document 3'];
 
 //   showServiceTypeOptions: boolean = false;
 //   showEventTriggerOptions: boolean = false;
@@ -86,13 +75,11 @@
 //   selectOption(type: string, option: string, param?: any) {
 //     if (type === 'serviceType') {
 //       this.notification.serviceType = option;
-//       this.isServiceTypeSelected = true;
 //       this.showServiceTypeOptions = false;
 //       this.filteredServiceTypes = [];
 //       (document.getElementById('serviceTypeSearch') as HTMLInputElement).value = option;
 //     } else if (type === 'eventTrigger') {
 //       this.notification.eventTrigger = option;
-//       this.selectedEventTrigger = option;
 //       this.showEventTriggerOptions = false;
 //       this.filteredEventTriggers = [];
 //       (document.getElementById('eventTriggerSearch') as HTMLInputElement).value = option;
@@ -111,6 +98,7 @@
 //     } else if (type === 'channel' && param) {
 //       param.channel = option;
 //       param.filteredChannels = [];
+//       this.checkFormValidity();
 //     }
 //   }
 
@@ -133,7 +121,7 @@
 //   }
 
 //   checkFormValidity() {
-//     return this.notification.serviceType !== '' && this.notification.eventTrigger !== '' && this.notification.party !== '' && this.notification.parameters[0].body !== '';
+//     return this.notification.serviceType !== '' && this.notification.eventTrigger !== '' && this.notification.party !== '' && this.notification.parameters[0].body !== '' && this.notification.parameters[0].channel !== '';
 //   }
 
 //   isFormValid(): boolean {
@@ -149,7 +137,6 @@
 //   }
 // }
 
-//new4
 
 // import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
@@ -166,7 +153,7 @@
 //     eventTrigger: '',
 //     party: '',
 //     parameters: [
-//       { channel: '', language: 'English', header: '', body: '', documents: '' }
+//       { channel: '', language: 'English', header: '', body: '', documents: '', filteredChannels: [] }
 //     ]
 //   };
 
@@ -425,6 +412,7 @@ export class CreateNotificationComponent implements OnInit {
   }
 
   next() {
+    this.dataService.setNotification(this.notification);
     this.router.navigate(['/notification-review'], { state: { notification: this.notification } });
   }
 }
