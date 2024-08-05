@@ -22,10 +22,24 @@
 //   searchTerm = '';
 //   isFilterVisible = false;
 //   filters = {
-//     notificationName: '',
-//     startDate: '',
-//     endDate: '',
-//     status: ''
+//     approvalStatus: {
+//       approved: false,
+//       initiated: false,
+//       rejected: false
+//     },
+//     status: {
+//       active: false,
+//       scheduled: false,
+//       paused: false,
+//       resumed: false,
+//       deleted: false,
+//       completed: false
+//     },
+//     dateRange: {
+//       startDate: '',
+//       endDate: ''
+//     },
+//     creationDate: ''
 //   };
 
 //   constructor(private router: Router) {}
@@ -75,6 +89,9 @@
 //   }
 // }
 
+
+//new
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -91,33 +108,21 @@ export class BulkNotificationsComponent implements OnInit {
       endDate: '02/07/2022 06:00',
       createdBy: 'Admin1',
       createdOn: '12/07/2020 11:00hrs',
-      approvalStatus: 'Approved'
+      approvalStatus: 'Approved',
+      language: 'English',
+      messageHeader: 'Header',
+      messageBody: 'Body',
+      submitTime: '06:00',
+      repeat: 'Daily',
+      days: 'Monday to Friday',
+      sendTo: 'All users',
+      totalRecords: 1000
     }
   ];
 
   activeTab = 'customer';
   searchTerm = '';
   isFilterVisible = false;
-  filters = {
-    approvalStatus: {
-      approved: false,
-      initiated: false,
-      rejected: false
-    },
-    status: {
-      active: false,
-      scheduled: false,
-      paused: false,
-      resumed: false,
-      deleted: false,
-      completed: false
-    },
-    dateRange: {
-      startDate: '',
-      endDate: ''
-    },
-    creationDate: ''
-  };
 
   constructor(private router: Router) {}
 
@@ -136,7 +141,6 @@ export class BulkNotificationsComponent implements OnInit {
   }
 
   applyFilter(filters: any): void {
-    // Apply the filter logic here, for now we just log the filters
     console.log('Filters applied:', filters);
     this.closeFilter();
   }
@@ -146,7 +150,7 @@ export class BulkNotificationsComponent implements OnInit {
   }
 
   viewNotification(notification: any): void {
-    // Implement view notification logic here
+    this.router.navigate(['/view-bulk-notification'], { state: { notification } });
   }
 
   pauseNotification(notification: any): void {

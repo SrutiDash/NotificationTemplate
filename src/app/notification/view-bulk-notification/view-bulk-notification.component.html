@@ -1,0 +1,203 @@
+<!-- <div class="view-bulk-notification">
+    <h1>View Bulk Notification</h1>
+    <div class="notification-details">
+      <div class="detail-item">
+        <label>Notification Name:</label>
+        <span>{{ notification.name }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Created By:</label>
+        <span>{{ notification.createdBy }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Created On:</label>
+        <span>{{ notification.createdOn }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Approved Status:</label>
+        <span>{{ notification.approvalStatus }}</span>
+      </div>
+    </div>
+    <div class="channels">
+      <h2>Channels</h2>
+      <div class="channel-item">
+        <h3>In-App Notification</h3>
+      
+      </div>
+      <div class="channel-item">
+        <h3>SMS</h3>
+       
+      </div>
+    </div>
+    <div class="schedule">
+      <h2>Schedule</h2>
+      <div class="detail-item">
+        <label>Language:</label>
+        <span>{{ notification.language }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Message Header:</label>
+        <span>{{ notification.messageHeader }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Message Body:</label>
+        <span>{{ notification.messageBody }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Start Date:</label>
+        <span>{{ notification.startDate }}</span>
+      </div>
+      <div class="detail-item">
+        <label>End Date:</label>
+        <span>{{ notification.endDate }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Submit Time:</label>
+        <span>{{ notification.submitTime }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Repeat:</label>
+        <span>{{ notification.repeat }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Days:</label>
+        <span>{{ notification.days }}</span>
+      </div>
+    </div>
+    <div class="sent-to">
+      <h2>Sent To</h2>
+      <div class="detail-item">
+        <label>Send To:</label>
+        <span>{{ notification.sendTo }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Total Number of Records:</label>
+        <span>{{ notification.totalRecords }}</span>
+      </div>
+    </div>
+    <div class="record-status">
+      <h2>Record Status</h2>
+      <div class="history">
+        <h3>History</h3>
+        <div class="channel-item">
+          <h4>In-App Notification</h4>
+         
+        </div>
+        <div class="channel-item">
+          <h4>SMS</h4>
+          
+        </div>
+        <div class="channel-item">
+          <h4>Email</h4>
+         
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="trace-button">Trace</button>
+      <button class="close-button" (click)="close()">Close</button>
+    </div>
+  </div>
+   -->
+
+   <div class="view-bulk-notification">
+    <h1>View Bulk Notification</h1>
+    <div class="notification-details">
+      <div class="detail-item">
+        <label>Notification Name:</label>
+        <span>{{ notification.name }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Created By:</label>
+        <span>{{ notification.createdBy }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Created On:</label>
+        <span>{{ notification.createdOn }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Approved Status:</label>
+        <span>{{ notification.approvalStatus }}</span>
+      </div>
+    </div>
+    <div class="channels">
+      <h2>Channels</h2>
+      <div class="channel-item">
+        <h3>In-App Notification</h3>
+        <!-- Add In-App Notification Details -->
+      </div>
+      <div class="channel-item">
+        <h3>SMS</h3>
+        <!-- Add SMS Details -->
+      </div>
+    </div>
+    <div class="schedule">
+      <h2>Schedule</h2>
+      <div class="detail-item">
+        <label>Language:</label>
+        <span>{{ notification.language }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Message Header:</label>
+        <span>{{ notification.messageHeader }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Message Body:</label>
+        <span>{{ notification.messageBody }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Start Date:</label>
+        <span>{{ notification.startDate }}</span>
+      </div>
+      <div class="detail-item">
+        <label>End Date:</label>
+        <span>{{ notification.endDate }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Submit Time:</label>
+        <span>{{ notification.submitTime }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Repeat:</label>
+        <span>{{ notification.repeat }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Days:</label>
+        <span>{{ notification.days }}</span>
+      </div>
+    </div>
+    <div class="sent-to">
+      <h2>Sent To</h2>
+      <div class="detail-item">
+        <label>Send To:</label>
+        <span>{{ notification.sendTo }}</span>
+      </div>
+      <div class="detail-item">
+        <label>Total Number of Records:</label>
+        <span>{{ notification.totalRecords }}</span>
+      </div>
+    </div>
+    <div class="record-status">
+      <h2>Record Status</h2>
+      <div class="history">
+        <h3>History</h3>
+        <div class="channel-item">
+          <h4>In-App Notification</h4>
+          <!-- Add In-App Notification History Details -->
+        </div>
+        <div class="channel-item">
+          <h4>SMS</h4>
+          <!-- Add SMS History Details -->
+        </div>
+        <div class="channel-item">
+          <h4>Email</h4>
+          <!-- Add Email History Details -->
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="trace-button">Trace</button>
+      <button class="close-button" (click)="close()">Close</button>
+    </div>
+  </div>
+  

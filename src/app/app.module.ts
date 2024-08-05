@@ -19,6 +19,7 @@ import { NextDialogComponent } from './notification/next-dialog/next-dialog.comp
 import { RecordUploadComponent } from './notification/record-upload/record-upload.component';
 import { BulkReviewConfirmComponent } from './notification/bulk-review-confirm/bulk-review-confirm.component';
 import { BulkFilterComponent } from './notification/bulk-filter/bulk-filter.component';
+import { ViewBulkNotificationComponent } from './notification/view-bulk-notification/view-bulk-notification.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { BulkFilterComponent } from './notification/bulk-filter/bulk-filter.comp
     RecordUploadComponent,
     BulkReviewConfirmComponent,
     BulkFilterComponent,
+    ViewBulkNotificationComponent,
   ],
   imports: [
     BrowserModule,

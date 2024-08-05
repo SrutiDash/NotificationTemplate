@@ -1,4 +1,4 @@
-   <div class="create-notification">
+   <!-- <div class="create-notification">
     <h2>Notification Management > Create New</h2>
     <div class="notification-details">
         <h3>Notification Details</h3>
@@ -113,4 +113,155 @@
             <button type="button" class="next-btn" [disabled]="!isFormValid()" [class.enabled]="isFormValid()" (click)="next()">NEXT</button>
         </div>
     </div>
-</div>
+</div> -->
+
+   <!-- new3 -->
+
+<!-- <div class="create-notification">
+  <h2>Notification Management > Create New</h2>
+  <div class="notification-details">
+    <h3>Notification Details</h3>
+    <form>
+      <div class="form-group">
+        <label for="serviceTypeSearch">Service Type</label>
+        <input type="text" id="serviceTypeSearch" (focus)="showOptions('serviceType')" (keyup)="filterOptions('serviceType', $event)" placeholder="Search service type">
+        <ul id="serviceTypeOptions" *ngIf="showServiceTypeOptions && filteredServiceTypes.length > 0">
+          <li *ngFor="let option of filteredServiceTypes" (click)="selectOption('serviceType', option)">{{ option }}</li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label for="eventTriggerSearch">Event Trigger</label>
+        <input type="text" id="eventTriggerSearch" (focus)="showOptions('eventTrigger')" (keyup)="filterOptions('eventTrigger', $event)" placeholder="Search event trigger">
+        <ul id="eventTriggerOptions" *ngIf="showEventTriggerOptions && filteredEventTriggers.length > 0">
+          <li *ngFor="let option of filteredEventTriggers" (click)="selectOption('eventTrigger', option)">{{ option }}</li>
+        </ul>
+      </div>
+      <div class="form-group">
+        <label for="partySearch">Party</label>
+        <input type="text" id="partySearch" (focus)="showOptions('party')" (keyup)="filterOptions('party', $event)" placeholder="Search party">
+        <ul id="partyOptions" *ngIf="showPartyOptions && filteredParties.length > 0">
+          <li *ngFor="let option of filteredParties" (click)="selectOption('party', option)">{{ option }}</li>
+        </ul>
+      </div>
+    </form>
+
+    <div *ngIf="isServiceTypeSelected">
+      <h3>Search Parameters</h3>
+      <div class="form-group">
+        <label for="parameterSearch">Select Parameters</label>
+        <input type="text" id="parameterSearch" (focus)="showOptions('parameter')" (keyup)="filterOptions('parameter', $event)" placeholder="Search parameter">
+        <ul id="parameterOptions" *ngIf="showParameterOptions && filteredParameters.length > 0">
+          <li *ngFor="let option of filteredParameters" (click)="selectOption('parameter', option)">{{ option }}</li>
+        </ul>
+      </div>
+
+      <div class="parameter-table">
+        <div class="parameter-header">
+          <div class="parameter-column">CHANNEL</div>
+          <div class="parameter-column">LANGUAGE</div>
+          <div class="parameter-column">HEADER</div>
+          <div class="parameter-column">BODY</div>
+          <div class="parameter-column">ATTACHABLE DOCUMENTS</div>
+        </div>
+
+        <div class="parameter-row" *ngFor="let param of searchParameters">
+          <div class="parameter-column">
+            <input type="text" [(ngModel)]="param.channel" (focus)="showOptions('channel', param)" (keyup)="filterOptions('channel', $event, param)" placeholder="Search channel...">
+            <ul *ngIf="param.filteredChannels.length > 0">
+              <li *ngFor="let option of param.filteredChannels" (click)="selectOption('channel', option, param)">{{ option }}</li>
+            </ul>
+          </div>
+          <div class="parameter-column"><input type="text" [(ngModel)]="param.language"></div>
+          <div class="parameter-column"><input type="text" [(ngModel)]="param.header" [value]="selectedEventTrigger" readonly></div>
+          <div class="parameter-column"><input type="text" [(ngModel)]="param.body" readonly></div>
+          <div class="parameter-column">
+            <select [(ngModel)]="param.documents">
+              <option *ngFor="let doc of documents">{{ doc }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button type="button" class="cancel-btn" (click)="cancel()">CANCEL</button>
+      <button type="button" class="next-btn" [disabled]="!isFormValid()" [class.enabled]="isFormValid()" (click)="next()">NEXT</button>
+    </div>
+  </div>
+</div> -->
+
+<!-- new ---------------------------------------------------->
+
+<div class="create-notification">
+    <h2>Notification Management > Create New</h2>
+    <div class="notification-details">
+      <h3>Notification Details</h3>
+      <form>
+        <div class="form-group">
+          <label for="serviceTypeSearch">Service Type</label>
+          <input type="text" id="serviceTypeSearch" (focus)="showOptions('serviceType')" (keyup)="filterOptions('serviceType', $event)" placeholder="Search service type">
+          <ul id="serviceTypeOptions" *ngIf="showServiceTypeOptions && filteredServiceTypes.length > 0">
+            <li *ngFor="let option of filteredServiceTypes" (click)="selectOption('serviceType', option)">{{ option }}</li>
+          </ul>
+        </div>
+        <div class="form-group">
+          <label for="eventTriggerSearch">Event Trigger</label>
+          <input type="text" id="eventTriggerSearch" (focus)="showOptions('eventTrigger')" (keyup)="filterOptions('eventTrigger', $event)" placeholder="Search event trigger">
+          <ul id="eventTriggerOptions" *ngIf="showEventTriggerOptions && filteredEventTriggers.length > 0">
+            <li *ngFor="let option of filteredEventTriggers" (click)="selectOption('eventTrigger', option)">{{ option }}</li>
+          </ul>
+        </div>
+        <div class="form-group">
+          <label for="partySearch">Party</label>
+          <input type="text" id="partySearch" (focus)="showOptions('party')" (keyup)="filterOptions('party', $event)" placeholder="Search party">
+          <ul id="partyOptions" *ngIf="showPartyOptions && filteredParties.length > 0">
+            <li *ngFor="let option of filteredParties" (click)="selectOption('party', option)">{{ option }}</li>
+          </ul>
+        </div>
+      </form>
+  
+      <div *ngIf="isServiceTypeSelected">
+        <h3>Search Parameters</h3>
+        <div class="form-group">
+          <label for="parameterSearch">Select Parameters</label>
+          <input type="text" id="parameterSearch" (focus)="showOptions('parameter')" (keyup)="filterOptions('parameter', $event)" placeholder="Search parameter">
+          <ul id="parameterOptions" *ngIf="showParameterOptions && filteredParameters.length > 0">
+            <li *ngFor="let option of filteredParameters" (click)="selectOption('parameter', option)">{{ option }}</li>
+          </ul>
+        </div>
+  
+        <div class="parameter-table">
+          <div class="parameter-header">
+            <div class="parameter-column">CHANNEL</div>
+            <div class="parameter-column">LANGUAGE</div>
+            <div class="parameter-column">HEADER</div>
+            <div class="parameter-column">BODY</div>
+            <div class="parameter-column">ATTACHABLE DOCUMENTS</div>
+          </div>
+  
+          <div class="parameter-row" *ngFor="let param of searchParameters">
+            <div class="parameter-column">
+              <input type="text" [(ngModel)]="param.channel" (focus)="showOptions('channel', param)" (keyup)="filterOptions('channel', $event, param)" placeholder="Search channel...">
+              <ul *ngIf="param.filteredChannels.length > 0">
+                <li *ngFor="let option of param.filteredChannels" (click)="selectOption('channel', option, param)">{{ option }}</li>
+              </ul>
+            </div>
+            <div class="parameter-column"><input type="text" [(ngModel)]="param.language"></div>
+            <div class="parameter-column"><input type="text" [(ngModel)]="param.header" [value]="selectedEventTrigger" readonly></div>
+            <div class="parameter-column"><input type="text" [(ngModel)]="param.body" readonly></div>
+            <div class="parameter-column">
+              <select [(ngModel)]="param.documents">
+                <option *ngFor="let doc of documents">{{ doc }}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="buttons">
+        <button type="button" class="cancel-btn" (click)="cancel()">CANCEL</button>
+        <button type="button" class="next-btn" [disabled]="!isFormValid()" [class.enabled]="isFormValid()" (click)="next()">NEXT</button>
+      </div>
+    </div>
+  </div>
+  
