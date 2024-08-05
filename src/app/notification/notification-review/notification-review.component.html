@@ -1,48 +1,3 @@
-<!-- <div class="notification-review">
-    <h1>Review and Confirm Notification</h1>
-  
-    <h2>Notification Details</h2>
-    <div class="form-group">
-      <label>Service Type:</label>
-      <span>{{ notification.serviceType }}</span>
-    </div>
-    <div class="form-group">
-      <label>Event Trigger:</label>
-      <span>{{ notification.eventTrigger }}</span>
-    </div>
-    <div class="form-group">
-      <label>Party:</label>
-      <span>{{ notification.party }}</span>
-    </div>
-  
-    <h2>Set Channels</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Channel</th>
-          <th>Language</th>
-          <th>Message Header</th>
-          <th>Message Body</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let param of notification.parameters">
-          <td>{{param.channel}}</td>
-          <td>{{param.language}}</td>
-          <td>{{param.header}}</td>
-          <td>{{param.body}}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <div class="form-actions">
-      <button type="button" (click)="cancel()">Cancel</button>
-      <button type="button" (click)="back()">Back</button>
-      <button type="button" (click)="confirm()">Confirm</button>
-    </div>
-  </div>
-   -->
-
    <!-- <div class="notification-review">
     <h2>Notification Review</h2>
     <div class="review-details">
@@ -66,33 +21,10 @@
       <button type="button" (click)="back()">Back</button>
       <button type="button" (click)="confirm()">Confirm</button>
     </div>
-  </div> -->
-<!--   
-  <div class="notification-review">
-    <h2>Notification Review</h2>
-    <div class="review-details">
-      <h3>Selected Details</h3>
-      <div class="form-group">
-        <label>Service Type:</label>
-        <span>{{ notification.serviceType }}</span>
-      </div>
-      <div class="form-group">
-        <label>Event Trigger:</label>
-        <span>{{ notification.eventTrigger }}</span>
-      </div>
-      <div class="form-group">
-        <label>Party:</label>
-        <span>{{ notification.party }}</span>
-      </div>
-    </div>
-    
-    <div class="buttons">
-      <button type="button" (click)="cancel()">Cancel</button>
-      <button type="button" (click)="back()">Back</button>
-      <button type="button" (click)="confirm()">Confirm</button>
-    </div>
   </div>
    -->
+
+   <!-- new -->
 
    <div class="notification-review">
     <h2>Notification Review</h2>
@@ -110,12 +42,28 @@
         <label>Party:</label>
         <span>{{ notification.party }}</span>
       </div>
+  
+      <!-- Parameters Table -->
+      <div class="parameters-table">
+        <div class="parameter-row header-row">
+          <div class="parameter-column">CHANNEL</div>
+          <div class="parameter-column">LANGUAGE</div>
+          <div class="parameter-column">HEADER</div>
+          <div class="parameter-column">BODY</div>
+        </div>
+        <div class="parameter-row" *ngFor="let param of notification.parameters">
+          <div class="parameter-column">{{ param.channel }}</div>
+          <div class="parameter-column">{{ param.language }}</div>
+          <div class="parameter-column">{{ notification.eventTrigger }}</div>
+          <div class="parameter-column">{{ param.body }}</div>
+        </div>
+      </div>
     </div>
-    
+  
     <div class="buttons">
-      <button type="button" (click)="cancel()">Cancel</button>
-      <button type="button" (click)="back()">Back</button>
-      <button type="button" (click)="confirm()">Confirm</button>
+      <button type="button" class="cancel-btn" (click)="cancel()">Cancel</button>
+      <button type="button" class="back-btn" (click)="back()">Back</button>
+      <button type="button" class="confirm-btn" (click)="confirm()">Confirm</button>
     </div>
   </div>
-  
+    
