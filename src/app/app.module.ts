@@ -1,5 +1,3 @@
-//new
-
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -26,6 +24,7 @@ import { PauseDialogComponent } from './notification/pause-dialog/pause-dialog.c
 import { BulkEditComponent } from './notification/bulk-edit/bulk-edit.component';
 import { BulkEditReviewComponent } from './notification/bulk-edit-review/bulk-edit-review.component';
 import { NotificationReviewComponent } from './notification/notification-review/notification-review.component';
+import { ServiceTypeComponent } from './notification/service-type/service-type.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +47,8 @@ import { NotificationReviewComponent } from './notification/notification-review/
     PauseDialogComponent,
     BulkEditComponent,
     BulkEditReviewComponent,
-    NotificationReviewComponent
+    NotificationReviewComponent,
+    ServiceTypeComponent
   ],
   imports: [
     BrowserModule,
