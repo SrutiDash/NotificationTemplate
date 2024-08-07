@@ -1,56 +1,17 @@
-// import { Component } from '@angular/core';
-// import { Router } from '@angular/router';
-
-// @Component({
-//   selector: 'app-notification-management',
-//   templateUrl: './notification-management.component.html',
-//   styleUrls: ['./notification-management.component.css']
-// })
-// export class NotificationManagementComponent {
-//   isFilterPromptVisible = false;
-//   notifications = [
-//     // Sample data, replace with your actual data
-//     { id: 1, serviceType: 'Type1', eventTrigger: 'Trigger1', party: 'Party1', createdOn: '12 DEC 2020', createdBy: 'User1' },
-//     // Add more sample notifications as needed
-//   ];
-
-//   constructor(private router: Router) { }
-
-//   toggleFilterPrompt() {
-//     this.isFilterPromptVisible = !this.isFilterPromptVisible;
-//   }
-
-//   navigateTo(route: string) {
-//     this.router.navigate([route]);
-//   }
-
-//   viewNotification(notification: any) {
-//     this.router.navigate(['/notification-details', notification.id]);
-//   }
-
-//   editNotification(notification: any) {
-//     this.router.navigate(['/notification-edit', notification.id]);
-//   }
-
-//   deleteNotification(notification: any) {
-//     // Logic to delete notification
-//   }
-// }
-
-//new------------------------------
-
 // import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
-// import { DataService } from '../../services/data.service'; // Ensure the path is correct
+// import { DataService } from '../../services/data.service';  // Ensure the path is correct
+// import { Notification } from '../../models/notification.model';  // Adjust the path to your actual Notification model location
 
 // @Component({
 //   selector: 'app-notification-management',
 //   templateUrl: './notification-management.component.html',
 //   styleUrls: ['./notification-management.component.css']
 // })
+
 // export class NotificationManagementComponent implements OnInit {
-//   notifications = [];
-//   isFilterPromptVisible = false;
+//   notifications: Notification[] = [];
+//   isFilterPromptVisible: boolean = false;  // Ensure this is declared
 
 //   constructor(private dataService: DataService, private router: Router) { }
 
@@ -60,66 +21,7 @@
 
 //   loadNotifications() {
 //     this.dataService.getNotificationTemplates().subscribe({
-//       next: (data) => {
-//         this.notifications = data.map(item => ({
-//           serviceType: item.serviceType,
-//           eventTrigger: item.eventTrigger,
-//           party: item.party,
-//           createdOn: item.createdOn,
-//           createdBy: item.createdBy || 'N/A' // Assuming 'createdBy' might not be provided
-//         }));
-//       },
-//       error: (error) => console.error('Error loading notifications:', error)
-//     });
-//   }
-
-//   toggleFilterPrompt() {
-//     this.isFilterPromptVisible = !this.isFilterPromptVisible;
-//   }
-
-//   navigateTo(route: string) {
-//     this.router.navigate([route]);
-//   }
-
-//   viewNotification(notification: any) {
-//     this.router.navigate(['/notification-details', notification.id]);
-//   }
-
-//   editNotification(notification: any) {
-//     this.router.navigate(['/notification-edit', notification.id]);
-//   }
-
-//   deleteNotification(notification: any) {
-//     // Logic to delete notification
-//   }
-// }
-
-
-//new2----------------------------------------
-
-// src/app/notification/notification-management/notification-management.component.ts
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { DataService } from '../../services/data.service';  // Ensure the path is correct
-import { Notification } from '../../models/notification.model';  // Adjust the path to your actual Notification model location
-
-@Component({
-  selector: 'app-notification-management',
-  templateUrl: './notification-management.component.html',
-  styleUrls: ['./notification-management.component.css']
-})
-// export class NotificationManagementComponent implements OnInit {
-//   notifications: Notification[] = [];  // Typed as an array of Notification
-
-//   constructor(private dataService: DataService, private router: Router) { }
-
-//   ngOnInit() {
-//     this.loadNotifications();
-//   }
-
-//   loadNotifications() {
-//     this.dataService.getNotificationTemplates().subscribe({
-//       next: (data: Notification[]) => {  // Ensure that data is typed as Notification[]
+//       next: (data: Notification[]) => {
 //         this.notifications = data;
 //       },
 //       error: (error) => console.error('Error loading notifications:', error)
@@ -127,19 +29,19 @@ import { Notification } from '../../models/notification.model';  // Adjust the p
 //   }
 
 //   toggleFilterPrompt() {
-//     // Logic to toggle filter prompt
+//     this.isFilterPromptVisible = !this.isFilterPromptVisible;
 //   }
 
 //   navigateTo(route: string) {
 //     this.router.navigate([route]);
 //   }
 
-//   viewNotification(notification: Notification) {  // Now typed correctly
-//     this.router.navigate(['/notification-details', notification.id]);
+//   viewNotification(notification: Notification) {
+//     this.router.navigate(['/notification-details', notification.id]);  // Assumed 'id' should be part of Notification
 //   }
 
 //   editNotification(notification: Notification) {
-//     this.router.navigate(['/notification-edit', notification.id]);
+//     this.router.navigate(['/notification-edit', notification.id]);  // Assumed 'id' should be part of Notification
 //   }
 
 //   deleteNotification(notification: Notification) {
@@ -147,9 +49,193 @@ import { Notification } from '../../models/notification.model';  // Adjust the p
 //   }
 // }
 
+
+//new2--------------------------------------
+
+
+// import { Component, OnInit } from '@angular/core';
+// import { Router } from '@angular/router';
+// import { DataService } from '../../services/data.service';
+// import { Notification } from '../../models/notification.model';  // Ensure you have this model defined accordingly
+
+// @Component({
+//   selector: 'app-notification-management',
+//   templateUrl: './notification-management.component.html',
+//   styleUrls: ['./notification-management.component.css']
+// })
+// export class NotificationManagementComponent implements OnInit {
+//   notifications: Notification[] = [];
+//   isFilterPromptVisible: boolean = false;
+
+//   constructor(private dataService: DataService, private router: Router) { }
+
+//   ngOnInit() {
+//     this.loadNotifications();
+//   }
+
+//   loadNotifications() {
+//     this.dataService.getNotificationTemplates().subscribe({
+//       next: (data: Notification[]) => this.notifications = data,
+//       error: (error) => console.error('Error loading notifications:', error)
+//     });
+//   }
+
+//   viewNotification(notificationId: number) {
+//     this.router.navigate(['/notification-details', notificationId]);
+//   }
+
+//   toggleFilterPrompt() {
+//     this.isFilterPromptVisible = !this.isFilterPromptVisible;
+//   }
+
+//   navigateToCreateNotification() {
+//     this.router.navigate(['/create-notification']);
+//   }
+
+//   editNotification(notificationId: number) {
+//     this.router.navigate(['/notification-edit', notificationId]);
+//   }
+
+//   deleteNotification(notificationId: number) {
+//     this.dataService.deleteNotification(notificationId).subscribe({
+//       next: () => {
+//         this.notifications = this.notifications.filter(notification => notification.id !== notificationId);
+//         alert('Notification deleted successfully.');
+//       },
+//       error: (error) => console.error('Error deleting notification:', error)
+//     });
+//   }
+// }
+
+
+//new3
+
+
+// import { Component, OnInit } from '@angular/core';
+// import { Router } from '@angular/router';
+// import { DataService } from '../../services/data.service';
+// import { Notification } from '../../models/notification.model'; // Ensure this model is correctly defined
+
+// @Component({
+//   selector: 'app-notification-management',
+//   templateUrl: './notification-management.component.html',
+//   styleUrls: ['./notification-management.component.css']
+// })
+// export class NotificationManagementComponent implements OnInit {
+//   notifications: Notification[] = [];
+
+//   constructor(private dataService: DataService, private router: Router) { }
+
+//   ngOnInit() {
+//     this.loadNotifications();
+//   }
+
+//   loadNotifications() {
+//     this.dataService.getNotificationTemplates().subscribe({
+//       next: (data) => this.notifications = data,
+//       error: (error) => console.error('Error loading notifications:', error)
+//     });
+//   }
+
+//   navigateToCreateNotification() {
+//     this.router.navigate(['/create-notification']);
+//   }
+
+//   viewNotification(notification: Notification) {
+//     this.router.navigate(['/notification-details', notification.id]); // Assuming `id` is the correct identifier
+//   }
+
+//   editNotification(notification: Notification) {
+//     this.router.navigate(['/notification-edit', notification.id]); // Assuming `id` is the correct identifier
+//   }
+
+//   deleteNotification(notification: Notification) {
+//     this.dataService.deleteNotification(notification.id).subscribe({
+//       next: () => {
+//         this.notifications = this.notifications.filter(n => n.id !== notification.id);
+//         console.log('Notification deleted successfully.');
+//       },
+//       error: (error) => console.error('Error deleting notification:', error)
+//     });
+//   }
+// }
+
+
+//new4
+
+// File: src/app/notification-management/notification-management.component.ts
+
+// import { Component, OnInit } from '@angular/core';
+// import { Router } from '@angular/router';
+// import { DataService } from '../../services/data.service';  // Adjust the path as necessary
+// import { Notification } from '../../models/notification.model';  // Adjust the path as necessary
+
+// @Component({
+//   selector: 'app-notification-management',
+//   templateUrl: './notification-management.component.html',
+//   styleUrls: ['./notification-management.component.css']
+// })
+// export class NotificationManagementComponent implements OnInit {
+//   notifications: Notification[] = [];
+//   isFilterPromptVisible: boolean = false;
+
+//   constructor(private dataService: DataService, private router: Router) { }
+
+//   ngOnInit() {
+//     this.loadNotifications();
+//   }
+
+//   loadNotifications() {
+//     this.dataService.getNotificationTemplates().subscribe({
+//       next: (data: Notification[]) => this.notifications = data,
+//       error: (error: any) => console.error('Error loading notifications:', error)
+//     });
+//   }
+
+//   navigateToCreateNotification() {
+//     this.router.navigate(['/create-notification']);
+//   }
+
+//   toggleFilterPrompt() {
+//     this.isFilterPromptVisible = !this.isFilterPromptVisible;
+//   }
+
+//   viewNotification(notification: Notification) {
+//     this.router.navigate(['/notification-details', notification.id]);
+//   }
+
+//   editNotification(notification: Notification) {
+//     this.router.navigate(['/notification-edit', notification.id]);
+//   }
+
+//   deleteNotification(notificationId: number) {
+//     this.dataService.deleteNotification(notificationId).subscribe({
+//       next: () => {
+//         this.notifications = this.notifications.filter(notification => notification.id !== notificationId);
+//         console.log('Notification deleted successfully.');
+//       },
+//       error: (error: any) => console.error('Error deleting notification:', error)
+//     });
+//   }
+// }
+
+//new
+
+// File: src/app/notification-management/notification-management.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../../services/data.service';
+import { Notification } from '../../models/notification.model';
+
+@Component({
+  selector: 'app-notification-management',
+  templateUrl: './notification-management.component.html',
+  styleUrls: ['./notification-management.component.css']
+})
 export class NotificationManagementComponent implements OnInit {
   notifications: Notification[] = [];
-  isFilterPromptVisible: boolean = false;  // Ensure this is declared
+  isFilterPromptVisible: boolean = false;
 
   constructor(private dataService: DataService, private router: Router) { }
 
@@ -159,30 +245,34 @@ export class NotificationManagementComponent implements OnInit {
 
   loadNotifications() {
     this.dataService.getNotificationTemplates().subscribe({
-      next: (data: Notification[]) => {
-        this.notifications = data;
-      },
+      next: (data: Notification[]) => this.notifications = data,
       error: (error) => console.error('Error loading notifications:', error)
     });
+  }
+
+  navigateToCreateNotification() {
+    this.router.navigate(['/create-notification']);
   }
 
   toggleFilterPrompt() {
     this.isFilterPromptVisible = !this.isFilterPromptVisible;
   }
 
-  navigateTo(route: string) {
-    this.router.navigate([route]);
-  }
-
   viewNotification(notification: Notification) {
-    this.router.navigate(['/notification-details', notification.id]);  // Assumed 'id' should be part of Notification
+    this.router.navigate(['/notification-details', notification.id]);
   }
 
   editNotification(notification: Notification) {
-    this.router.navigate(['/notification-edit', notification.id]);  // Assumed 'id' should be part of Notification
+    this.router.navigate(['/notification-edit', notification.id]);
   }
 
   deleteNotification(notification: Notification) {
-    // Logic to delete notification
+    this.dataService.deleteNotification(notification.id).subscribe({
+      next: () => {
+        this.notifications = this.notifications.filter(n => n.id !== notification.id);
+        console.log('Notification deleted successfully.');
+      },
+      error: (error) => console.error('Error deleting notification:', error)
+    });
   }
 }

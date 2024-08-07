@@ -1,8 +1,8 @@
-//new
-
+// // src/app/services/data.service.ts
 // import { Injectable } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
 // import { Observable } from 'rxjs';
+// import { Notification } from '../models/notification.model';  // Ensure correct path
 
 // @Injectable({
 //   providedIn: 'root'
@@ -33,8 +33,8 @@
 //   senderParent: string = '';
 //   grade: string = '';
 //   channels: string[] = [];
-//   inAppNotifications: any[] = []; // Corrected
-//   smsNotifications: any[] = []; // Corrected
+//   inAppNotifications: any[] = [];
+//   smsNotifications: any[] = [];
 //   emailNotifications: any[] = [];
 
 //   constructor(private http: HttpClient) { }
@@ -55,6 +55,11 @@
 //     return this.http.get(`${this.baseUrl}/parameters`);
 //   }
 
+//   // Add a method to fetch notification templates
+//   getNotificationTemplates(): Observable<any[]> {
+//     return this.http.get<any[]>(`${this.baseUrl}/notification-templates`);
+//   }
+
 //   saveNotification(): Observable<any> {
 //     // Implement save logic here, e.g., sending data to the backend
 //     return this.http.post(`${this.baseUrl}/save-notification`, {
@@ -64,26 +69,16 @@
 //       senderParent: this.senderParent,
 //       grade: this.grade,
 //       channels: this.channels,
-//       inAppNotifications: this.inAppNotifications, // Corrected
-//       smsNotifications: this.smsNotifications, // Corrected
+//       inAppNotifications: this.inAppNotifications,
+//       smsNotifications: this.smsNotifications,
 //       emailNotifications: this.emailNotifications
 //     });
 //   }
 // }
 
-//new
 
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import { Observable } from 'rxjs';
+//new2----------------------------------------------
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class DataService {
-//   private baseUrl = 'http://localhost:5000/api';
-
-// src/app/services/data.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -140,9 +135,26 @@ export class DataService {
     return this.http.get(`${this.baseUrl}/parameters`);
   }
 
-  // Add a method to fetch notification templates
+  // getNotificationTemplates(): Observable<any[]> {
+  //   return this.http.get<any[]>(`${this.baseUrl}/notification-templates`);
+  // }
+
+  // getNotificationTemplate(id: number): Observable<any> {
+  //   return this.http.get(`${this.baseUrl}/notification-templates/${id}`);
+  // }
+
+  //new
+
   getNotificationTemplates(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseUrl}/notification-templates`);
+  }
+
+  getNotificationTemplate(id: number): Observable<any> {
+    return this.http.get(`${this.baseUrl}/notification-templates/${id}`);
+  }
+
+  deleteNotification(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/notification-templates/${id}`);
   }
 
   saveNotification(): Observable<any> {

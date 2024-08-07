@@ -160,6 +160,8 @@ th {
 } */
 
 
+
+
 .notification-management {
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -195,13 +197,28 @@ th {
   width: 300px;
 }
 
-.create-new {
-  background-color: #ff4081;
-  color: white;
+/* .create-new {
+  background-color: #433237;
+  color: rgb(228, 48, 48);
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 50px;
+  width: 185px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 20.46px;
+} */
+
+.create-new {
+  background-color: #e45353;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 50px;
+  font-family: Nunito Sans;
   width: 185px;
   height: 50px;
   font-size: 15px;
@@ -244,6 +261,9 @@ th {
 }
 
 .notification-management img {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 18px;
 }
+
+
+

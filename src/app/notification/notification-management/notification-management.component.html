@@ -1,7 +1,8 @@
-<div class="notification-management">
+<!-- <div class="notification-management">
   <div class="header">
     <h1>Notifications</h1>
-    <button class="create-new" (click)="navigateTo('create-notification')">CREATE NEW</button>
+    <button class="create-new" (click)="navigateTo('create-notification')" style="background-color: #ff4081; color: white;">CREATE NEW</button>
+
   </div>
   <div class="filter">
     <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter" (click)="toggleFilterPrompt()" class="filter-icon">
@@ -29,7 +30,58 @@
         <td>{{ notification.createdBy }}</td>
         <td>
           <button (click)="viewNotification(notification)">
-            <img src="https://i.ibb.co/7J1rgJG/Component-103-65.png" alt="Component-103-65">
+            <img src="https://i.ibb.co/7J1rgJG/Component-103-65.png" alt="view">
+          </button>
+          <button (click)="editNotification(notification)">
+            <img src="https://i.ibb.co/bdsfYMQ/pencil.png" alt="pencil">
+          </button>
+          <button (click)="deleteNotification(notification)">
+            <img src="https://i.ibb.co/x5g7gRs/bin.png" alt="bin">
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+
+
+<!-- new -->
+
+<!-- File: src/app/notification-management/notification-management.component.html -->
+
+<div class="notification-management">
+  <div class="header">
+    <h1>Notifications</h1>
+    <button class="create-new" (click)="navigateToCreateNotification()" style="background-color: #ff4081; color: white;">CREATE NEW</button>
+  </div>
+  <div class="filter">
+    <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter" (click)="toggleFilterPrompt()" class="filter-icon">
+    <div class="filter-dropdown" *ngIf="isFilterPromptVisible">
+      <app-filter-prompt (close)="toggleFilterPrompt()"></app-filter-prompt>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>SERVICE TYPE</th>
+        <th>EVENT TRIGGER</th>
+        <th>PARTY</th>
+        <th>CREATED ON <span>&uarr;&darr;</span></th>
+        <th>CREATED BY <span>&uarr;&darr;</span></th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let notification of notifications">
+        <td>{{ notification.serviceType }}</td>
+        <td>{{ notification.eventTrigger }}</td>
+        <td>{{ notification.party }}</td>
+        <td>{{ notification.createdOn }}</td>
+        <td>{{ notification.createdBy }}</td>
+        <td>
+          <button (click)="viewNotification(notification)">
+            <img src="https://i.ibb.co/7J1rgJG/Component-103-65.png" alt="view">
           </button>
           <button (click)="editNotification(notification)">
             <img src="https://i.ibb.co/bdsfYMQ/pencil.png" alt="pencil">
@@ -42,3 +94,4 @@
     </tbody>
   </table>
 </div>
+
