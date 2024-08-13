@@ -232,6 +232,8 @@
 //   }
 // }
 
+// final
+
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
@@ -312,3 +314,4 @@ export class FilterPromptComponent implements OnInit {
     this.parties = [];
   }
 }
+
