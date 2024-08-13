@@ -157,6 +157,19 @@ export class DataService {
     return this.http.delete(`${this.baseUrl}/notification-templates/${id}`);
   }
 
+  getFilteredServiceTypes(): Observable<any> {
+    return this.http.get(`${this.baseUrl}/filter-service-types`);
+  }
+  
+  getFilteredEventTriggers(serviceType: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/filter-event-triggers/${serviceType}`);
+  }
+  
+  getFilteredParties(serviceType: string, eventTrigger: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/filter-parties/${serviceType}/${eventTrigger}`);
+  }
+  
+
   saveNotification(): Observable<any> {
     // Implement save logic here, e.g., sending data to the backend
     return this.http.post(`${this.baseUrl}/save-notification`, {
