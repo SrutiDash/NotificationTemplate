@@ -80,7 +80,7 @@
     z-index: 10;
   }
    */
-
+/* 
 
    .filter-container {
     background-color: white;
@@ -150,8 +150,81 @@
   
   .filter-dropdown {
     position: absolute;
-    top: 40px; /* Adjust as needed */
+    top: 40px;
     left: 0;
     z-index: 10;
   }
-  
+   */
+
+   .filter-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 1000;
+}
+
+.filter-body label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter-body select,
+.filter-body input[type="text"],
+.filter-body input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.date-range {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-range input {
+  width: 48%;
+}
+
+.filter-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clear-btn,
+.apply-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-btn {
+  background-color: transparent;
+  color: #f44336;
+  font-weight: bold;
+}
+
+.apply-btn {
+  background-color: #f44336;
+  color: white;
+  font-weight: bold;
+}
+
+.filter-icon {
+  cursor: pointer;
+}
+
+.filter-dropdown {
+  position: absolute;
+  top: 40px; /* Adjust as needed */
+  left: 0;
+  z-index: 10;
+}
