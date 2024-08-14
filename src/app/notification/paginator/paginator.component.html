@@ -7,9 +7,94 @@
 
    <!-- new -->
 
-   <div class="paginator">
+   <!-- <div class="paginator">
     <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
     <button *ngFor="let page of pages" (click)="setPage(page)" [class.active]="page === currentPage">{{ page }}</button>
     <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  </div> -->
+
+  <!-- new2 -->
+<!-- 
+  <div class="pagination-container">
+    <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+  
+    <ng-container *ngFor="let page of pages">
+      <button 
+        *ngIf="shouldShowPage(page)" 
+        (click)="setPage(page)" 
+        [class.active]="page === currentPage">
+        {{ page }}
+      </button>
+    </ng-container>
+  
+    <span *ngIf="showEllipsis()">...</span>
+  
+    <button 
+      *ngIf="totalPages > 5 && currentPage < totalPages - 2" 
+      (click)="setPage(totalPages)" 
+      [class.active]="totalPages === currentPage">
+      {{ totalPages }}
+    </button>
+  
+    <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  
+    <select (change)="setPage($event.target.value)" [value]="currentPage">
+      <option *ngFor="let page of pages">{{ page }}</option>
+    </select>
   </div>
   
+   -->
+
+   <div class="pagination-container">
+    <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">&lt;</button>
+  
+    <ng-container *ngFor="let page of pages">
+      <button 
+        *ngIf="shouldShowPage(page)" 
+        (click)="setPage(page)" 
+        [class.active]="page === currentPage">
+        {{ page }}
+      </button>
+    </ng-container>
+  
+    <span *ngIf="showEllipsis()">...</span>
+  
+    <button 
+      *ngIf="totalPages > 5 && currentPage < totalPages - 2" 
+      (click)="setPage(totalPages)" 
+      [class.active]="totalPages === currentPage">
+      {{ totalPages }}
+    </button>
+  
+    <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">&gt;</button>
+    <span>Go to page:</span>
+    <select (change)="onPageSelect($event)" [value]="currentPage">
+      <option *ngFor="let page of pages" [value]="page">{{ page }}</option>
+    </select>
+  </div>
+  
+
+   <!-- <div class="pagination-container">
+    <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+  
+    <button (click)="setPage(1)" [class.active]="currentPage === 1">1</button>
+    <button *ngIf="showLeftEllipsis()" disabled>...</button>
+  
+    <ng-container *ngFor="let page of middlePages">
+      <button 
+        (click)="setPage(page)" 
+        [class.active]="page === currentPage">
+        {{ page }}
+      </button>
+    </ng-container>
+  
+    <button *ngIf="showRightEllipsis()" disabled>...</button>
+    <button (click)="setPage(totalPages)" [class.active]="currentPage === totalPages">{{ totalPages }}</button>
+  
+    <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  
+    <select (change)="onPageSelect($event)" [value]="currentPage">
+      <option *ngFor="let page of pages" [value]="page">{{ page }}</option>
+    </select>
+  </div>
+   -->

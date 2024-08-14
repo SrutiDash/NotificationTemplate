@@ -24,7 +24,7 @@
     margin: 0 10px;
   }
    */
-
+/* 
    .paginator {
     display: flex;
     justify-content: center;
@@ -49,4 +49,47 @@
   .paginator button.active {
     background-color: #ff4081;
   }
+   */
+
+   /* new */
+
+   .pagination-container {
+    display: flex;
+    /* align-items: center; */
+    align-items: end;
+    justify-content: end;
+    /* justify-content: center; */
+    margin-top: 20px;
+    border-radius: 10%;
+  }
   
+  .pagination-container button {
+    padding: 5px 10px;
+    margin: 0 2px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    border-radius: 10%;
+  }
+  
+  .pagination-container button.active {
+    background-color: #4B93FF;
+    color: white;
+    border-radius: 10%;
+  }
+  
+  .pagination-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    border-radius: 10%;
+  }
+  
+  .pagination-container select {
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 10%;
+  }
+  
+  .goToPage {
+    align-items: end;
+  }
