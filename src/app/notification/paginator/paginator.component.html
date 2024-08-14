@@ -67,7 +67,11 @@
     </button>
   
     <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">&gt;</button>
-    <span>Go to page:</span>
+    <span>
+        <strong>
+            Go to page:
+        </strong>
+    </span>
     <select (change)="onPageSelect($event)" [value]="currentPage">
       <option *ngFor="let page of pages" [value]="page">{{ page }}</option>
     </select>
