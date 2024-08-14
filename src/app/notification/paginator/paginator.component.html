@@ -1,0 +1,15 @@
+<!-- <div class="pagination">
+    <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{currentPage}} of {{totalPages}}</span>
+    <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+</div>
+   -->
+
+   <!-- new -->
+
+   <div class="paginator">
+    <button (click)="setPage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+    <button *ngFor="let page of pages" (click)="setPage(page)" [class.active]="page === currentPage">{{ page }}</button>
+    <button (click)="setPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+  </div>
+  
