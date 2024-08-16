@@ -64,7 +64,7 @@
 
 
 <!-- new --------------------- -->
-
+<!-- 
 <div class="notification-details">
   <h1>Notification Management &gt; View Details</h1>
   <div class="details-container">
@@ -98,10 +98,6 @@
         <span class="label">Created On</span>
         <span class="value">{{ notificationDetails.createdOn }}</span>
       </div>
-      <!-- <div class="detail-item">
-        <span class="label">Status</span>
-        <span class="value">{{ notificationDetails.status }}</span>
-      </div> -->
     </div>
 
     <div class="detail-item">
@@ -128,4 +124,50 @@
     <button class="close-button" (click)="close()">CLOSE</button>
   </div>
 </div>
+ -->
 
+
+ <div class="notification-details">
+  <h1>Notification Management &gt; View Details</h1>
+  <div class="details-container">
+    <h2>Notification Details</h2>
+    <div class="details-grid">
+      <div class="detail-item">
+        <span class="label">Service Type</span>
+        <span class="value">{{ notificationDetails.serviceType }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Event Trigger</span>
+        <span class="value">{{ notificationDetails.eventTrigger }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Party</span>
+        <span class="value">{{ notificationDetails.party }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Created On</span>
+        <span class="value">{{ notificationDetails.createdOn | date }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Channel</span>
+        <span class="value">{{ notificationDetails.channel }}</span>
+      </div>
+    </div>
+
+    <div class="detail-item">
+      <!-- <span class="label">Language and Texts</span> -->
+      <div *ngFor="let item of languagesTexts">
+        <div class="detail-item">
+          <span class="label">Language:</span>
+          <span class="value">{{ item.language }}</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Text:</span>
+          <span class="value">{{ item.text }}</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="close-button" (click)="close()">CLOSE</button>
+  </div>
+</div>

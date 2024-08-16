@@ -312,6 +312,12 @@ export class DataService {
     return this.http.get(`${this.baseUrl}/filter-parties/${serviceType}/${eventTrigger}`);
   }
 
+  // data.service.ts
+getNotificationDetails(id: number): Observable<any> {
+  return this.http.get<any>(`${this.baseUrl}/notification-details/${id}`);
+}
+
+
   saveNotification(): Observable<any> {
     return this.http.post(`${this.baseUrl}/save-notification`, {
       serviceType: this.selectedServiceType,
