@@ -12,6 +12,7 @@
 // import { ViewBulkNotificationComponent } from './notification/view-bulk-notification/view-bulk-notification.component';
 // import { BulkEditComponent } from './notification/bulk-edit/bulk-edit.component';
 // import { NotificationReviewComponent } from './notification/notification-review/notification-review.component';
+// import { NotificationReviewConfirmComponent } from './notification/notification-review-confirm/notification-review-confirm.component'; // Import the new component
 
 // const routes: Routes = [
 //   { path: '', redirectTo: '/notifications', pathMatch: 'full' },
@@ -26,7 +27,8 @@
 //   { path: 'record-upload', component: RecordUploadComponent },
 //   { path: 'view-bulk-notification', component: ViewBulkNotificationComponent },
 //   { path: 'bulk-edit', component: BulkEditComponent },
-//   { path: 'notification-review', component: NotificationReviewComponent }
+//   { path: 'notification-review', component: NotificationReviewComponent },
+//   { path: 'notification-review-confirm', component: NotificationReviewConfirmComponent } // Add the new route
 // ];
 
 // @NgModule({
@@ -34,7 +36,6 @@
 //   exports: [RouterModule]
 // })
 // export class AppRoutingModule { }
-
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -55,6 +56,7 @@ import { NotificationReviewConfirmComponent } from './notification/notification-
 const routes: Routes = [
   { path: '', redirectTo: '/notifications', pathMatch: 'full' },
   { path: 'notifications', component: NotificationManagementComponent },
+  { path: 'notification-management', redirectTo: '/notifications', pathMatch: 'full' },  // Redirect to 'notifications'
   { path: 'create-notification', component: CreateNotificationComponent },
   { path: 'notification-details/:id', component: NotificationDetailsComponent },
   { path: 'notification-edit/:id', component: NotificationEditComponent },
@@ -74,3 +76,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
