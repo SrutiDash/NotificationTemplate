@@ -33,7 +33,7 @@
           }
           
           .buttons button {
-            background-color: #5cb85c;
+            background-color: #f1266d;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -43,7 +43,7 @@
           }
           
           .buttons button:hover {
-            background-color: #4cae4c;
+            background-color: #db2464;
           }
           
           .parameter-table {
