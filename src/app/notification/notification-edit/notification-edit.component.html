@@ -1,4 +1,4 @@
-   <div class="notification-edit">
+   <!-- <div class="notification-edit">
     <h1>Enter Notification Details</h1>
   
     <div class="notification-details">
@@ -77,6 +77,62 @@
       </table>
     </div>
     
+    <div class="buttons">
+      <button class="cancel-button" (click)="cancel()">Cancel</button>
+      <button class="next-button" (click)="next()">Next</button>
+    </div>
+  </div>
+   -->
+
+   <!-- new -->
+
+   <div class="notification-edit">
+    <h1>Edit Notification Details</h1>
+  
+    <div class="notification-details">
+      <h2>Notification Details</h2>
+      <form class="details-form">
+        <div class="form-group">
+          <label for="serviceType">Service Type</label>
+          <input type="text" id="serviceType" [(ngModel)]="notification.serviceType" name="serviceType" readonly>
+        </div>
+        <div class="form-group">
+          <label for="eventTrigger">Event Trigger</label>
+          <input type="text" id="eventTrigger" [(ngModel)]="notification.eventTrigger" name="eventTrigger" readonly>
+        </div>
+        <div class="form-group">
+          <label for="party">Party</label>
+          <input type="text" id="party" [(ngModel)]="notification.party" name="party" readonly>
+        </div>
+        <div class="form-group">
+          <label for="createdOn">Created On</label>
+          <input type="text" id="createdOn" [(ngModel)]="notification.createdOn" name="createdOn" readonly>
+        </div>
+        <div class="form-group">
+          <label for="channel">Channel</label>
+          <input type="text" id="channel" [(ngModel)]="notification.channel" name="channel" readonly>
+        </div>
+      </form>
+    </div>
+  
+    <div class="languages-texts">
+      <h2>Languages and Texts</h2>
+      <div *ngFor="let item of languagesTexts" class="language-text">
+        <div class="form-group">
+          <label>Language:</label>
+          <input type="text" [(ngModel)]="item.language" readonly>
+        </div>
+        <div class="form-group">
+          <label>Header:</label>
+          <input type="text" [(ngModel)]="item.header" readonly>
+        </div>
+        <div class="form-group">
+          <label>Text:</label>
+          <textarea [(ngModel)]="item.text" readonly></textarea>
+        </div>
+      </div>
+    </div>
+  
     <div class="buttons">
       <button class="cancel-button" (click)="cancel()">Cancel</button>
       <button class="next-button" (click)="next()">Next</button>
