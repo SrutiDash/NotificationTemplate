@@ -1,91 +1,5 @@
-   <!-- <div class="notification-edit">
-    <h1>Enter Notification Details</h1>
-  
-    <div class="notification-details">
-      <h2>Notification Details</h2>
-      <form class="details-form">
-        <div class="form-group">
-          <label for="serviceType">Service Type</label>
-          <input type="text" id="serviceType" [(ngModel)]="notification.serviceType" name="serviceType">
-        </div>
-        <div class="form-group">
-          <label for="eventTrigger">Event Trigger</label>
-          <input type="text" id="eventTrigger" [(ngModel)]="notification.eventTrigger" name="eventTrigger">
-        </div>
-        <div class="form-group">
-          <label for="party">Party</label>
-          <input type="text" id="party" [(ngModel)]="notification.party" name="party">
-        </div>
-        <div class="form-group">
-          <label for="senderParent">Sender Parent</label>
-          <input type="text" id="senderParent" [(ngModel)]="notification.senderParent" name="senderParent">
-        </div>
-        <div class="form-group">
-          <label for="grade">Grade</label>
-          <input type="text" id="grade" [(ngModel)]="notification.grade" name="grade">
-        </div>
-      </form>
-    </div>
-  
-    <div class="search-parameters">
-      <h2>Search Parameter</h2>
-      <input type="text" id="search" [(ngModel)]="search" name="search" placeholder="Search...">
-    </div>
-    
-    <div class="channels">
-      <h2>Channels</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Channel</th>
-            <th>Language</th>
-            <th>Header</th>
-            <th>Body</th>
-            <th>Attachable Documents</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>In-App Notification</td>
-            <td><input type="text" [(ngModel)]="notification.inAppNotification.language" name="inAppLanguage"></td>
-            <td><input type="text" [(ngModel)]="notification.inAppNotification.header" name="inAppHeader"></td>
-            <td><textarea [(ngModel)]="notification.inAppNotification.messageBody" name="inAppBody"></textarea></td>
-            <td><input type="text" [(ngModel)]="notification.inAppNotification.attachableDocuments" name="inAppDocs"></td>
-          </tr>
-          <tr>
-            <td>SMS</td>
-            <td><input type="text" [(ngModel)]="notification.sms.language" name="smsLanguage"></td>
-            <td><input type="text" [(ngModel)]="notification.sms.header" name="smsHeader"></td>
-            <td><textarea [(ngModel)]="notification.sms.body" name="smsBody"></textarea></td>
-            <td><input type="text" [(ngModel)]="notification.sms.attachableDocuments" name="smsDocs"></td>
-          </tr>
-          <tr>
-            <td>Email</td>
-            <td><input type="text" [(ngModel)]="notification.email.language" name="emailLanguage"></td>
-            <td><input type="text" [(ngModel)]="notification.email.header" name="emailHeader"></td>
-            <td><textarea [(ngModel)]="notification.email.body" name="emailBody"></textarea></td>
-            <td><input type="text" [(ngModel)]="notification.email.attachableDocuments" name="emailDocs"></td>
-          </tr>
-          <tr>
-            <td>URL</td>
-            <td><input type="text" [(ngModel)]="notification.url.language" name="urlLanguage"></td>
-            <td><input type="text" [(ngModel)]="notification.url.header" name="urlHeader"></td>
-            <td><textarea [(ngModel)]="notification.url.body" name="urlBody"></textarea></td>
-            <td><input type="text" [(ngModel)]="notification.url.attachableDocuments" name="urlDocs"></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    
-    <div class="buttons">
-      <button class="cancel-button" (click)="cancel()">Cancel</button>
-      <button class="next-button" (click)="next()">Next</button>
-    </div>
-  </div>
-   -->
-
    <!-- new -->
-
+<!-- 
    <div class="notification-edit">
     <h1>Edit Notification Details</h1>
   
@@ -138,4 +52,64 @@
       <button class="next-button" (click)="next()">Next</button>
     </div>
   </div>
+   -->
+
+   <div class="notification-edit">
+    <h1>Edit Notification Details</h1>
   
+    <div class="notification-details">
+      <h2>Notification Details</h2>
+      <form class="details-form">
+        <div class="form-group">
+          <label for="serviceType">Service Type</label>
+          <input type="text" id="serviceType" [(ngModel)]="notification.serviceType" name="serviceType">
+        </div>
+        <div class="form-group">
+          <label for="eventTrigger">Event Trigger</label>
+          <input type="text" id="eventTrigger" [(ngModel)]="notification.eventTrigger" name="eventTrigger">
+        </div>
+        <div class="form-group">
+          <label for="party">Party</label>
+          <input type="text" id="party" [(ngModel)]="notification.party" name="party">
+        </div>
+        <div class="form-group">
+          <label for="createdOn">Created On</label>
+          <input type="text" id="createdOn" [(ngModel)]="notification.createdOn" name="createdOn" readonly>
+        </div>
+        <div class="form-group">
+          <label for="channel">Channel</label>
+          <input type="text" id="channel" [(ngModel)]="notification.channel" name="channel">
+        </div>
+      </form>
+    </div>
+  
+    <div class="search-parameters">
+      <h2>Search Parameter</h2>
+      <input type="text" id="search" [(ngModel)]="search" name="search" placeholder="Search...">
+    </div>
+  
+    <div class="languages-texts">
+      <h2>Languages and Texts</h2>
+      <div *ngFor="let item of languagesTexts" class="language-text">
+        <div class="form-group">
+          <label>Language:</label>
+          <input type="text" [(ngModel)]="item.language">
+        </div>
+        <div class="form-group">
+          <label>Header:</label>
+          <input type="text" [(ngModel)]="item.header">
+        </div>
+        <div class="form-group">
+          <label>Text:</label>
+          <textarea [(ngModel)]="item.text"></textarea>
+        </div>
+      </div>
+    </div>
+  
+    <div class="buttons">
+      <button class="cancel-button" (click)="cancel()">Cancel</button>
+      <button class="next-button" (click)="next()">Next</button>
+    </div>
+  </div>
+  
+
