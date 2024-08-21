@@ -1,114 +1,4 @@
- <!-- newwwww -->
-
- <!-- <div class="notification-management">
-  <div class="header">
-    <h1>Notifications</h1>
-    <button class="create-new" (click)="navigateToCreateNotification()" style="background-color: #ff4081; color: white;">CREATE NEW</button>
-  </div>
-  <div class="filter">
-    <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter" (click)="toggleFilterPrompt()" class="filter-icon">
-    <div class="filter-dropdown" *ngIf="isFilterPromptVisible">
-      <app-filter-prompt
-        (close)="toggleFilterPrompt()"
-        (applyFilters)="applyFilter($event)">
-      </app-filter-prompt>
-    </div>
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>SERVICE TYPE</th>
-        <th>EVENT TRIGGER</th>
-        <th>PARTY</th>
-        <th>CREATED ON <span>&uarr;&darr;</span></th>
-        <th>CREATED BY <span>&uarr;&darr;</span></th>
-        <th>ACTION</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let notification of notifications">
-        <td>{{ notification.serviceType }}</td>
-        <td>{{ notification.eventTrigger }}</td>
-        <td>{{ notification.party }}</td>
-        <td>{{ notification.createdOn }}</td>
-        <td>{{ notification.createdBy }}</td>
-        <td>
-          <button (click)="viewNotification(notification)">
-            <img src="https://i.ibb.co/7J1rgJG/Component-103-65.png" alt="view">
-          </button>
-          <button (click)="editNotification(notification)">
-            <img src="https://i.ibb.co/bdsfYMQ/pencil.png" alt="pencil">
-          </button>
-          <button (click)="deleteNotification(notification)">
-            <img src="https://i.ibb.co/x5g7gRs/bin.png" alt="bin">
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
-
-<!-- 
-<div class="notification-management">
-  <div class="header">
-    <h1>Notifications</h1>
-    <button class="create-new" (click)="navigateToCreateNotification()" style="background-color: #ff4081; color: white;">CREATE NEW</button>
-  </div>
-  <div class="filter">
-    <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter" (click)="toggleFilterPrompt()" class="filter-icon">
-    <div class="filter-dropdown" *ngIf="isFilterPromptVisible">
-      <app-filter-prompt
-        [isVisible]="isFilterPromptVisible"
-        (closeDialog)="toggleFilterPrompt()"
-        (applyFilters)="applyFilter($event)">
-      </app-filter-prompt>
-    </div>
-  </div>
-  <table>
-    <thead>
-      <tr>
-        <th>SERVICE TYPE</th>
-        <th>EVENT TRIGGER</th>
-        <th>PARTY</th>
-        <th>CREATED ON <span>&uarr;&darr;</span></th>
-        <th>CREATED BY <span>&uarr;&darr;</span></th>
-        <th>ACTION</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let notification of filteredNotifications">
-        <td>{{ notification.serviceType }}</td>
-        <td>{{ notification.eventTrigger }}</td>
-        <td>{{ notification.party }}</td>
-        <td>{{ notification.createdOn }}</td>
-        <td>{{ notification.createdBy }}</td>
-        <td>
-          <button (click)="viewNotification(notification)">
-            <img src="https://i.ibb.co/7J1rgJG/Component-103-65.png" alt="view">
-          </button>
-          <button (click)="editNotification(notification)">
-            <img src="https://i.ibb.co/bdsfYMQ/pencil.png" alt="pencil">
-          </button>
-          <button (click)="deleteNotification(notification)">
-            <img src="https://i.ibb.co/x5g7gRs/bin.png" alt="bin">
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <app-paginator 
-    [totalItems]="notifications.length"
-    [itemsPerPage]="itemsPerPage"
-    [currentPage]="currentPage"
-    (pageChange)="onPageChange($event)">
-  </app-paginator>
-</div> -->
-
-
-<!-- new -->
-
-<div class="notification-management">
+<!-- <div class="notification-management">
   <div class="header">
     <h1>Notifications</h1>
     <button class="create-new" (click)="navigateToCreateNotification()" style="background-color: #ff4081; color: white;">CREATE NEW</button>
@@ -163,4 +53,68 @@
     (pageChange)="onPageChange($event)">
   </app-paginator>
 </div>
+ -->
 
+
+ <div class="notification-management">
+  <div class="header">
+    <h1>Notifications</h1>
+    <button class="create-new" (click)="navigateToCreateNotification()" style="background-color: #ff4081; color: white;">CREATE NEW</button>
+  </div>
+  <div class="filter">
+    <img src="https://i.ibb.co/XzgSC4y/Icon-awesome-filter.png" alt="Icon-awesome-filter" (click)="toggleFilterPrompt()" class="filter-icon">
+    <div class="filter-dropdown" *ngIf="isFilterPromptVisible">
+      <app-filter-prompt
+        [isVisible]="isFilterPromptVisible"
+        (closeDialog)="toggleFilterPrompt()"
+        (applyFilters)="applyFilter($event)">
+      </app-filter-prompt>
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>SERVICE TYPE</th>
+        <th>EVENT TRIGGER</th>
+        <th>PARTY</th>
+        <th>CREATED ON <span>&uarr;&darr;</span></th>
+        <th>CREATED BY <span>&uarr;&darr;</span></th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let notification of filteredNotifications">
+        <td>{{ notification.serviceType }}</td>
+        <td>{{ notification.eventTrigger }}</td>
+        <td>{{ notification.party }}</td>
+        <td>{{ notification.createdOn }}</td>
+        <td>{{ notification.createdBy }}</td>
+        <td>
+          <button (click)="viewNotification(notification)">
+            <img src="https://i.ibb.co/7J1rgJG/Component-103-65.png" alt="view">
+          </button>
+          <button (click)="editNotification(notification)">
+            <img src="https://i.ibb.co/bdsfYMQ/pencil.png" alt="pencil">
+          </button>
+          <button (click)="confirmDelete(notification)">
+            <img src="https://i.ibb.co/x5g7gRs/bin.png" alt="bin">
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-paginator 
+    [totalItems]="notifications.length"
+    [itemsPerPage]="itemsPerPage"
+    [currentPage]="currentPage"
+    (pageChange)="onPageChange($event)">
+  </app-paginator>
+
+  <!-- Confirmation Modal -->
+  <app-confirmation-modal 
+    *ngIf="showModal"
+    (onConfirm)="deleteNotification()"
+    (onCancel)="hideDeleteConfirmation()">
+  </app-confirmation-modal>
+</div>
