@@ -1,181 +1,63 @@
-   <!-- <div class="filter-container">
-    <div class="filter-body">
-      <label>Service Type</label>
-      <div class="checkbox-group">
-        <input type="checkbox" id="sendMoney" name="sendMoney">
-        <label for="sendMoney">Send Money</label>
-        <input type="checkbox" id="payMerchant" name="payMerchant">
-        <label for="payMerchant">Pay Merchant</label>
-      </div>
-      <label>Enter services</label>
-      <input type="text" placeholder="Enter services">
-      <label>Event Trigger</label>
-      <div class="checkbox-group">
-        <input type="checkbox" id="success" name="success">
-        <label for="success">Success</label>
-        <input type="checkbox" id="failed" name="failed">
-        <label for="failed">Failed</label>
-      </div>
-      <label>Party</label>
-      <div class="checkbox-group">
-        <input type="checkbox" id="sender" name="sender">
-        <label for="sender">Sender</label>
-        <input type="checkbox" id="receiver" name="receiver">
-        <label for="receiver">Receiver</label>
-      </div>
-      <label>Date Range</label>
-      <div class="date-range">
-        <input type="date" placeholder="Start date">
-        <input type="date" placeholder="End date">
-      </div>
-    </div>
-    <div class="filter-footer">
-      <button class="clear-btn" (click)="clearFilters()">Clear</button>
-      <button class="apply-btn" (click)="applyFilters()">Apply</button>
-    </div>
-  </div>
-   -->
-
-<!-- 
-   <div class="filter-container">
-    <div class="filter-body">
-      <label>Service Type</label>
-      <select [(ngModel)]="selectedServiceType" (change)="onServiceTypeChange()">
-        <option value="" disabled selected>Select Service Type</option>
-        <option *ngFor="let serviceType of serviceTypes" [value]="serviceType">{{serviceType}}</option>
-      </select>
-      
-      <label>Event Trigger</label>
-      <select [(ngModel)]="selectedEventTrigger" (change)="onEventTriggerChange()" [disabled]="!selectedServiceType">
-        <option value="" disabled selected>Select Event Trigger</option>
-        <option *ngFor="let eventTrigger of eventTriggers" [value]="eventTrigger">{{eventTrigger}}</option>
-      </select>
-      
-      <label>Party</label>
-      <select [(ngModel)]="selectedParty" [disabled]="!selectedServiceType || !selectedEventTrigger">
-        <option value="" disabled selected>Select Party</option>
-        <option *ngFor="let party of parties" [value]="party">{{party}}</option>
-      </select>
-      
-      <label>Date Range</label>
-      <div class="date-range">
-        <input type="date" [(ngModel)]="startDate" placeholder="Start date">
-        <input type="date" [(ngModel)]="endDate" placeholder="End date">
-      </div>
-    </div>
+     <div class="filter-container">
+      <div class="filter-body">
+        <label>Service Type</label>
+        <div class="custom-dropdown">
+          <input 
+            type="text" 
+            placeholder="Select Service Type" 
+            [(ngModel)]="serviceTypeSearch"
+            (focus)="showServiceTypeDropdown = true"
+            (input)="filterServiceTypes()"
+            [readonly]="false" /> <!-- Set readonly to false to allow search before selection -->
+          <div class="dropdown-list" *ngIf="showServiceTypeDropdown && filteredServiceTypes.length > 0">
+            <div *ngFor="let serviceType of filteredServiceTypes" (click)="selectServiceType(serviceType)">
+              {{serviceType}}
+            </div>
+          </div>
+        </div>
+        
+        <label>Event Trigger</label>
+        <div class="custom-dropdown">
+          <input 
+            type="text" 
+            placeholder="Select Event Trigger" 
+            [(ngModel)]="eventTriggerSearch"
+            (focus)="showEventTriggerDropdown = true"
+            (input)="filterEventTriggers()"
+            [disabled]="!selectedServiceType" />
+          <div class="dropdown-list" *ngIf="showEventTriggerDropdown && filteredEventTriggers.length > 0">
+            <div *ngFor="let eventTrigger of filteredEventTriggers" (click)="selectEventTrigger(eventTrigger)">
+              {{eventTrigger}}
+            </div>
+          </div>
+        </div>
     
-    <div class="filter-footer">
-      <button class="clear-btn" (click)="clearFilters()">Clear</button>
-      <button class="apply-btn" (click)="applyFilter()">Apply</button>
-    </div>
-  </div>
-   -->
-
-<!-- 
-   <div class="filter-container">
-    <div class="filter-body">
-      <label>Service Type</label>
-      <select [(ngModel)]="selectedServiceType" (change)="onServiceTypeChange()">
-        <option value="" disabled selected>Select Service Type</option>
-        <option *ngFor="let serviceType of serviceTypes" [value]="serviceType">{{serviceType}}</option>
-      </select>
+        <label>Party</label>
+        <div class="custom-dropdown">
+          <input 
+            type="text" 
+            placeholder="Select Party" 
+            [(ngModel)]="partySearch"
+            (focus)="showPartyDropdown = true"
+            (input)="filterParties()"
+            [disabled]="!selectedEventTrigger" />
+          <div class="dropdown-list" *ngIf="showPartyDropdown && filteredParties.length > 0">
+            <div *ngFor="let party of filteredParties" (click)="selectParty(party)">
+              {{party}}
+            </div>
+          </div>
+        </div>
+    
+        <label>Date Range</label>
+        <div class="date-range">
+          <input type="date" [(ngModel)]="startDate" placeholder="Start date" />
+          <input type="date" [(ngModel)]="endDate" placeholder="End date" />
+        </div>
+      </div>
       
-      <label>Event Trigger</label>
-      <select [(ngModel)]="selectedEventTrigger" (change)="onEventTriggerChange()" [disabled]="!selectedServiceType">
-        <option value="" disabled selected>Select Event Trigger</option>
-        <option *ngFor="let eventTrigger of eventTriggers" [value]="eventTrigger">{{eventTrigger}}</option>
-      </select>
-      
-      <label>Party</label>
-      <select [(ngModel)]="selectedParty" [disabled]="!selectedServiceType || !selectedEventTrigger">
-        <option value="" disabled selected>Select Party</option>
-        <option *ngFor="let party of parties" [value]="party">{{party}}</option>
-      </select>
-      
-      <label>Date Range</label>
-      <div class="date-range">
-        <input type="date" [(ngModel)]="startDate" placeholder="Start date">
-        <input type="date" [(ngModel)]="endDate" placeholder="End date">
+      <div class="filter-footer">
+        <button class="clear-btn" (click)="clearFilters()">Clear</button>
+        <button class="apply-btn" (click)="applyFilter()">Apply</button>
       </div>
     </div>
-    
-    <div class="filter-footer">
-      <button class="clear-btn" (click)="clearFilters()">Clear</button>
-      <button class="apply-btn" (click)="applyFilter()">Apply</button>
-    </div>
-  </div>
-   -->
-<!-- 
-   <div class="filter-container">
-    <div class="filter-body">
-      <label>Service Type</label>
-      <select [(ngModel)]="selectedServiceType" (change)="onServiceTypeChange()">
-        <option value="" disabled selected>Select Service Type</option>
-        <option *ngFor="let serviceType of serviceTypes" [value]="serviceType">{{serviceType}}</option>
-      </select>
-      
-      <label>Event Trigger</label>
-      <select [(ngModel)]="selectedEventTrigger" (change)="onEventTriggerChange()" [disabled]="!selectedServiceType">
-        <option value="" disabled selected>Select Event Trigger</option>
-        <option *ngFor="let eventTrigger of eventTriggers" [value]="eventTrigger">{{eventTrigger}}</option>
-      </select>
-      
-      <label>Party</label>
-      <select [(ngModel)]="selectedParty" [disabled]="!selectedServiceType || !selectedEventTrigger">
-        <option value="" disabled selected>Select Party</option>
-        <option *ngFor="let party of parties" [value]="party">{{party}}</option>
-      </select>
-      
-      <label>Date Range</label>
-      <div class="date-range">
-        <input type="date" [(ngModel)]="startDate" placeholder="Start date">
-        <input type="date" [(ngModel)]="endDate" placeholder="End date">
-      </div>
-    </div>
-    
-    <div class="filter-footer">
-      <button class="clear-btn" (click)="clearFilters()">Clear</button>
-      <button class="apply-btn" (click)="applyFilter()">Apply</button>
-    </div>
-  </div>
-   -->
-
-<!-- 
-   final -->
-
-
-<div class="filter-container">
-    <div class="filter-body">
-      <label>Service Type</label>
-      <select [(ngModel)]="selectedServiceType" (change)="onServiceTypeChange()">
-        <option value="" disabled selected>Select Service Type</option>
-        <option *ngFor="let serviceType of serviceTypes" [value]="serviceType">{{serviceType}}</option>
-      </select>
-      
-      <label>Event Trigger</label>
-      <select [(ngModel)]="selectedEventTrigger" (change)="onEventTriggerChange()" [disabled]="!selectedServiceType">
-        <option value="" disabled selected>Select Event Trigger</option>
-        <option *ngFor="let eventTrigger of eventTriggers" [value]="eventTrigger">{{eventTrigger}}</option>
-      </select>
-      
-      <label>Party</label>
-      <select [(ngModel)]="selectedParty" [disabled]="!selectedServiceType || !selectedEventTrigger">
-        <option value="" disabled selected>Select Party</option>
-        <option *ngFor="let party of parties" [value]="party">{{party}}</option>
-      </select>
-      
-      <label>Date Range</label>
-      <div class="date-range">
-        <input type="date" [(ngModel)]="startDate" placeholder="Start date">
-        <input type="date" [(ngModel)]="endDate" placeholder="End date">
-      </div>
-    </div>
-    
-    <div class="filter-footer">
-      <button class="clear-btn" (click)="clearFilters()">Clear</button>
-      <button class="apply-btn" (click)="applyFilter()">Apply</button>
-    </div>
-  </div>
-   
-
-   
+        
