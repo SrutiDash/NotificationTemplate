@@ -156,14 +156,34 @@ export class DataService {
   }
 
   // Method to get parameters for edit notification layout
-  getEditParameters(serviceCode: string, eventName: string, partyType: string): Observable<string[]> {
-    const params = new HttpParams()
+  // getEditParameters(serviceCode: string, eventName: string, partyType: string): Observable<string[]> {
+  //   const params = new HttpParams()
+  //     .set('serviceCode', serviceCode)
+  //     .set('eventName', eventName)
+  //     .set('partyType', partyType);
+
+  //   return this.http.get<string[]>(`${this.baseUrl}/edit-parameters`, { params });
+  // }
+
+//   getEditParameters(serviceCode: string, eventName: string, partyType: string): Observable<string[]> {
+//     const params = new HttpParams()
+//         .set('serviceCode', serviceCode)
+//         .set('eventName', eventName)
+//         .set('partyType', partyType);
+
+//     return this.http.get<string[]>(`${this.baseUrl}/parameters`, { params });
+// }
+
+getEditParameters(serviceCode: string, eventName: string, partyType: string): Observable<string[]> {
+  const params = new HttpParams()
       .set('serviceCode', serviceCode)
       .set('eventName', eventName)
       .set('partyType', partyType);
 
-    return this.http.get<string[]>(`${this.baseUrl}/edit-parameters`, { params });
-  }
+  return this.http.get<string[]>(`${this.baseUrl}/edit-parameters`, { params });
+}
+
+
 
   // Method to delete a notification
   deleteNotification(id: number): Observable<any> {

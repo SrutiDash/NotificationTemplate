@@ -186,46 +186,133 @@ export class NotificationEditComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    const notificationId = this.route.snapshot.params['id'];
-    this.dataService.getNotificationDetails(notificationId).subscribe({
-      next: (details) => {
-        this.notification = details;
-        this.languagesTexts = details.languagesTexts.map((item: any) => {
-          return {
-            ...item,
-            header: details.eventTrigger // Set the header value to the event trigger
-          };
-        });
+  // ngOnInit(): void {
+  //   const notificationId = this.route.snapshot.params['id'];
+  //   this.dataService.getNotificationDetails(notificationId).subscribe({
+  //     next: (details) => {
+  //       this.notification = details;
+  //       this.languagesTexts = details.languagesTexts.map((item: any) => {
+  //         return {
+  //           ...item,
+  //           header: details.eventTrigger // Set the header value to the event trigger
+  //         };
+  //       });
 
-        // Fetch parameters based on the notification's service type, event trigger, and party
-        this.dataService.getEditParameters(
-          this.notification.serviceType,
-          this.notification.eventTrigger,
-          this.notification.party
-        ).subscribe((data: any) => {
-          this.parameters = data;
-          this.filteredParameters = data;
-        });
+  //       // Fetch parameters based on the notification's service type, event trigger, and party
+  //       this.dataService.getEditParameters(
+  //         this.notification.serviceType,
+  //         this.notification.eventTrigger,
+  //         this.notification.party
+  //       ).subscribe((data: any) => {
+  //         this.parameters = data;
+  //         this.filteredParameters = data;
+  //       });
+  //     },
+  //     error: (error) => console.error('Failed to load notification details:', error)
+  //   });
+  // }
+
+//   ngOnInit(): void {
+//     const notificationId = this.route.snapshot.params['id'];
+//     this.dataService.getNotificationDetails(notificationId).subscribe({
+//         next: (details) => {
+//             this.notification = details;
+//             this.languagesTexts = details.languagesTexts.map((item: any) => {
+//                 return {
+//                     ...item,
+//                     header: details.eventTrigger // Set the header value to the event trigger
+//                 };
+//             });
+
+//             // Fetch parameters based on the notification's service type, event trigger, and party
+//             this.dataService.getEditParameters(
+//                 this.notification.serviceType,
+//                 this.notification.eventTrigger,
+//                 this.notification.party
+//             ).subscribe((data: any) => {
+//                 this.parameters = data;
+//                 this.filteredParameters = data;
+//                 this.showParameterOptions = true; // Show dropdown once data is available
+//             });
+//         },
+//         error: (error) => console.error('Failed to load notification details:', error)
+//     });
+// }
+
+ngOnInit(): void {
+  const notificationId = this.route.snapshot.params['id'];
+  this.dataService.getNotificationDetails(notificationId).subscribe({
+      next: (details) => {
+          this.notification = details;
+          this.languagesTexts = details.languagesTexts.map((item: any) => {
+              return {
+                  ...item,
+                  header: details.eventTrigger // Set the header value to the event trigger
+              };
+          });
+
+          // Fetch parameters based on the notification's service type, event trigger, and party
+          this.dataService.getEditParameters(
+              this.notification.serviceType,
+              this.notification.eventTrigger,
+              this.notification.party
+          ).subscribe((data: any) => {
+              this.parameters = data;
+              this.filteredParameters = data;
+              this.showParameterOptions = true; // Show dropdown once data is available
+          });
       },
       error: (error) => console.error('Failed to load notification details:', error)
-    });
-  }
+  });
+}
 
-  filterOptions(event: any) {
-    const query = event.target.value.toLowerCase();
-    this.filteredParameters = this.parameters.filter(option =>
+
+
+  // filterOptions(event: any) {
+  //   const query = event.target.value.toLowerCase();
+  //   this.filteredParameters = this.parameters.filter(option =>
+  //     option.toLowerCase().includes(query)
+  //   );
+  // }
+
+  // selectOption(option: string) {
+  //   this.notification.parameters[0].body = option;
+  //   this.showParameterOptions = false;
+  //   this.filteredParameters = [];
+  //   (document.getElementById('parameterSearch') as HTMLInputElement).value = option;
+  //   this.onEdit();
+  // }
+
+//   filterOptions(event: any) {
+//     const query = event.target.value.toLowerCase();
+//     this.filteredParameters = this.parameters.filter(option =>
+//         option.toLowerCase().includes(query)
+//     );
+// }
+
+// selectOption(option: string) {
+//     this.notification.parameters[0].body = option;
+//     this.notification.parameters[0].header = this.notification.eventTrigger;
+//     this.showParameterOptions = false;
+//     this.filteredParameters = [];
+//     (document.getElementById('search') as HTMLInputElement).value = option;
+// }
+
+filterOptions(event: any) {
+  const query = event.target.value.toLowerCase();
+  this.filteredParameters = this.parameters.filter(option =>
       option.toLowerCase().includes(query)
-    );
-  }
+  );
+}
 
-  selectOption(option: string) {
-    this.notification.parameters[0].body = option;
-    this.showParameterOptions = false;
-    this.filteredParameters = [];
-    (document.getElementById('parameterSearch') as HTMLInputElement).value = option;
-    this.onEdit();
-  }
+selectOption(option: string) {
+  this.search = option;
+  this.showParameterOptions = false;
+  this.filteredParameters = [];
+  this.onEdit(); // Mark the form as edited
+}
+
+
 
   showOptions() {
     this.showParameterOptions = true;

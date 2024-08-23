@@ -87,10 +87,32 @@
     </form>
   </div>
 
-  <div class="search-parameters">
+  <!-- <div class="search-parameters">
     <h2>Search Parameter</h2>
     <input type="text" id="search" [(ngModel)]="search" name="search" placeholder="Search...">
   </div>
+   -->
+
+   <!-- <div class="search-parameters">
+    <h2>Search Parameter</h2>
+    <div class="dropdown">
+      <input type="text" id="search" [(ngModel)]="search" name="search" placeholder="Search..." (focus)="showParameterOptions = true" (input)="filterOptions($event)" />
+        <ul *ngIf="showParameterOptions && filteredParameters.length > 0" class="dropdown-menu">
+          <li *ngFor="let param of filteredParameters" (click)="selectOption(param)">{{ param }}</li>
+        </ul>
+    </div>
+</div> -->
+
+<div class="search-parameters">
+  <h2>Search Parameter</h2>
+  <div class="dropdown">
+      <input type="text" id="search" [(ngModel)]="search" name="search" placeholder="Search..." (focus)="showParameterOptions = true" (input)="filterOptions($event)" />
+      <ul *ngIf="showParameterOptions && filteredParameters.length > 0" class="dropdown-menu">
+          <li *ngFor="let param of filteredParameters" (click)="selectOption(param)">{{ param }}</li>
+      </ul>
+  </div>
+</div>
+
 
   <div class="languages-texts">
     <h2>Languages and Texts</h2>
