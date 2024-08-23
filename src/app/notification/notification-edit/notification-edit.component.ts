@@ -298,6 +298,27 @@ ngOnInit(): void {
 //     (document.getElementById('search') as HTMLInputElement).value = option;
 // }
 
+// filterOptions(event: any) {
+//   const query = event.target.value.toLowerCase();
+//   this.filteredParameters = this.parameters.filter(option =>
+//       option.toLowerCase().includes(query)
+//   );
+// }
+
+// selectOption(option: string) {
+//   this.search = option;
+//   this.showParameterOptions = false;
+//   this.filteredParameters = [];
+//   this.onEdit(); // Mark the form as edited
+// }
+
+
+
+//   showOptions() {
+//     this.showParameterOptions = true;
+//     this.filteredParameters = [...this.parameters];
+//   }
+
 filterOptions(event: any) {
   const query = event.target.value.toLowerCase();
   this.filteredParameters = this.parameters.filter(option =>
@@ -312,12 +333,11 @@ selectOption(option: string) {
   this.onEdit(); // Mark the form as edited
 }
 
+showOptions() {
+  this.showParameterOptions = true;
+  this.filteredParameters = [...this.parameters];
+}
 
-
-  showOptions() {
-    this.showParameterOptions = true;
-    this.filteredParameters = [...this.parameters];
-  }
 
   onEdit(): void {
     this.isEdited = true; // Set the isEdited flag to true when any field is modified
