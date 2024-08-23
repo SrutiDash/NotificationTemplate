@@ -77,9 +77,16 @@ export class NotificationReviewComponent implements OnInit {
     this.router.navigate(['/notification-management']);
   }
 
+  // back(): void {
+  //   this.router.navigate(['/create-notification']);
+  // }
+
   back(): void {
-    this.router.navigate(['/create-notification']);
+    this.router.navigate(['/create-notification'], {
+      state: { notification: this.notification }
+    });
   }
+  
 
   confirm(): void {
     console.log('Notification confirmed:', this.notification);
