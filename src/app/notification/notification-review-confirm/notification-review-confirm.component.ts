@@ -123,8 +123,12 @@ export class NotificationReviewConfirmComponent implements OnInit {
     this.router.navigate(['/notifications']);
   }
 
+  // back(): void {
+  //   this.router.navigate(['/notification-edit', this.notificationDetails.id]);
+  // }
+
   back(): void {
-    this.router.navigate(['/notification-edit', this.notificationDetails.id]);
+    this.router.navigate(['/notification-edit']);
   }
 
   confirm(): void {

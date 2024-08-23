@@ -68,6 +68,7 @@ const routes: Routes = [
   { path: 'view-bulk-notification', component: ViewBulkNotificationComponent },
   { path: 'bulk-edit', component: BulkEditComponent },
   { path: 'notification-review', component: NotificationReviewComponent },
+  { path: 'notification-edit', component: NotificationEditComponent },
   { path: 'notification-review-confirm', component: NotificationReviewConfirmComponent } // Add the new route
 ];
 
