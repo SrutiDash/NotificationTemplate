@@ -319,24 +319,80 @@ ngOnInit(): void {
 //     this.filteredParameters = [...this.parameters];
 //   }
 
+// filterOptions(event: any) {
+//   const query = event.target.value.toLowerCase();
+//   this.filteredParameters = this.parameters.filter(option =>
+//       option.toLowerCase().includes(query)
+//   );
+// }
+
+// selectOption(option: string) {
+//   this.search = option;
+//   this.showParameterOptions = false;
+//   this.filteredParameters = [];
+//   this.onEdit(); // Mark the form as edited
+// }
+
+// showOptions() {
+//   this.showParameterOptions = true;
+//   this.filteredParameters = [...this.parameters];
+// }
+
+
+// onFocus() {
+//   this.showParameterOptions = true;
+// }
+
+// filterOptions(event: any) {
+//   const query = event.target.value.toLowerCase();
+//   this.filteredParameters = this.parameters.filter(option =>
+//       option.toLowerCase().includes(query)
+//   );
+
+//   // Show the dropdown only if there are results and the input is focused
+//   this.showParameterOptions = this.filteredParameters.length > 0 && query.length > 0;
+// }
+
+// selectOption(option: string) {
+//   this.search = option;
+//   this.showParameterOptions = false;  // Hide the dropdown after selecting an option
+//   this.filteredParameters = [];
+//   this.onEdit();  // Mark the form as edited
+// }
+
+// showOptions() {
+//   this.showParameterOptions = true;
+//   this.filteredParameters = [...this.parameters];
+// }
+
+showOptions() {
+  this.showParameterOptions = true;
+}
+
 filterOptions(event: any) {
   const query = event.target.value.toLowerCase();
   this.filteredParameters = this.parameters.filter(option =>
       option.toLowerCase().includes(query)
   );
+
+  // Only show the dropdown if there are results to show
+  this.showParameterOptions = this.filteredParameters.length > 0 && query.length > 0;
 }
 
 selectOption(option: string) {
   this.search = option;
-  this.showParameterOptions = false;
+  this.showParameterOptions = false;  // Hide the dropdown after selecting an option
   this.filteredParameters = [];
-  this.onEdit(); // Mark the form as edited
+  this.onEdit();  // Mark the form as edited
 }
 
-showOptions() {
-  this.showParameterOptions = true;
-  this.filteredParameters = [...this.parameters];
+hideOptions() {
+  // Delay hiding to allow the click event on the dropdown item to be captured
+  setTimeout(() => {
+      this.showParameterOptions = false;
+  }, 200);
 }
+
 
 
   onEdit(): void {

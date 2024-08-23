@@ -110,9 +110,9 @@ h2 {
   background-color: white;
   border: 1px solid #ccc;
   border-radius: 4px;
-  max-height: 200px;
+  max-height: 180px;
   overflow-y: auto;
-  z-index: 1000;
+  z-index: 60;
 }
 
 .dropdown-item {
