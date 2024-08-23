@@ -22,28 +22,62 @@ export class NotificationEditComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
-    const notificationId = this.route.snapshot.params['id'];
-    this.dataService.getNotificationDetails(notificationId).subscribe({
-      next: (details) => {
-        this.notification = details;
-        this.languagesTexts = details.languagesTexts.map((item: any) => ({
-          ...item,
-          header: details.eventTrigger 
-        }));
+  // ngOnInit(): void {
+  //   const notificationId = this.route.snapshot.params['id'];
+  //   this.dataService.getNotificationDetails(notificationId).subscribe({
+  //     next: (details) => {
+  //       this.notification = details;
+  //       this.languagesTexts = details.languagesTexts.map((item: any) => ({
+  //         ...item,
+  //         header: details.eventTrigger 
+  //       }));
 
-        this.dataService.getEditParameters(
-          this.notification.serviceType,
-          this.notification.eventTrigger,
-          this.notification.party
-        ).subscribe((data: any) => {
-          this.parameters = data;
-          this.filteredParameters = data;
-        });
-      },
-      error: (error) => console.error('Failed to load notification details:', error)
-    });
+  //       this.dataService.getEditParameters(
+  //         this.notification.serviceType,
+  //         this.notification.eventTrigger,
+  //         this.notification.party
+  //       ).subscribe((data: any) => {
+  //         this.parameters = data;
+  //         this.filteredParameters = data;
+  //       });
+  //     },
+  //     error: (error) => console.error('Failed to load notification details:', error)
+  //   });
+  // }
+
+  ngOnInit(): void {
+    const notificationData = history.state.notification;
+  
+    if (notificationData) {
+      this.notification = notificationData;
+      this.languagesTexts = notificationData.languagesTexts || [];
+    } else {
+      const notificationId = this.route.snapshot.params['id'];
+      this.dataService.getNotificationDetails(notificationId).subscribe({
+        next: (details) => {
+          this.notification = details;
+          this.languagesTexts = details.languagesTexts.map((item: any) => {
+            return {
+              ...item,
+              header: details.eventTrigger // Set the header value to the event trigger
+            };
+          });
+  
+          // Fetch parameters based on the notification's service type, event trigger, and party
+          this.dataService.getEditParameters(
+            this.notification.serviceType,
+            this.notification.eventTrigger,
+            this.notification.party
+          ).subscribe((data: any) => {
+            this.parameters = data;
+            this.filteredParameters = data;
+          });
+        },
+        error: (error) => console.error('Failed to load notification details:', error)
+      });
+    }
   }
+  
 
   filterOptions(event: any) {
     const query = event.target.value.toLowerCase();
