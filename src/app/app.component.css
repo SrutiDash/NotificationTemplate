@@ -1,19 +1,19 @@
-.navbar {
+/* .navbar {
   display: flex;
   align-items: center;
   background-color: white;
   padding: 10px;
-}
+} */
 
-.logo {
+/* .logo {
   height: 40px;
   margin-right: 20px;
-}
+} */
 
-.last-login,
+/* .last-login,
 .date {
   margin-right: 20px;
-}
+} */
 
 .notification img {
   height: 20px;
