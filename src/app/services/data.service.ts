@@ -38,33 +38,9 @@ export class DataService {
     return this.http.get(`${this.baseUrl}/parties`);
   }
 
-  // Method to get parameters
-  // getParameters(): Observable<any> {
-  //   return this.http.get(`${this.baseUrl}/parameters`);
-  // }
-
   getCreateParameters(): Observable<string[]> {
     return this.http.get<string[]>(`${this.baseUrl}/create-parameters`);
   }
-
-  // Method to get parameters for edit notification layout
-  // getEditParameters(serviceCode: string, eventName: string, partyType: string): Observable<string[]> {
-  //   const params = new HttpParams()
-  //     .set('serviceCode', serviceCode)
-  //     .set('eventName', eventName)
-  //     .set('partyType', partyType);
-
-  //   return this.http.get<string[]>(`${this.baseUrl}/edit-parameters`, { params });
-  // }
-
-//   getEditParameters(serviceCode: string, eventName: string, partyType: string): Observable<string[]> {
-//     const params = new HttpParams()
-//         .set('serviceCode', serviceCode)
-//         .set('eventName', eventName)
-//         .set('partyType', partyType);
-
-//     return this.http.get<string[]>(`${this.baseUrl}/parameters`, { params });
-// }
 
 getEditParameters(serviceCode: string, eventName: string, partyType: string): Observable<string[]> {
   const params = new HttpParams()
