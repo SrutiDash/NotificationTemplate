@@ -1,5 +1,3 @@
-// //new2
-
 // import { Component, OnInit } from '@angular/core';
 // import { Router } from '@angular/router';
 // import { DataService } from '../../services/data.service';
@@ -15,8 +13,9 @@
 //   filteredNotifications: Notification[] = [];
 //   itemsPerPage = 10;
 //   currentPage = 1;
-
 //   isFilterPromptVisible: boolean = false;
+//   showModal: boolean = false;
+//   notificationToDelete: Notification | null = null;
 
 //   constructor(private dataService: DataService, private router: Router) { }
 
@@ -65,18 +64,33 @@
 //     this.router.navigate(['/notification-edit', notification.id]);
 //   }
 
-//   deleteNotification(notification: Notification) {
-//     this.dataService.deleteNotification(notification.id).subscribe({
-//       next: () => {
-//         this.notifications = this.notifications.filter(n => n.id !== notification.id);
-//         this.updateFilteredNotifications();
-//         console.log('Notification deleted successfully.');
-//       },
-//       error: (error) => console.error('Error deleting notification:', error)
-//     });
+//   confirmDelete(notification: Notification) {
+//     this.notificationToDelete = notification;
+//     this.showModal = true;
+//   }
+
+//   hideDeleteConfirmation() {
+//     this.showModal = false;
+//     this.notificationToDelete = null;
+//   }
+
+//   deleteNotification() {
+//     if (this.notificationToDelete) {
+//       this.dataService.deleteNotification(this.notificationToDelete.id).subscribe({
+//         next: () => {
+//           this.notifications = this.notifications.filter(n => n.id !== this.notificationToDelete!.id);
+//           this.updateFilteredNotifications();
+//           this.hideDeleteConfirmation();
+//           console.log('Notification deleted successfully.');
+//         },
+//         error: (error) => console.error('Error deleting notification:', error)
+//       });
+//     }
 //   }
 // }
 
+
+//new
 
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -137,11 +151,15 @@ export class NotificationManagementComponent implements OnInit {
   }
 
   viewNotification(notification: Notification) {
-    this.router.navigate(['/notification-details', notification.id]);
+    if (!notification.disabled) {
+      this.router.navigate(['/notification-details', notification.id]);
+    }
   }
 
   editNotification(notification: Notification) {
-    this.router.navigate(['/notification-edit', notification.id]);
+    if (!notification.disabled) {
+      this.router.navigate(['/notification-edit', notification.id]);
+    }
   }
 
   confirmDelete(notification: Notification) {
@@ -156,15 +174,9 @@ export class NotificationManagementComponent implements OnInit {
 
   deleteNotification() {
     if (this.notificationToDelete) {
-      this.dataService.deleteNotification(this.notificationToDelete.id).subscribe({
-        next: () => {
-          this.notifications = this.notifications.filter(n => n.id !== this.notificationToDelete!.id);
-          this.updateFilteredNotifications();
-          this.hideDeleteConfirmation();
-          console.log('Notification deleted successfully.');
-        },
-        error: (error) => console.error('Error deleting notification:', error)
-      });
+      this.notificationToDelete.disabled = true; // Disable the notification
+      this.updateFilteredNotifications();
+      this.hideDeleteConfirmation();
     }
   }
 }

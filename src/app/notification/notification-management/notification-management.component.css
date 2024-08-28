@@ -101,6 +101,12 @@ th {
   margin-right: 5px;
 }
 
+.disabled {
+  opacity: 0.5;
+  pointer-events: none; /* Disable all events on the row */
+}
+
+
 
 
 

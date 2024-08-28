@@ -38,7 +38,7 @@
           <button (click)="editNotification(notification)">
             <img src="https://i.ibb.co/bdsfYMQ/pencil.png" alt="pencil">
           </button>
-          <button (click)="deleteNotification(notification)">
+          <button (click)="confirmDelete(notification)">
             <img src="https://i.ibb.co/x5g7gRs/bin.png" alt="bin">
           </button>
         </td>
@@ -52,11 +52,18 @@
     [currentPage]="currentPage"
     (pageChange)="onPageChange($event)">
   </app-paginator>
-</div>
- -->
+
+  <app-confirmation-modal 
+    *ngIf="showModal"
+    (onConfirm)="deleteNotification()"
+    (onCancel)="hideDeleteConfirmation()">
+  </app-confirmation-modal>
+</div> -->
 
 
- <div class="notification-management">
+<!-- new -->
+
+<div class="notification-management">
   <div class="header">
     <h1>Notifications</h1>
     <button class="create-new" (click)="navigateToCreateNotification()" style="background-color: #ff4081; color: white;">CREATE NEW</button>
@@ -83,20 +90,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let notification of filteredNotifications">
+      <tr *ngFor="let notification of filteredNotifications" [class.disabled]="notification.disabled">
         <td>{{ notification.serviceType }}</td>
         <td>{{ notification.eventTrigger }}</td>
         <td>{{ notification.party }}</td>
         <td>{{ notification.createdOn }}</td>
         <td>{{ notification.createdBy }}</td>
         <td>
-          <button (click)="viewNotification(notification)">
+          <button [disabled]="notification.disabled" (click)="viewNotification(notification)">
             <img src="https://i.ibb.co/7J1rgJG/Component-103-65.png" alt="view">
           </button>
-          <button (click)="editNotification(notification)">
+          <button [disabled]="notification.disabled" (click)="editNotification(notification)">
             <img src="https://i.ibb.co/bdsfYMQ/pencil.png" alt="pencil">
           </button>
-          <button (click)="confirmDelete(notification)">
+          <button [disabled]="notification.disabled" (click)="confirmDelete(notification)">
             <img src="https://i.ibb.co/x5g7gRs/bin.png" alt="bin">
           </button>
         </td>
